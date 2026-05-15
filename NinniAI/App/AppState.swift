@@ -4,12 +4,6 @@ import SwiftData
 // MARK: - App State
 /// Uygulama genelindeki paylaşılan durum yöneticisi.
 /// @Observable macro ile tüm view'lar otomatik güncellenir.
-///
-/// Bu sınıf şu sorumlulukları taşır:
-/// - AudioEngineManager yaşam döngüsü
-/// - NowPlayableManager yaşam döngüsü
-/// - Aktif bebek profili referansı
-/// - Navigasyon durumu
 @Observable
 final class AppState {
     
@@ -21,16 +15,19 @@ final class AppState {
     /// Kilit ekranı kontrol yöneticisi
     let nowPlayable: NowPlayableManager
     
+    /// Yerel Bağlam Motoru
+    let contextEngine: ContextResolver
+    
     // MARK: - Navigation State
     
     /// Ana tab seçimi
     var selectedTab: AppTab = .dashboard
     
-    /// Player sheet açık mı?
-    var isPlayerPresented: Bool = false
-    
     /// Full-screen player açık mı?
     var isFullPlayerPresented: Bool = false
+    
+    /// Onboarding tamamlandı mı? (UserSettings'den okunur)
+    var isOnboardingCompleted: Bool = false
     
     // MARK: - Init
     
@@ -38,6 +35,7 @@ final class AppState {
         let engine = AudioEngineManager()
         self.audioEngine = engine
         self.nowPlayable = NowPlayableManager(audioManager: engine)
+        self.contextEngine = ContextResolver()
     }
 }
 

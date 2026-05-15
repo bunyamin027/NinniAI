@@ -3,42 +3,71 @@ import SwiftData
 
 // MARK: - Content View
 /// Ana uygulama görünümü.
-/// Onboarding durumuna göre ya Onboarding akışını ya da TabView'u gösterir.
-/// Faz 2'de Onboarding entegre edilecek, şu an doğrudan TabView gösterilir.
+/// Onboarding durumuna göre ya Onboarding akışını ya da ana TabView'u gösterir.
 struct ContentView: View {
     
     @Environment(\.modelContext) private var modelContext
+    @Query private var allSettings: [UserSettings]
     @State private var appState = AppState()
+    @State private var showOnboarding = true
+    
+    /// Onboarding tamamlanmış mı? (SwiftData'dan okunur)
+    private var isOnboardingDone: Bool {
+        allSettings.first?.isOnboardingCompleted ?? false
+    }
     
     var body: some View {
+        Group {
+            if showOnboarding && !isOnboardingDone {
+                OnboardingContainerView {
+                    withAnimation(AppTheme.animationSlow) {
+                        showOnboarding = false
+                        appState.isOnboardingCompleted = true
+                    }
+                }
+            } else {
+                mainTabView
+            }
+        }
+        .environment(appState)
+        .onAppear {
+            showOnboarding = !isOnboardingDone
+            appState.isOnboardingCompleted = isOnboardingDone
+            
+            // Baby varsa ContextEngine'i güncelle
+            if let baby = allSettings.first?.baby {
+                appState.contextEngine.resolve(baby: baby)
+            }
+        }
+    }
+    
+    // MARK: - Main Tab View
+    
+    private var mainTabView: some View {
         ZStack(alignment: .bottom) {
             TabView(selection: Binding(
                 get: { appState.selectedTab },
                 set: { appState.selectedTab = $0 }
             )) {
-                // Dashboard (Faz 3'te detaylandırılacak)
-                dashboardPlaceholder
+                DashboardPlaceholderView()
                     .tag(AppTab.dashboard)
                     .tabItem {
                         Label(AppTab.dashboard.title, systemImage: AppTab.dashboard.iconName)
                     }
                 
-                // Player
                 PlayerView()
                     .tag(AppTab.player)
                     .tabItem {
                         Label(AppTab.player.title, systemImage: AppTab.player.iconName)
                     }
                 
-                // Analytics (Faz 4'te detaylandırılacak)
-                analyticsPlaceholder
+                AnalyticsPlaceholderView()
                     .tag(AppTab.analytics)
                     .tabItem {
                         Label(AppTab.analytics.title, systemImage: AppTab.analytics.iconName)
                     }
                 
-                // Settings (Faz 4'te detaylandırılacak)
-                settingsPlaceholder
+                SettingsPlaceholderView()
                     .tag(AppTab.settings)
                     .tabItem {
                         Label(AppTab.settings.title, systemImage: AppTab.settings.iconName)
@@ -49,78 +78,71 @@ struct ContentView: View {
             
             // Mini Player (tab bar üstünde)
             MiniPlayerBar()
-                .padding(.bottom, 50) // Tab bar yüksekliği
+                .padding(.bottom, 50)
         }
-        .environment(appState)
         .fullScreenCover(isPresented: $appState.isFullPlayerPresented) {
             PlayerView()
                 .environment(appState)
         }
     }
+}
+
+// MARK: - Placeholder Views (Faz 3-4'te detaylandırılacak)
+
+private struct DashboardPlaceholderView: View {
+    @Environment(AppState.self) private var appState
     
-    // MARK: - Placeholder Views
-    
-    private var dashboardPlaceholder: some View {
+    var body: some View {
         ZStack {
-            GradientBackground()
+            GradientBackground(
+                appState.contextEngine.currentContext.isNightMode
+                    ? .nightMode : .default
+            )
             
             VStack(spacing: AppTheme.spacingMD) {
-                Image(systemName: "moon.stars.fill")
-                    .font(.system(size: 64))
-                    .foregroundStyle(AppTheme.accentPrimary)
-                
-                Text("NinniAI")
+                // Bağlamsal karşılama
+                Text(appState.contextEngine.currentContext.greeting)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundStyle(AppTheme.textPrimary)
+                    .multilineTextAlignment(.center)
                 
-                Text("Akıllı Uyku Asistanı")
-                    .font(.title3)
+                Text(appState.contextEngine.currentContext.subtitle)
+                    .font(.body)
                     .foregroundStyle(AppTheme.textSecondary)
+                    .multilineTextAlignment(.center)
                 
-                Text("Faz 3'te burada dinamik dashboard olacak")
+                Spacer().frame(height: AppTheme.spacingLG)
+                
+                // Hızlı başlat butonu
+                PulseButton(
+                    isActive: appState.audioEngine.isPlaying,
+                    icon: appState.audioEngine.isPlaying ? "pause.fill" : "play.fill",
+                    size: 80
+                ) {
+                    appState.selectedTab = .player
+                }
+                
+                Text("Sesleri keşfetmek için dokunun")
                     .font(.caption)
                     .foregroundStyle(AppTheme.textTertiary)
-                    .padding(.top, AppTheme.spacingLG)
             }
+            .padding(AppTheme.spacingLG)
         }
     }
-    
-    private var analyticsPlaceholder: some View {
+}
+
+private struct AnalyticsPlaceholderView: View {
+    var body: some View {
         ZStack {
             GradientBackground()
-            
             VStack(spacing: AppTheme.spacingMD) {
                 Image(systemName: "chart.bar.fill")
                     .font(.system(size: 48))
                     .foregroundStyle(AppTheme.accentPrimary)
-                
                 Text("Uyku Analitiği")
-                    .font(.title2)
-                    .fontWeight(.semibold)
+                    .font(.title2).fontWeight(.semibold)
                     .foregroundStyle(AppTheme.textPrimary)
-                
-                Text("Faz 4'te burada grafikler olacak")
-                    .font(.caption)
-                    .foregroundStyle(AppTheme.textTertiary)
-            }
-        }
-    }
-    
-    private var settingsPlaceholder: some View {
-        ZStack {
-            GradientBackground()
-            
-            VStack(spacing: AppTheme.spacingMD) {
-                Image(systemName: "gearshape.fill")
-                    .font(.system(size: 48))
-                    .foregroundStyle(AppTheme.accentPrimary)
-                
-                Text("Ayarlar")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(AppTheme.textPrimary)
-                
                 Text("Faz 4'te detaylandırılacak")
                     .font(.caption)
                     .foregroundStyle(AppTheme.textTertiary)
@@ -129,7 +151,35 @@ struct ContentView: View {
     }
 }
 
-#Preview {
+private struct SettingsPlaceholderView: View {
+    var body: some View {
+        ZStack {
+            GradientBackground()
+            VStack(spacing: AppTheme.spacingMD) {
+                Image(systemName: "gearshape.fill")
+                    .font(.system(size: 48))
+                    .foregroundStyle(AppTheme.accentPrimary)
+                Text("Ayarlar")
+                    .font(.title2).fontWeight(.semibold)
+                    .foregroundStyle(AppTheme.textPrimary)
+                Text("Faz 4'te detaylandırılacak")
+                    .font(.caption)
+                    .foregroundStyle(AppTheme.textTertiary)
+            }
+        }
+    }
+}
+
+#Preview("Onboarding") {
+    ContentView()
+        .modelContainer(for: [
+            Baby.self, Sound.self, SleepSession.self,
+            Interruption.self, SoundUsage.self,
+            Milestone.self, UserSettings.self
+        ], inMemory: true)
+}
+
+#Preview("Main App") {
     ContentView()
         .modelContainer(PreviewSampleData.container)
 }

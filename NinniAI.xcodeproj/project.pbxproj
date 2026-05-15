@@ -10,6 +10,7 @@
 		00961888DCC0DCB49B98F125 /* AudioEngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB1FE127AA44F25FF44E0F /* AudioEngineManager.swift */; };
 		0256FE15B91ADA757DCD7283 /* SeamlessLooper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215AB652B9FD71B729EBBCC /* SeamlessLooper.swift */; };
 		05A4AED92DCBAF29331C32F3 /* FadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97DE9D777940E5F39EADAB /* FadeController.swift */; };
+		0DAB3C79512E932148E9DEB2 /* SleepProblemsStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394DBF0F3904E5E6593EE45B /* SleepProblemsStepView.swift */; };
 		11C52438F26EE58D8B5F216C /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4FF0EACE2A4D7AD5F6179A /* Milestone.swift */; };
 		11D124848CFDA58F6269A76E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57F61E4EC004C6139FC7F3D /* Assets.xcassets */; };
 		18939DDB086EAD8C0DFE6CD4 /* Interruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDAEDF5EC63C15BF6793F6C /* Interruption.swift */; };
@@ -19,19 +20,28 @@
 		5423E46D7FF8819DA9F54BE6 /* SleepProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40B44CBD77A317A82625A7 /* SleepProblem.swift */; };
 		5E8DDE5307835ACD240D1626 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621210CB0809F8626F1DA371 /* PlayerView.swift */; };
 		6A0945F3FD36789B951A0234 /* NowPlayableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8D25689C95D2CF9E11129 /* NowPlayableManager.swift */; };
+		6F4A367FA87CE7D42636BD17 /* ContextResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40267CB0DF17CD10B285678 /* ContextResolver.swift */; };
+		7099220DB421E19FF31038EA /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04AE0B5567ABF96F0194E8 /* OnboardingContainerView.swift */; };
 		76BA112389D0661756706BA9 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6498B8018198FD5B5CFB1161 /* AppState.swift */; };
+		82EA7A7928B9CE1139FCCAB5 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F704C0BCAE39CE40B289FA /* View+Extensions.swift */; };
 		8593E58A4EA6C39BE9621F34 /* Baby.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37FA2BB21C6147D5356F233 /* Baby.swift */; };
 		89DF74B8A49DBE19116089EB /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D32A3570DA382B1DFFA14A /* GlassCard.swift */; };
 		8A669DC9FE00F724112CBC9E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894FE02F60FB2A0B8AC0F2C7 /* Sound.swift */; };
 		93F04DB28C7B86AEFD0CAD6E /* PulseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274C9FB2AC4254BB25F12CB /* PulseButton.swift */; };
+		A17E864F53DF8D7A8547D8A2 /* WelcomeStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F80C812767AA646D03DA3 /* WelcomeStepView.swift */; };
+		A5EB49E54FAF76E66049E8D3 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E843D1619E95C0A785585ACA /* Date+Extensions.swift */; };
 		BE92471FDBE85A140F5FBA66 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D879D9D6E49D15EB85787E4B /* SoundPickerView.swift */; };
 		C728D0AB380809AB87CB75C5 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34747F7ECA897960E367F5AE /* GradientBackground.swift */; };
+		C93214BE7F7344CAB060CF5E /* MilestoneTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6A02F9BC0D45BBBE45846F /* MilestoneTracker.swift */; };
+		CCB1B8F2BBC9E27AF3042E74 /* BabyInfoStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725A7FEFE7A14A1DD28DAC7E /* BabyInfoStepView.swift */; };
 		CF2436011E242D3C54BF87E5 /* SoundUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6ABB9039EC46A3238978AE /* SoundUsage.swift */; };
 		D2D8F0860F7900EBA63E2EF3 /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B078FC7684D00B7B58E5663 /* PreviewSampleData.swift */; };
 		D639FF7CAA4FC61073973590 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98563CA53D18C3FF6567195D /* AppTheme.swift */; };
 		D6639D6A47AF22A2A4D67356 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3649FD7A293B124F61E4C89 /* ContentView.swift */; };
 		D69161B3AA1A904DE34312AF /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C149F74345D9E6644A9A08 /* UserSettings.swift */; };
+		D75263F83767EF164D5B1350 /* NightModeResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989ACF246863847D6CF5D3C5 /* NightModeResolver.swift */; };
 		E3098C436A9CFF732D9C3577 /* SoundCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92378DECB5F98463AE55744 /* SoundCategory.swift */; };
+		E339954AE60A1BCA3223EABB /* AnalysisAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C72CA4416DB455AAB5ADFB /* AnalysisAnimationView.swift */; };
 		EDA0735A94D7E89B6460A9EE /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9297CCF3EF12FA7F209D4F /* TimerPickerView.swift */; };
 		F991BCEA4C5E7EBF0A380C02 /* NinniAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8F5B20C5A967965F7B4B3 /* NinniAIApp.swift */; };
 /* End PBXBuildFile section */
@@ -44,11 +54,15 @@
 		2FDAEDF5EC63C15BF6793F6C /* Interruption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interruption.swift; sourceTree = "<group>"; };
 		32D44EFDBC37E143669594A5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		34747F7ECA897960E367F5AE /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		394DBF0F3904E5E6593EE45B /* SleepProblemsStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepProblemsStepView.swift; sourceTree = "<group>"; };
 		3E97DE9D777940E5F39EADAB /* FadeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeController.swift; sourceTree = "<group>"; };
+		51F704C0BCAE39CE40B289FA /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		52C72CA4416DB455AAB5ADFB /* AnalysisAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisAnimationView.swift; sourceTree = "<group>"; };
 		56A8F5B20C5A967965F7B4B3 /* NinniAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinniAIApp.swift; sourceTree = "<group>"; };
 		621210CB0809F8626F1DA371 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		6498B8018198FD5B5CFB1161 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		6A40B44CBD77A317A82625A7 /* SleepProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepProblem.swift; sourceTree = "<group>"; };
+		725A7FEFE7A14A1DD28DAC7E /* BabyInfoStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyInfoStepView.swift; sourceTree = "<group>"; };
 		7274C9FB2AC4254BB25F12CB /* PulseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseButton.swift; sourceTree = "<group>"; };
 		7B4FF0EACE2A4D7AD5F6179A /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		7FAB1FE127AA44F25FF44E0F /* AudioEngineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineManager.swift; sourceTree = "<group>"; };
@@ -59,13 +73,19 @@
 		92F574E83316B0A9264F322C /* SleepSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSession.swift; sourceTree = "<group>"; };
 		9405092CC6A1022B18B9866B /* NinniAI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NinniAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98563CA53D18C3FF6567195D /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		989ACF246863847D6CF5D3C5 /* NightModeResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightModeResolver.swift; sourceTree = "<group>"; };
+		9A04AE0B5567ABF96F0194E8 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
 		A37FA2BB21C6147D5356F233 /* Baby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baby.swift; sourceTree = "<group>"; };
 		A56550EA700DFDAC387B191B /* MiniPlayerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerBar.swift; sourceTree = "<group>"; };
+		C04F80C812767AA646D03DA3 /* WelcomeStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeStepView.swift; sourceTree = "<group>"; };
 		C57F61E4EC004C6139FC7F3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D879D9D6E49D15EB85787E4B /* SoundPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerView.swift; sourceTree = "<group>"; };
 		D92378DECB5F98463AE55744 /* SoundCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCategory.swift; sourceTree = "<group>"; };
+		DA6A02F9BC0D45BBBE45846F /* MilestoneTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneTracker.swift; sourceTree = "<group>"; };
 		E7C149F74345D9E6644A9A08 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		E843D1619E95C0A785585ACA /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		F3649FD7A293B124F61E4C89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F40267CB0DF17CD10B285678 /* ContextResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -147,6 +167,11 @@
 		532960D186BD7F173F016F64 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				52C72CA4416DB455AAB5ADFB /* AnalysisAnimationView.swift */,
+				725A7FEFE7A14A1DD28DAC7E /* BabyInfoStepView.swift */,
+				9A04AE0B5567ABF96F0194E8 /* OnboardingContainerView.swift */,
+				394DBF0F3904E5E6593EE45B /* SleepProblemsStepView.swift */,
+				C04F80C812767AA646D03DA3 /* WelcomeStepView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -213,6 +238,9 @@
 		A7E1F62F72AE537499AA87C3 /* ContextEngine */ = {
 			isa = PBXGroup;
 			children = (
+				F40267CB0DF17CD10B285678 /* ContextResolver.swift */,
+				DA6A02F9BC0D45BBBE45846F /* MilestoneTracker.swift */,
+				989ACF246863847D6CF5D3C5 /* NightModeResolver.swift */,
 			);
 			path = ContextEngine;
 			sourceTree = "<group>";
@@ -227,6 +255,8 @@
 		B9CEFE568F62C92450987569 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E843D1619E95C0A785585ACA /* Date+Extensions.swift */,
+				51F704C0BCAE39CE40B289FA /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -423,25 +453,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E339954AE60A1BCA3223EABB /* AnalysisAnimationView.swift in Sources */,
 				3F96991D84495D6F88EC832C /* AppConstants.swift in Sources */,
 				76BA112389D0661756706BA9 /* AppState.swift in Sources */,
 				D639FF7CAA4FC61073973590 /* AppTheme.swift in Sources */,
 				00961888DCC0DCB49B98F125 /* AudioEngineManager.swift in Sources */,
 				8593E58A4EA6C39BE9621F34 /* Baby.swift in Sources */,
+				CCB1B8F2BBC9E27AF3042E74 /* BabyInfoStepView.swift in Sources */,
 				D6639D6A47AF22A2A4D67356 /* ContentView.swift in Sources */,
+				6F4A367FA87CE7D42636BD17 /* ContextResolver.swift in Sources */,
+				A5EB49E54FAF76E66049E8D3 /* Date+Extensions.swift in Sources */,
 				05A4AED92DCBAF29331C32F3 /* FadeController.swift in Sources */,
 				89DF74B8A49DBE19116089EB /* GlassCard.swift in Sources */,
 				C728D0AB380809AB87CB75C5 /* GradientBackground.swift in Sources */,
 				18939DDB086EAD8C0DFE6CD4 /* Interruption.swift in Sources */,
 				11C52438F26EE58D8B5F216C /* Milestone.swift in Sources */,
+				C93214BE7F7344CAB060CF5E /* MilestoneTracker.swift in Sources */,
 				35EC9F1D0DB55394CA2E8822 /* MiniPlayerBar.swift in Sources */,
+				D75263F83767EF164D5B1350 /* NightModeResolver.swift in Sources */,
 				F991BCEA4C5E7EBF0A380C02 /* NinniAIApp.swift in Sources */,
 				6A0945F3FD36789B951A0234 /* NowPlayableManager.swift in Sources */,
+				7099220DB421E19FF31038EA /* OnboardingContainerView.swift in Sources */,
 				5E8DDE5307835ACD240D1626 /* PlayerView.swift in Sources */,
 				D2D8F0860F7900EBA63E2EF3 /* PreviewSampleData.swift in Sources */,
 				93F04DB28C7B86AEFD0CAD6E /* PulseButton.swift in Sources */,
 				0256FE15B91ADA757DCD7283 /* SeamlessLooper.swift in Sources */,
 				5423E46D7FF8819DA9F54BE6 /* SleepProblem.swift in Sources */,
+				0DAB3C79512E932148E9DEB2 /* SleepProblemsStepView.swift in Sources */,
 				2C5C438F4A6F9C4EAACF5E59 /* SleepSession.swift in Sources */,
 				8A669DC9FE00F724112CBC9E /* Sound.swift in Sources */,
 				E3098C436A9CFF732D9C3577 /* SoundCategory.swift in Sources */,
@@ -449,6 +487,8 @@
 				CF2436011E242D3C54BF87E5 /* SoundUsage.swift in Sources */,
 				EDA0735A94D7E89B6460A9EE /* TimerPickerView.swift in Sources */,
 				D69161B3AA1A904DE34312AF /* UserSettings.swift in Sources */,
+				82EA7A7928B9CE1139FCCAB5 /* View+Extensions.swift in Sources */,
+				A17E864F53DF8D7A8547D8A2 /* WelcomeStepView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
