@@ -67,7 +67,7 @@ struct ContentView: View {
                         Label(AppTab.analytics.title, systemImage: AppTab.analytics.iconName)
                     }
                 
-                SettingsPlaceholderView()
+                SettingsView()
                     .tag(AppTab.settings)
                     .tabItem {
                         Label(AppTab.settings.title, systemImage: AppTab.settings.iconName)
@@ -83,27 +83,6 @@ struct ContentView: View {
         .fullScreenCover(isPresented: $appState.isFullPlayerPresented) {
             PlayerView()
                 .environment(appState)
-        }
-    }
-}
-
-// MARK: - Placeholder Views (Faz 4'te detaylandırılacak)
-
-private struct SettingsPlaceholderView: View {
-    var body: some View {
-        ZStack {
-            GradientBackground()
-            VStack(spacing: AppTheme.spacingMD) {
-                Image(systemName: "gearshape.fill")
-                    .font(.system(size: 48))
-                    .foregroundStyle(AppTheme.accentPrimary)
-                Text("Ayarlar")
-                    .font(.title2).fontWeight(.semibold)
-                    .foregroundStyle(AppTheme.textPrimary)
-                Text("Faz 4'te detaylandırılacak")
-                    .font(.caption)
-                    .foregroundStyle(AppTheme.textTertiary)
-            }
         }
     }
 }
