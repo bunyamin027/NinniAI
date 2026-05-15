@@ -1,0 +1,669 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00961888DCC0DCB49B98F125 /* AudioEngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB1FE127AA44F25FF44E0F /* AudioEngineManager.swift */; };
+		0256FE15B91ADA757DCD7283 /* SeamlessLooper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215AB652B9FD71B729EBBCC /* SeamlessLooper.swift */; };
+		05A4AED92DCBAF29331C32F3 /* FadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97DE9D777940E5F39EADAB /* FadeController.swift */; };
+		11C52438F26EE58D8B5F216C /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4FF0EACE2A4D7AD5F6179A /* Milestone.swift */; };
+		11D124848CFDA58F6269A76E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57F61E4EC004C6139FC7F3D /* Assets.xcassets */; };
+		18939DDB086EAD8C0DFE6CD4 /* Interruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDAEDF5EC63C15BF6793F6C /* Interruption.swift */; };
+		2C5C438F4A6F9C4EAACF5E59 /* SleepSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F574E83316B0A9264F322C /* SleepSession.swift */; };
+		35EC9F1D0DB55394CA2E8822 /* MiniPlayerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56550EA700DFDAC387B191B /* MiniPlayerBar.swift */; };
+		3F96991D84495D6F88EC832C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D44EFDBC37E143669594A5 /* AppConstants.swift */; };
+		5423E46D7FF8819DA9F54BE6 /* SleepProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40B44CBD77A317A82625A7 /* SleepProblem.swift */; };
+		5E8DDE5307835ACD240D1626 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621210CB0809F8626F1DA371 /* PlayerView.swift */; };
+		6A0945F3FD36789B951A0234 /* NowPlayableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8D25689C95D2CF9E11129 /* NowPlayableManager.swift */; };
+		76BA112389D0661756706BA9 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6498B8018198FD5B5CFB1161 /* AppState.swift */; };
+		8593E58A4EA6C39BE9621F34 /* Baby.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37FA2BB21C6147D5356F233 /* Baby.swift */; };
+		89DF74B8A49DBE19116089EB /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D32A3570DA382B1DFFA14A /* GlassCard.swift */; };
+		8A669DC9FE00F724112CBC9E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894FE02F60FB2A0B8AC0F2C7 /* Sound.swift */; };
+		93F04DB28C7B86AEFD0CAD6E /* PulseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274C9FB2AC4254BB25F12CB /* PulseButton.swift */; };
+		BE92471FDBE85A140F5FBA66 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D879D9D6E49D15EB85787E4B /* SoundPickerView.swift */; };
+		C728D0AB380809AB87CB75C5 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34747F7ECA897960E367F5AE /* GradientBackground.swift */; };
+		CF2436011E242D3C54BF87E5 /* SoundUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6ABB9039EC46A3238978AE /* SoundUsage.swift */; };
+		D2D8F0860F7900EBA63E2EF3 /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B078FC7684D00B7B58E5663 /* PreviewSampleData.swift */; };
+		D639FF7CAA4FC61073973590 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98563CA53D18C3FF6567195D /* AppTheme.swift */; };
+		D6639D6A47AF22A2A4D67356 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3649FD7A293B124F61E4C89 /* ContentView.swift */; };
+		D69161B3AA1A904DE34312AF /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C149F74345D9E6644A9A08 /* UserSettings.swift */; };
+		E3098C436A9CFF732D9C3577 /* SoundCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92378DECB5F98463AE55744 /* SoundCategory.swift */; };
+		EDA0735A94D7E89B6460A9EE /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9297CCF3EF12FA7F209D4F /* TimerPickerView.swift */; };
+		F991BCEA4C5E7EBF0A380C02 /* NinniAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8F5B20C5A967965F7B4B3 /* NinniAIApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00D32A3570DA382B1DFFA14A /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		04E8D25689C95D2CF9E11129 /* NowPlayableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayableManager.swift; sourceTree = "<group>"; };
+		2D546E4F3EBB85514F57FDAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2F6ABB9039EC46A3238978AE /* SoundUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundUsage.swift; sourceTree = "<group>"; };
+		2FDAEDF5EC63C15BF6793F6C /* Interruption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interruption.swift; sourceTree = "<group>"; };
+		32D44EFDBC37E143669594A5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		34747F7ECA897960E367F5AE /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		3E97DE9D777940E5F39EADAB /* FadeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeController.swift; sourceTree = "<group>"; };
+		56A8F5B20C5A967965F7B4B3 /* NinniAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinniAIApp.swift; sourceTree = "<group>"; };
+		621210CB0809F8626F1DA371 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		6498B8018198FD5B5CFB1161 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		6A40B44CBD77A317A82625A7 /* SleepProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepProblem.swift; sourceTree = "<group>"; };
+		7274C9FB2AC4254BB25F12CB /* PulseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseButton.swift; sourceTree = "<group>"; };
+		7B4FF0EACE2A4D7AD5F6179A /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
+		7FAB1FE127AA44F25FF44E0F /* AudioEngineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineManager.swift; sourceTree = "<group>"; };
+		8215AB652B9FD71B729EBBCC /* SeamlessLooper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessLooper.swift; sourceTree = "<group>"; };
+		894FE02F60FB2A0B8AC0F2C7 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		8B078FC7684D00B7B58E5663 /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
+		8F9297CCF3EF12FA7F209D4F /* TimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPickerView.swift; sourceTree = "<group>"; };
+		92F574E83316B0A9264F322C /* SleepSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSession.swift; sourceTree = "<group>"; };
+		9405092CC6A1022B18B9866B /* NinniAI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NinniAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98563CA53D18C3FF6567195D /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		A37FA2BB21C6147D5356F233 /* Baby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baby.swift; sourceTree = "<group>"; };
+		A56550EA700DFDAC387B191B /* MiniPlayerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerBar.swift; sourceTree = "<group>"; };
+		C57F61E4EC004C6139FC7F3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D879D9D6E49D15EB85787E4B /* SoundPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerView.swift; sourceTree = "<group>"; };
+		D92378DECB5F98463AE55744 /* SoundCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCategory.swift; sourceTree = "<group>"; };
+		E7C149F74345D9E6644A9A08 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		F3649FD7A293B124F61E4C89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		04597F4D28194397E9EA5D85 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E4DC7D7882CE4B9845B83F12 /* Fonts */,
+				CA421FD45658EB4E159840CD /* Sounds */,
+				C57F61E4EC004C6139FC7F3D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0AFC40B00139D6555A59AEB3 /* SleepAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SleepAnalytics;
+			sourceTree = "<group>";
+		};
+		0E203689656B197B3E525A97 = {
+			isa = PBXGroup;
+			children = (
+				E022779D3D3AFDCEE47514BC /* NinniAI */,
+				E4ADDB80BEAFDBB0BAB3DE08 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E66A9F7189DB210D544EEAF /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
+		2343362048AA077885008785 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		25107F9DE080443EDE604B94 /* Heartbeat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Heartbeat;
+			sourceTree = "<group>";
+		};
+		2564DD493EF151279BEE32CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2343362048AA077885008785 /* Analytics */,
+				65B916B6C12E644EA1156927 /* Dashboard */,
+				3CEAE366271FE355F6958CC6 /* Launch */,
+				532960D186BD7F173F016F64 /* Onboarding */,
+				C5C9DB15CF5FF0A45FB32FA0 /* Player */,
+				1E66A9F7189DB210D544EEAF /* Premium */,
+				9B65521F3E3E564D0B1339DA /* Settings */,
+				83FBABC4E0004B2D97B7F97A /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3CEAE366271FE355F6958CC6 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		518009F3B6F3942B7ABBC18B /* Ambient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ambient;
+			sourceTree = "<group>";
+		};
+		532960D186BD7F173F016F64 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		65B916B6C12E644EA1156927 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		83FBABC4E0004B2D97B7F97A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C366A06B6D41682A26614497 /* Components */,
+				B9CEFE568F62C92450987569 /* Extensions */,
+				D67CC280261833420B309604 /* Modifiers */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		98303929CC1A0CFAF4D745E1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C3E4EF12B45E955D66852B57 /* AudioEngine */,
+				A7E1F62F72AE537499AA87C3 /* ContextEngine */,
+				A260A14FCD0078BA7EF2102D /* Notification */,
+				0AFC40B00139D6555A59AEB3 /* SleepAnalytics */,
+				C0F4732BC85A1BDB9AE6C7A7 /* StoreKit */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9B65521F3E3E564D0B1339DA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A14E4ED13A0273296A5C913B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A37FA2BB21C6147D5356F233 /* Baby.swift */,
+				2FDAEDF5EC63C15BF6793F6C /* Interruption.swift */,
+				7B4FF0EACE2A4D7AD5F6179A /* Milestone.swift */,
+				6A40B44CBD77A317A82625A7 /* SleepProblem.swift */,
+				92F574E83316B0A9264F322C /* SleepSession.swift */,
+				894FE02F60FB2A0B8AC0F2C7 /* Sound.swift */,
+				D92378DECB5F98463AE55744 /* SoundCategory.swift */,
+				2F6ABB9039EC46A3238978AE /* SoundUsage.swift */,
+				E7C149F74345D9E6644A9A08 /* UserSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A260A14FCD0078BA7EF2102D /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		A7E1F62F72AE537499AA87C3 /* ContextEngine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ContextEngine;
+			sourceTree = "<group>";
+		};
+		B2D38F009A313889D76FA36D /* Nature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Nature;
+			sourceTree = "<group>";
+		};
+		B9CEFE568F62C92450987569 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BCB064EDDAFA1E5C3BDEE12B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8B078FC7684D00B7B58E5663 /* PreviewSampleData.swift */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C0F4732BC85A1BDB9AE6C7A7 /* StoreKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StoreKit;
+			sourceTree = "<group>";
+		};
+		C1E6694C71B0419D6D4EE134 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				32D44EFDBC37E143669594A5 /* AppConstants.swift */,
+				6498B8018198FD5B5CFB1161 /* AppState.swift */,
+				98563CA53D18C3FF6567195D /* AppTheme.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C366A06B6D41682A26614497 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				00D32A3570DA382B1DFFA14A /* GlassCard.swift */,
+				34747F7ECA897960E367F5AE /* GradientBackground.swift */,
+				7274C9FB2AC4254BB25F12CB /* PulseButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C3E4EF12B45E955D66852B57 /* AudioEngine */ = {
+			isa = PBXGroup;
+			children = (
+				7FAB1FE127AA44F25FF44E0F /* AudioEngineManager.swift */,
+				3E97DE9D777940E5F39EADAB /* FadeController.swift */,
+				04E8D25689C95D2CF9E11129 /* NowPlayableManager.swift */,
+				8215AB652B9FD71B729EBBCC /* SeamlessLooper.swift */,
+			);
+			path = AudioEngine;
+			sourceTree = "<group>";
+		};
+		C5C9DB15CF5FF0A45FB32FA0 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A56550EA700DFDAC387B191B /* MiniPlayerBar.swift */,
+				621210CB0809F8626F1DA371 /* PlayerView.swift */,
+				D879D9D6E49D15EB85787E4B /* SoundPickerView.swift */,
+				8F9297CCF3EF12FA7F209D4F /* TimerPickerView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		CA421FD45658EB4E159840CD /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				518009F3B6F3942B7ABBC18B /* Ambient */,
+				25107F9DE080443EDE604B94 /* Heartbeat */,
+				D0577B6E5AD7510E825984EC /* Lullaby */,
+				B2D38F009A313889D76FA36D /* Nature */,
+				F98F8F13DB8696DD61AAEE58 /* WhiteNoise */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		D0577B6E5AD7510E825984EC /* Lullaby */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lullaby;
+			sourceTree = "<group>";
+		};
+		D67CC280261833420B309604 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		E022779D3D3AFDCEE47514BC /* NinniAI */ = {
+			isa = PBXGroup;
+			children = (
+				C1E6694C71B0419D6D4EE134 /* App */,
+				A14E4ED13A0273296A5C913B /* Models */,
+				BCB064EDDAFA1E5C3BDEE12B /* Preview Content */,
+				04597F4D28194397E9EA5D85 /* Resources */,
+				98303929CC1A0CFAF4D745E1 /* Services */,
+				2564DD493EF151279BEE32CA /* Views */,
+				F3649FD7A293B124F61E4C89 /* ContentView.swift */,
+				2D546E4F3EBB85514F57FDAC /* Info.plist */,
+				56A8F5B20C5A967965F7B4B3 /* NinniAIApp.swift */,
+			);
+			path = NinniAI;
+			sourceTree = "<group>";
+		};
+		E4ADDB80BEAFDBB0BAB3DE08 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9405092CC6A1022B18B9866B /* NinniAI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4DC7D7882CE4B9845B83F12 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F98F8F13DB8696DD61AAEE58 /* WhiteNoise */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WhiteNoise;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D01396F14D8253A930C47784 /* NinniAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D5A155A034C85EDD8F3698 /* Build configuration list for PBXNativeTarget "NinniAI" */;
+			buildPhases = (
+				79D9B97FC9D6EE848A2AF945 /* Sources */,
+				FC67DE079B9C3F8397F34BB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NinniAI;
+			packageProductDependencies = (
+			);
+			productName = NinniAI;
+			productReference = 9405092CC6A1022B18B9866B /* NinniAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7419BB4502010920D0F363A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					D01396F14D8253A930C47784 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2B4D3B338A5C3379CA9A7645 /* Build configuration list for PBXProject "NinniAI" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 0E203689656B197B3E525A97;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E4ADDB80BEAFDBB0BAB3DE08 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D01396F14D8253A930C47784 /* NinniAI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC67DE079B9C3F8397F34BB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11D124848CFDA58F6269A76E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79D9B97FC9D6EE848A2AF945 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F96991D84495D6F88EC832C /* AppConstants.swift in Sources */,
+				76BA112389D0661756706BA9 /* AppState.swift in Sources */,
+				D639FF7CAA4FC61073973590 /* AppTheme.swift in Sources */,
+				00961888DCC0DCB49B98F125 /* AudioEngineManager.swift in Sources */,
+				8593E58A4EA6C39BE9621F34 /* Baby.swift in Sources */,
+				D6639D6A47AF22A2A4D67356 /* ContentView.swift in Sources */,
+				05A4AED92DCBAF29331C32F3 /* FadeController.swift in Sources */,
+				89DF74B8A49DBE19116089EB /* GlassCard.swift in Sources */,
+				C728D0AB380809AB87CB75C5 /* GradientBackground.swift in Sources */,
+				18939DDB086EAD8C0DFE6CD4 /* Interruption.swift in Sources */,
+				11C52438F26EE58D8B5F216C /* Milestone.swift in Sources */,
+				35EC9F1D0DB55394CA2E8822 /* MiniPlayerBar.swift in Sources */,
+				F991BCEA4C5E7EBF0A380C02 /* NinniAIApp.swift in Sources */,
+				6A0945F3FD36789B951A0234 /* NowPlayableManager.swift in Sources */,
+				5E8DDE5307835ACD240D1626 /* PlayerView.swift in Sources */,
+				D2D8F0860F7900EBA63E2EF3 /* PreviewSampleData.swift in Sources */,
+				93F04DB28C7B86AEFD0CAD6E /* PulseButton.swift in Sources */,
+				0256FE15B91ADA757DCD7283 /* SeamlessLooper.swift in Sources */,
+				5423E46D7FF8819DA9F54BE6 /* SleepProblem.swift in Sources */,
+				2C5C438F4A6F9C4EAACF5E59 /* SleepSession.swift in Sources */,
+				8A669DC9FE00F724112CBC9E /* Sound.swift in Sources */,
+				E3098C436A9CFF732D9C3577 /* SoundCategory.swift in Sources */,
+				BE92471FDBE85A140F5FBA66 /* SoundPickerView.swift in Sources */,
+				CF2436011E242D3C54BF87E5 /* SoundUsage.swift in Sources */,
+				EDA0735A94D7E89B6460A9EE /* TimerPickerView.swift in Sources */,
+				D69161B3AA1A904DE34312AF /* UserSettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5B8DB4ED38A17F8DABAF6277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = NinniAI;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		64FEEA963C01F93305F5930B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = NinniAI;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		AB2E0F25C5328D3B43FAE320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NinniAI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NinniAI;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ninni.ai;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE8A1ED4353A3540633A8A7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NinniAI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NinniAI;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ninni.ai;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B4D3B338A5C3379CA9A7645 /* Build configuration list for PBXProject "NinniAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B8DB4ED38A17F8DABAF6277 /* Debug */,
+				64FEEA963C01F93305F5930B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B6D5A155A034C85EDD8F3698 /* Build configuration list for PBXNativeTarget "NinniAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB2E0F25C5328D3B43FAE320 /* Debug */,
+				CE8A1ED4353A3540633A8A7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7419BB4502010920D0F363A5 /* Project object */;
+}

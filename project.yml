@@ -1,0 +1,51 @@
+name: NinniAI
+
+options:
+  bundleIdPrefix: com.ninni.ai
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+  groupSortPosition: top
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    GENERATE_INFOPLIST_FILE: YES
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: "1.0.0"
+    ENABLE_PREVIEWS: YES
+    DEVELOPMENT_TEAM: ""
+    INFOPLIST_KEY_CFBundleDisplayName: NinniAI
+    INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.healthcare-fitness"
+    INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+    INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+    INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+    INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+    INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleLightContent
+    INFOPLIST_KEY_UIUserInterfaceStyle: Dark
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+
+targets:
+  NinniAI:
+    type: application
+    platform: iOS
+    sources:
+      - path: NinniAI
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ninni.ai
+        INFOPLIST_KEY_CFBundleDisplayName: NinniAI
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1,2"
+    info:
+      path: NinniAI/Info.plist
+      properties:
+        UIBackgroundModes:
+          - audio
+        NSMicrophoneUsageDescription: "NinniAI ses kayıt özelliği için mikrofon erişimi gerektirir."
