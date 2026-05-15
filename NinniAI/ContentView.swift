@@ -49,7 +49,7 @@ struct ContentView: View {
                 get: { appState.selectedTab },
                 set: { appState.selectedTab = $0 }
             )) {
-                DashboardPlaceholderView()
+                DashboardView()
                     .tag(AppTab.dashboard)
                     .tabItem {
                         Label(AppTab.dashboard.title, systemImage: AppTab.dashboard.iconName)
@@ -61,7 +61,7 @@ struct ContentView: View {
                         Label(AppTab.player.title, systemImage: AppTab.player.iconName)
                     }
                 
-                AnalyticsPlaceholderView()
+                AnalyticsDashboardView()
                     .tag(AppTab.analytics)
                     .tabItem {
                         Label(AppTab.analytics.title, systemImage: AppTab.analytics.iconName)
@@ -87,69 +87,7 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Placeholder Views (Faz 3-4'te detaylandırılacak)
-
-private struct DashboardPlaceholderView: View {
-    @Environment(AppState.self) private var appState
-    
-    var body: some View {
-        ZStack {
-            GradientBackground(
-                appState.contextEngine.currentContext.isNightMode
-                    ? .nightMode : .default
-            )
-            
-            VStack(spacing: AppTheme.spacingMD) {
-                // Bağlamsal karşılama
-                Text(appState.contextEngine.currentContext.greeting)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundStyle(AppTheme.textPrimary)
-                    .multilineTextAlignment(.center)
-                
-                Text(appState.contextEngine.currentContext.subtitle)
-                    .font(.body)
-                    .foregroundStyle(AppTheme.textSecondary)
-                    .multilineTextAlignment(.center)
-                
-                Spacer().frame(height: AppTheme.spacingLG)
-                
-                // Hızlı başlat butonu
-                PulseButton(
-                    isActive: appState.audioEngine.isPlaying,
-                    icon: appState.audioEngine.isPlaying ? "pause.fill" : "play.fill",
-                    size: 80
-                ) {
-                    appState.selectedTab = .player
-                }
-                
-                Text("Sesleri keşfetmek için dokunun")
-                    .font(.caption)
-                    .foregroundStyle(AppTheme.textTertiary)
-            }
-            .padding(AppTheme.spacingLG)
-        }
-    }
-}
-
-private struct AnalyticsPlaceholderView: View {
-    var body: some View {
-        ZStack {
-            GradientBackground()
-            VStack(spacing: AppTheme.spacingMD) {
-                Image(systemName: "chart.bar.fill")
-                    .font(.system(size: 48))
-                    .foregroundStyle(AppTheme.accentPrimary)
-                Text("Uyku Analitiği")
-                    .font(.title2).fontWeight(.semibold)
-                    .foregroundStyle(AppTheme.textPrimary)
-                Text("Faz 4'te detaylandırılacak")
-                    .font(.caption)
-                    .foregroundStyle(AppTheme.textTertiary)
-            }
-        }
-    }
-}
+// MARK: - Placeholder Views (Faz 4'te detaylandırılacak)
 
 private struct SettingsPlaceholderView: View {
     var body: some View {
