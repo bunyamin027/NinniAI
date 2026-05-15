@@ -7,115 +7,231 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0094E6FE2AE53EA25793AECC /* clavier-music-lullaby-sleep-piano-music-285599.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C4224583694FAAEE94B79D47 /* clavier-music-lullaby-sleep-piano-music-285599.m4a */; };
 		00961888DCC0DCB49B98F125 /* AudioEngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB1FE127AA44F25FF44E0F /* AudioEngineManager.swift */; };
+		020BB2BB01E5033ACA64888B /* piano_music-calm-relaxation-122811.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4AD4CABEB3EBFF42252D90D7 /* piano_music-calm-relaxation-122811.m4a */; };
 		0256FE15B91ADA757DCD7283 /* SeamlessLooper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215AB652B9FD71B729EBBCC /* SeamlessLooper.swift */; };
 		03BB332F48D3891EEE530C03 /* BabyProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD4AD27BB0F0A8689548D4C /* BabyProfileEditView.swift */; };
 		05A4AED92DCBAF29331C32F3 /* FadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97DE9D777940E5F39EADAB /* FadeController.swift */; };
 		0DAB3C79512E932148E9DEB2 /* SleepProblemsStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394DBF0F3904E5E6593EE45B /* SleepProblemsStepView.swift */; };
 		11C52438F26EE58D8B5F216C /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4FF0EACE2A4D7AD5F6179A /* Milestone.swift */; };
 		11D124848CFDA58F6269A76E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57F61E4EC004C6139FC7F3D /* Assets.xcassets */; };
+		143BBF8EC7DA2795A5E6EF7A /* denis-pavlov-music-calm-baby-lullaby-sweet-dreams-music-box-397059.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9F7D8161CC3D3416F45BC706 /* denis-pavlov-music-calm-baby-lullaby-sweet-dreams-music-box-397059.m4a */; };
 		170EBF26CAB7B8660FB76F23 /* AnalyticsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB11794DB87A9A194524B2 /* AnalyticsDashboardView.swift */; };
+		17883B7D08E89CAF576B692E /* music_for_video-sedative-110241.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 557F1AE5761034846E775AE6 /* music_for_video-sedative-110241.m4a */; };
 		18939DDB086EAD8C0DFE6CD4 /* Interruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDAEDF5EC63C15BF6793F6C /* Interruption.swift */; };
+		1ACA5156F1BB426FE8BF9630 /* lorenzobuczek-sleepy-rain-116521.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 651668447BABA1802A1017F1 /* lorenzobuczek-sleepy-rain-116521.m4a */; };
 		1ACE7551B647FB1331295FD1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD22A514C2E0605665537C5 /* DashboardView.swift */; };
+		1C5EA3BFB16F7465615749A2 /* denis-pavlov-music-lullaby-baby-cradle-song-music-box-233532.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2551DB12C6E2FCAA5D13BBC9 /* denis-pavlov-music-lullaby-baby-cradle-song-music-box-233532.m4a */; };
 		2C5C438F4A6F9C4EAACF5E59 /* SleepSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F574E83316B0A9264F322C /* SleepSession.swift */; };
+		2F24B47370FF22F912185292 /* alan_frijns-valley-of-silence-meditation-yoga-relaxation-work-study-sleep-music-122612.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 03CE17C46CE891A68D1BF4F3 /* alan_frijns-valley-of-silence-meditation-yoga-relaxation-work-study-sleep-music-122612.m4a */; };
+		321BE9C6341C79926275709D /* viacheslavstarostin-baby-kids-children-music-471917.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 43B31D496BC3EEEBE32B89D7 /* viacheslavstarostin-baby-kids-children-music-471917.m4a */; };
+		328D59327BFA276523CA1FB2 /* music_for_video-pray-for-ukraine-sleep-21715.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3255C90C2EA76A7B1D93235D /* music_for_video-pray-for-ukraine-sleep-21715.m4a */; };
+		331BCA81CDB39F210940D070 /* siarhei_korbut-285-hz-star-chakra-484883.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5AD97117540C9A9856523563 /* siarhei_korbut-285-hz-star-chakra-484883.m4a */; };
 		35EC9F1D0DB55394CA2E8822 /* MiniPlayerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56550EA700DFDAC387B191B /* MiniPlayerBar.swift */; };
+		367F849AF61FE3BF68B4A079 /* music_for_video-forest-lullaby-110624.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5E38FCE770DE9B798347CE8B /* music_for_video-forest-lullaby-110624.m4a */; };
+		3ACC43936D7F409690464F29 /* pretex-briefing-ambience-341525.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB9E6209ED1D786BDC93C9 /* pretex-briefing-ambience-341525.m4a */; };
+		3B9C7731186E5DBC2DE0CFA6 /* angel4leon-baby-smile-190123.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4925CBDCE28F8873F659BBA6 /* angel4leon-baby-smile-190123.m4a */; };
 		3F96991D84495D6F88EC832C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D44EFDBC37E143669594A5 /* AppConstants.swift */; };
+		3FE723672004649BC28F1E8A /* prettyjohn1-meditation-495676.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C51882FC414F83D4D9CB927A /* prettyjohn1-meditation-495676.m4a */; };
+		4B016B2788B61C28E252A33A /* sleepvolume-the-quiet-night-lullaby-music-instrumental-346577.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 084FADC44223A15BE9F60EB8 /* sleepvolume-the-quiet-night-lullaby-music-instrumental-346577.m4a */; };
+		52AF63399B4F1FEE8DCDFCD7 /* freemusicforvideo-kids-cartoon-495621.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F97D4B605397F12E75EC80DD /* freemusicforvideo-kids-cartoon-495621.m4a */; };
+		52C4782C126A52B9E4B3316D /* miromaxmusic-fun-kids-music-438477.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 86B94C6459EDA251E8585092 /* miromaxmusic-fun-kids-music-438477.m4a */; };
 		5423E46D7FF8819DA9F54BE6 /* SleepProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40B44CBD77A317A82625A7 /* SleepProblem.swift */; };
 		57000CC0C0C236A65E1ACAC4 /* PremiumGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16B61E52DB929066BD6FCE5 /* PremiumGuard.swift */; };
+		58596512C92A53F6A1319965 /* backgroundmusicforvideos-lullaby-baby-sleep-music-388567.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5344614ACDBF9E1716E20BF7 /* backgroundmusicforvideos-lullaby-baby-sleep-music-388567.m4a */; };
 		5E8DDE5307835ACD240D1626 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621210CB0809F8626F1DA371 /* PlayerView.swift */; };
+		62867DCEAA1C22E406778C77 /* nonenothingnowhere-396-hz-root-chakra-156263.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C1E5921F4C0F2916C66C7362 /* nonenothingnowhere-396-hz-root-chakra-156263.m4a */; };
+		63FDB6F2EA85C60B10FD95E8 /* absolutesound-meditation-meditation-music-510801.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9176579F9A566DF8A0B18A2C /* absolutesound-meditation-meditation-music-510801.m4a */; };
+		6684DF0B1B58D09DB504EA7E /* shadowsandechoes-the-womb-dark-ambient-background-mystery-music-155682.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7600E53BB3BDEE5AC605E418 /* shadowsandechoes-the-womb-dark-ambient-background-mystery-music-155682.m4a */; };
 		6A0945F3FD36789B951A0234 /* NowPlayableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8D25689C95D2CF9E11129 /* NowPlayableManager.swift */; };
+		6A22865BB4B82102F288BB58 /* tunetank-lullaby-dreamy-children-music-347722.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3B5C77FDB52DF45D12E085E7 /* tunetank-lullaby-dreamy-children-music-347722.m4a */; };
 		6B107A8100DA38C71EEB4CFA /* MilestoneCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57EDA94895016499BE321F5 /* MilestoneCardView.swift */; };
+		6E63A91C54760D304095FC1D /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F896567CAB113271C6172569 /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a */; };
+		6E77F9783E202F491321A9F8 /* the_mountain-baby-sleep-143300.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5EFA6F42ABB723D806D73D91 /* the_mountain-baby-sleep-143300.m4a */; };
 		6F4A367FA87CE7D42636BD17 /* ContextResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40267CB0DF17CD10B285678 /* ContextResolver.swift */; };
 		7099220DB421E19FF31038EA /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04AE0B5567ABF96F0194E8 /* OnboardingContainerView.swift */; };
+		724671B3BE8E29680C6F6ED3 /* mfcc-baby-baby-kids-children-music-522351.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B31FEB99DC8AADDF4B7708B1 /* mfcc-baby-baby-kids-children-music-522351.m4a */; };
+		732E5CEE2867524A6401DB22 /* monume-lullaby-baby-sleep-music-509508.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7EF78AFDBD9C1012E11C41F9 /* monume-lullaby-baby-sleep-music-509508.m4a */; };
+		7373D5674E29EF7514F07821 /* mondamusic-kids-cartoon-499179.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4596DC737E47CB1B1C58860C /* mondamusic-kids-cartoon-499179.m4a */; };
 		73D061BC6FAC3EF5D6A59D04 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE2DD58374E984A09FBB7C /* NotificationManager.swift */; };
 		76BA112389D0661756706BA9 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6498B8018198FD5B5CFB1161 /* AppState.swift */; };
 		76CDC5A945273540F1660DD0 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8349971C343D101D16815E6 /* StoreKitManager.swift */; };
 		7CE1636A33E246E50FAC6A49 /* SuccessScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52787F23A4B454FD4ECAAF1F /* SuccessScoreView.swift */; };
 		82EA7A7928B9CE1139FCCAB5 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F704C0BCAE39CE40B289FA /* View+Extensions.swift */; };
 		8593E58A4EA6C39BE9621F34 /* Baby.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37FA2BB21C6147D5356F233 /* Baby.swift */; };
+		870FD0BEF894AE36E279CF5B /* imaginedragon-meditation-blue-138131.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A701DE6AA9E4E0806FDBD3C5 /* imaginedragon-meditation-blue-138131.m4a */; };
 		89DF74B8A49DBE19116089EB /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D32A3570DA382B1DFFA14A /* GlassCard.swift */; };
 		8A669DC9FE00F724112CBC9E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894FE02F60FB2A0B8AC0F2C7 /* Sound.swift */; };
 		8ED2719EA37324B78E56F9C8 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6956FAE358BD77218EEAC8F2 /* PaywallView.swift */; };
+		8F10AC01B6DE884ADD0AB8ED /* low_atmos-desert-night-sleep-atmosphere-513282.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D04CC511BA322DF553FB2600 /* low_atmos-desert-night-sleep-atmosphere-513282.m4a */; };
 		93F04DB28C7B86AEFD0CAD6E /* PulseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274C9FB2AC4254BB25F12CB /* PulseButton.swift */; };
+		94188DA1696176692836B4DE /* purebinaural-purebinaural-40-hz-gamma-binaural-beats-with-white-noise-484861.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B74DBA80314813EEE54458E4 /* purebinaural-purebinaural-40-hz-gamma-binaural-beats-with-white-noise-484861.m4a */; };
+		973CC9F82EDD1EB673204308 /* music_for_video-please-calm-my-mind-125566.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8221CEC9E0B290AB833E9C85 /* music_for_video-please-calm-my-mind-125566.m4a */; };
+		97D36F77E528297CED0E8298 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D2E4D847414D47D546667A00 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a */; };
+		996B45421E364E7DD36AAFA1 /* viacheslavstarostin-kids-baby-children-music-382060.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 71FDFF7816AE74815CFADCF7 /* viacheslavstarostin-kids-baby-children-music-382060.m4a */; };
+		9B74069AA08AE83B946E52F1 /* audiocoffee-positive-happy-kids-background-468931.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D6C7C22503D9A1989A012E4 /* audiocoffee-positive-happy-kids-background-468931.m4a */; };
+		9DDAD149C6BF8125C1ED7E6E /* low_atmos-orbit-sleep-background-514712.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5056D993568264BBE09567C1 /* low_atmos-orbit-sleep-background-514712.m4a */; };
+		9F7F4D9F372FDB8DBD57A735 /* bearian-174hz-396hz-528hz-412308.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A60C79D41A2EC0D002D1B750 /* bearian-174hz-396hz-528hz-412308.m4a */; };
+		A12D0601D124C67CA5BE6F6F /* quietphase-meditative-meditation-482094.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2EA8596C70A3EF25B4530263 /* quietphase-meditative-meditation-482094.m4a */; };
 		A17E864F53DF8D7A8547D8A2 /* WelcomeStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F80C812767AA646D03DA3 /* WelcomeStepView.swift */; };
 		A31A98162F485161889EF9A8 /* NightModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F801049DD4E36B12FDE40A /* NightModeView.swift */; };
 		A5EB49E54FAF76E66049E8D3 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E843D1619E95C0A785585ACA /* Date+Extensions.swift */; };
+		AD5006E7E8BD5FEA373E979E /* oceanframemusic-guitar-relaxation-524560.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FA65EA2317A7D33A032B612F /* oceanframemusic-guitar-relaxation-524560.m4a */; };
+		B18039FF6D804AD5E27B5493 /* mountaindweller-calm-lullaby-for-irish-harp-243170.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9E113CF1C0A567E68F08AF36 /* mountaindweller-calm-lullaby-for-irish-harp-243170.m4a */; };
+		B221E4713F171C09B89FE4D6 /* relaxingtime-sleep-music-vol15-195425.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D8DF9FED1B8C579B9C7C5C2B /* relaxingtime-sleep-music-vol15-195425.m4a */; };
+		B4D9E22CF23D3C55B7CA2793 /* soutera-cosmic-ocean-284361.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CA874738CC6FC61A16EB2CFF /* soutera-cosmic-ocean-284361.m4a */; };
+		B5E9A870A51A669943529907 /* multimusicas-sweet-samba-that-is-contagious-486886.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 93ADED84898922D4BF27BCE8 /* multimusicas-sweet-samba-that-is-contagious-486886.m4a */; };
+		B6F82FD2A5EE0E6736E7B4C2 /* delon_boomkin-baby-sleep-music-1-sound-effects-297159.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 75E5321FC2CD24F272C7FDB4 /* delon_boomkin-baby-sleep-music-1-sound-effects-297159.m4a */; };
 		BE92471FDBE85A140F5FBA66 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D879D9D6E49D15EB85787E4B /* SoundPickerView.swift */; };
+		C1DF83387061DFFC4D5989BB /* tunetank-music-box-sleep-lullaby-349471.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A5C1BF69CC392E1EE7852E6D /* tunetank-music-box-sleep-lullaby-349471.m4a */; };
+		C2AE2266692A282A689E2A60 /* don_vitaliy-time-heartbeat-fusion-169017.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9D6A692F8FA4C9ACCC05CB88 /* don_vitaliy-time-heartbeat-fusion-169017.m4a */; };
 		C7163DA7FD8AC3F356CFE01C /* SleepChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A43F0B0AB59AB83BE01FD7 /* SleepChartView.swift */; };
 		C728D0AB380809AB87CB75C5 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34747F7ECA897960E367F5AE /* GradientBackground.swift */; };
 		C93214BE7F7344CAB060CF5E /* MilestoneTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6A02F9BC0D45BBBE45846F /* MilestoneTracker.swift */; };
 		CCB1B8F2BBC9E27AF3042E74 /* BabyInfoStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725A7FEFE7A14A1DD28DAC7E /* BabyInfoStepView.swift */; };
 		CF2436011E242D3C54BF87E5 /* SoundUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6ABB9039EC46A3238978AE /* SoundUsage.swift */; };
+		D1E96F632910BFF0ACB1671A /* the_mountain-soft-loop-130012.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3B2DED412035B5BD4020F7B3 /* the_mountain-soft-loop-130012.m4a */; };
 		D1F81C8628D5F203669FDC71 /* QuickActionGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAD80250AA1A9E83DF8C49A /* QuickActionGrid.swift */; };
+		D288CF680BC6E8998F5CC7C8 /* SoundSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC7AB8909EE2A9D0486CB02 /* SoundSeeder.swift */; };
 		D2D8F0860F7900EBA63E2EF3 /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B078FC7684D00B7B58E5663 /* PreviewSampleData.swift */; };
+		D2E1987E9FE36726E9EF29AC /* ceeprolific-kiss-the-rain-274811.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D2B79CE5BDA2BBE82A1559D3 /* ceeprolific-kiss-the-rain-274811.m4a */; };
+		D38C32D4B507444F9132C1D8 /* clavier-music-dark-rain-deep-relaxing-ambient-soundscape-with-soothing-rain-318232.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5439FA2042AC41426302D044 /* clavier-music-dark-rain-deep-relaxing-ambient-soundscape-with-soothing-rain-318232.m4a */; };
 		D639FF7CAA4FC61073973590 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98563CA53D18C3FF6567195D /* AppTheme.swift */; };
 		D6639D6A47AF22A2A4D67356 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3649FD7A293B124F61E4C89 /* ContentView.swift */; };
 		D69161B3AA1A904DE34312AF /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C149F74345D9E6644A9A08 /* UserSettings.swift */; };
 		D75263F83767EF164D5B1350 /* NightModeResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989ACF246863847D6CF5D3C5 /* NightModeResolver.swift */; };
+		DB9BFF32ED6E0AE0DDF3AF9C /* hoggyart-285-hz-417-hz-741-hz-clearing-negative-energy-242900.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 742946695EA8668D17A514F8 /* hoggyart-285-hz-417-hz-741-hz-clearing-negative-energy-242900.m4a */; };
+		E1F1F67428049BC2A118737F /* nonenothingnowhere-432-hz-tune-in-with-nature-156265.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 491C33B2086D4AB40D6AE066 /* nonenothingnowhere-432-hz-tune-in-with-nature-156265.m4a */; };
 		E3098C436A9CFF732D9C3577 /* SoundCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92378DECB5F98463AE55744 /* SoundCategory.swift */; };
 		E339954AE60A1BCA3223EABB /* AnalysisAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C72CA4416DB455AAB5ADFB /* AnalysisAnimationView.swift */; };
 		EA4C6FB3CBAE5F6F0CC8047D /* LegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C759DF79BFDDE57DBB7646 /* LegalView.swift */; };
+		EB5848E22F4F44AF2ABAF262 /* mondamusic-meditation-512846.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7027983079D67A16CF679808 /* mondamusic-meditation-512846.m4a */; };
 		EDA0735A94D7E89B6460A9EE /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9297CCF3EF12FA7F209D4F /* TimerPickerView.swift */; };
+		EF92EEFA0E3474BC63CA1C67 /* tunetank-lullaby-baby-sleep-music-347721.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E930FEBC533028906F28877D /* tunetank-lullaby-baby-sleep-music-347721.m4a */; };
 		EF9A840FE8AFC2EAD86289C8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DED68684B0E29FF736B93D7 /* SettingsView.swift */; };
+		F0C32E9504CD52106EA90F2A /* the_mountain-baby-joy-130049.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3ACAE1C52CF90F08829A8942 /* the_mountain-baby-joy-130049.m4a */; };
+		F6A649CEDA431D5CD3D1511E /* konstantinpazuzustudio-quiet-rain-thunder-rain-and-piano-512040.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C18E84EF2219CA460FF54E9D /* konstantinpazuzustudio-quiet-rain-thunder-rain-and-piano-512040.m4a */; };
+		F6FD1397D1DA438F4ABD7896 /* tunetank-kids-relaxing-lullaby-music-349558.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 13A85F79F9E29DD5D114881B /* tunetank-kids-relaxing-lullaby-music-349558.m4a */; };
 		F991BCEA4C5E7EBF0A380C02 /* NinniAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8F5B20C5A967965F7B4B3 /* NinniAIApp.swift */; };
+		FAA80B115D2EC06AAB335988 /* lazarosv-electric-heartbeat-i-492330.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7488706B6FC8827A2E0054EF /* lazarosv-electric-heartbeat-i-492330.m4a */; };
 		FBED5BC3DAD95F8ECC470B65 /* WeeklyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C11C8F817035A0E879F52 /* WeeklyReportView.swift */; };
+		FCBD252F8B61D8EE08F981D0 /* nonenothingnowhere-174-hz-pain-release-156261.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DEAB2CFCCA3D2F7707C06A42 /* nonenothingnowhere-174-hz-pain-release-156261.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00D32A3570DA382B1DFFA14A /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
 		01AB11794DB87A9A194524B2 /* AnalyticsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDashboardView.swift; sourceTree = "<group>"; };
 		02A43F0B0AB59AB83BE01FD7 /* SleepChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepChartView.swift; sourceTree = "<group>"; };
+		03CE17C46CE891A68D1BF4F3 /* alan_frijns-valley-of-silence-meditation-yoga-relaxation-work-study-sleep-music-122612.m4a */ = {isa = PBXFileReference; path = "alan_frijns-valley-of-silence-meditation-yoga-relaxation-work-study-sleep-music-122612.m4a"; sourceTree = "<group>"; };
 		04E8D25689C95D2CF9E11129 /* NowPlayableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayableManager.swift; sourceTree = "<group>"; };
+		084FADC44223A15BE9F60EB8 /* sleepvolume-the-quiet-night-lullaby-music-instrumental-346577.m4a */ = {isa = PBXFileReference; path = "sleepvolume-the-quiet-night-lullaby-music-instrumental-346577.m4a"; sourceTree = "<group>"; };
+		13A85F79F9E29DD5D114881B /* tunetank-kids-relaxing-lullaby-music-349558.m4a */ = {isa = PBXFileReference; path = "tunetank-kids-relaxing-lullaby-music-349558.m4a"; sourceTree = "<group>"; };
+		2551DB12C6E2FCAA5D13BBC9 /* denis-pavlov-music-lullaby-baby-cradle-song-music-box-233532.m4a */ = {isa = PBXFileReference; path = "denis-pavlov-music-lullaby-baby-cradle-song-music-box-233532.m4a"; sourceTree = "<group>"; };
 		25DE2DD58374E984A09FBB7C /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		2D546E4F3EBB85514F57FDAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2D6C7C22503D9A1989A012E4 /* audiocoffee-positive-happy-kids-background-468931.m4a */ = {isa = PBXFileReference; path = "audiocoffee-positive-happy-kids-background-468931.m4a"; sourceTree = "<group>"; };
+		2EA8596C70A3EF25B4530263 /* quietphase-meditative-meditation-482094.m4a */ = {isa = PBXFileReference; path = "quietphase-meditative-meditation-482094.m4a"; sourceTree = "<group>"; };
 		2F6ABB9039EC46A3238978AE /* SoundUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundUsage.swift; sourceTree = "<group>"; };
 		2FDAEDF5EC63C15BF6793F6C /* Interruption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interruption.swift; sourceTree = "<group>"; };
+		3255C90C2EA76A7B1D93235D /* music_for_video-pray-for-ukraine-sleep-21715.m4a */ = {isa = PBXFileReference; path = "music_for_video-pray-for-ukraine-sleep-21715.m4a"; sourceTree = "<group>"; };
 		32D44EFDBC37E143669594A5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		34747F7ECA897960E367F5AE /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		394DBF0F3904E5E6593EE45B /* SleepProblemsStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepProblemsStepView.swift; sourceTree = "<group>"; };
+		3ACAE1C52CF90F08829A8942 /* the_mountain-baby-joy-130049.m4a */ = {isa = PBXFileReference; path = "the_mountain-baby-joy-130049.m4a"; sourceTree = "<group>"; };
+		3B2DED412035B5BD4020F7B3 /* the_mountain-soft-loop-130012.m4a */ = {isa = PBXFileReference; path = "the_mountain-soft-loop-130012.m4a"; sourceTree = "<group>"; };
+		3B5C77FDB52DF45D12E085E7 /* tunetank-lullaby-dreamy-children-music-347722.m4a */ = {isa = PBXFileReference; path = "tunetank-lullaby-dreamy-children-music-347722.m4a"; sourceTree = "<group>"; };
 		3E97DE9D777940E5F39EADAB /* FadeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeController.swift; sourceTree = "<group>"; };
 		41F801049DD4E36B12FDE40A /* NightModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightModeView.swift; sourceTree = "<group>"; };
+		43B31D496BC3EEEBE32B89D7 /* viacheslavstarostin-baby-kids-children-music-471917.m4a */ = {isa = PBXFileReference; path = "viacheslavstarostin-baby-kids-children-music-471917.m4a"; sourceTree = "<group>"; };
+		4596DC737E47CB1B1C58860C /* mondamusic-kids-cartoon-499179.m4a */ = {isa = PBXFileReference; path = "mondamusic-kids-cartoon-499179.m4a"; sourceTree = "<group>"; };
+		491C33B2086D4AB40D6AE066 /* nonenothingnowhere-432-hz-tune-in-with-nature-156265.m4a */ = {isa = PBXFileReference; path = "nonenothingnowhere-432-hz-tune-in-with-nature-156265.m4a"; sourceTree = "<group>"; };
+		4925CBDCE28F8873F659BBA6 /* angel4leon-baby-smile-190123.m4a */ = {isa = PBXFileReference; path = "angel4leon-baby-smile-190123.m4a"; sourceTree = "<group>"; };
+		4AD4CABEB3EBFF42252D90D7 /* piano_music-calm-relaxation-122811.m4a */ = {isa = PBXFileReference; path = "piano_music-calm-relaxation-122811.m4a"; sourceTree = "<group>"; };
+		5056D993568264BBE09567C1 /* low_atmos-orbit-sleep-background-514712.m4a */ = {isa = PBXFileReference; path = "low_atmos-orbit-sleep-background-514712.m4a"; sourceTree = "<group>"; };
 		51F704C0BCAE39CE40B289FA /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		52787F23A4B454FD4ECAAF1F /* SuccessScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessScoreView.swift; sourceTree = "<group>"; };
 		52C72CA4416DB455AAB5ADFB /* AnalysisAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisAnimationView.swift; sourceTree = "<group>"; };
+		5344614ACDBF9E1716E20BF7 /* backgroundmusicforvideos-lullaby-baby-sleep-music-388567.m4a */ = {isa = PBXFileReference; path = "backgroundmusicforvideos-lullaby-baby-sleep-music-388567.m4a"; sourceTree = "<group>"; };
+		5439FA2042AC41426302D044 /* clavier-music-dark-rain-deep-relaxing-ambient-soundscape-with-soothing-rain-318232.m4a */ = {isa = PBXFileReference; path = "clavier-music-dark-rain-deep-relaxing-ambient-soundscape-with-soothing-rain-318232.m4a"; sourceTree = "<group>"; };
+		557F1AE5761034846E775AE6 /* music_for_video-sedative-110241.m4a */ = {isa = PBXFileReference; path = "music_for_video-sedative-110241.m4a"; sourceTree = "<group>"; };
 		56A8F5B20C5A967965F7B4B3 /* NinniAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinniAIApp.swift; sourceTree = "<group>"; };
+		5AD97117540C9A9856523563 /* siarhei_korbut-285-hz-star-chakra-484883.m4a */ = {isa = PBXFileReference; path = "siarhei_korbut-285-hz-star-chakra-484883.m4a"; sourceTree = "<group>"; };
+		5E38FCE770DE9B798347CE8B /* music_for_video-forest-lullaby-110624.m4a */ = {isa = PBXFileReference; path = "music_for_video-forest-lullaby-110624.m4a"; sourceTree = "<group>"; };
+		5EFA6F42ABB723D806D73D91 /* the_mountain-baby-sleep-143300.m4a */ = {isa = PBXFileReference; path = "the_mountain-baby-sleep-143300.m4a"; sourceTree = "<group>"; };
 		614C11C8F817035A0E879F52 /* WeeklyReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyReportView.swift; sourceTree = "<group>"; };
 		621210CB0809F8626F1DA371 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		6498B8018198FD5B5CFB1161 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		651668447BABA1802A1017F1 /* lorenzobuczek-sleepy-rain-116521.m4a */ = {isa = PBXFileReference; path = "lorenzobuczek-sleepy-rain-116521.m4a"; sourceTree = "<group>"; };
 		6956FAE358BD77218EEAC8F2 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		6A40B44CBD77A317A82625A7 /* SleepProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepProblem.swift; sourceTree = "<group>"; };
 		6DED68684B0E29FF736B93D7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7027983079D67A16CF679808 /* mondamusic-meditation-512846.m4a */ = {isa = PBXFileReference; path = "mondamusic-meditation-512846.m4a"; sourceTree = "<group>"; };
+		71FDFF7816AE74815CFADCF7 /* viacheslavstarostin-kids-baby-children-music-382060.m4a */ = {isa = PBXFileReference; path = "viacheslavstarostin-kids-baby-children-music-382060.m4a"; sourceTree = "<group>"; };
 		725A7FEFE7A14A1DD28DAC7E /* BabyInfoStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyInfoStepView.swift; sourceTree = "<group>"; };
 		7274C9FB2AC4254BB25F12CB /* PulseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseButton.swift; sourceTree = "<group>"; };
+		742946695EA8668D17A514F8 /* hoggyart-285-hz-417-hz-741-hz-clearing-negative-energy-242900.m4a */ = {isa = PBXFileReference; path = "hoggyart-285-hz-417-hz-741-hz-clearing-negative-energy-242900.m4a"; sourceTree = "<group>"; };
+		7488706B6FC8827A2E0054EF /* lazarosv-electric-heartbeat-i-492330.m4a */ = {isa = PBXFileReference; path = "lazarosv-electric-heartbeat-i-492330.m4a"; sourceTree = "<group>"; };
+		75E5321FC2CD24F272C7FDB4 /* delon_boomkin-baby-sleep-music-1-sound-effects-297159.m4a */ = {isa = PBXFileReference; path = "delon_boomkin-baby-sleep-music-1-sound-effects-297159.m4a"; sourceTree = "<group>"; };
+		7600E53BB3BDEE5AC605E418 /* shadowsandechoes-the-womb-dark-ambient-background-mystery-music-155682.m4a */ = {isa = PBXFileReference; path = "shadowsandechoes-the-womb-dark-ambient-background-mystery-music-155682.m4a"; sourceTree = "<group>"; };
 		7B4FF0EACE2A4D7AD5F6179A /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
+		7EF78AFDBD9C1012E11C41F9 /* monume-lullaby-baby-sleep-music-509508.m4a */ = {isa = PBXFileReference; path = "monume-lullaby-baby-sleep-music-509508.m4a"; sourceTree = "<group>"; };
 		7FAB1FE127AA44F25FF44E0F /* AudioEngineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineManager.swift; sourceTree = "<group>"; };
+		7FAB9E6209ED1D786BDC93C9 /* pretex-briefing-ambience-341525.m4a */ = {isa = PBXFileReference; path = "pretex-briefing-ambience-341525.m4a"; sourceTree = "<group>"; };
 		8215AB652B9FD71B729EBBCC /* SeamlessLooper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessLooper.swift; sourceTree = "<group>"; };
+		8221CEC9E0B290AB833E9C85 /* music_for_video-please-calm-my-mind-125566.m4a */ = {isa = PBXFileReference; path = "music_for_video-please-calm-my-mind-125566.m4a"; sourceTree = "<group>"; };
+		86B94C6459EDA251E8585092 /* miromaxmusic-fun-kids-music-438477.m4a */ = {isa = PBXFileReference; path = "miromaxmusic-fun-kids-music-438477.m4a"; sourceTree = "<group>"; };
 		894FE02F60FB2A0B8AC0F2C7 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		8B078FC7684D00B7B58E5663 /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
 		8F9297CCF3EF12FA7F209D4F /* TimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPickerView.swift; sourceTree = "<group>"; };
+		9176579F9A566DF8A0B18A2C /* absolutesound-meditation-meditation-music-510801.m4a */ = {isa = PBXFileReference; path = "absolutesound-meditation-meditation-music-510801.m4a"; sourceTree = "<group>"; };
 		92F574E83316B0A9264F322C /* SleepSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSession.swift; sourceTree = "<group>"; };
+		93ADED84898922D4BF27BCE8 /* multimusicas-sweet-samba-that-is-contagious-486886.m4a */ = {isa = PBXFileReference; path = "multimusicas-sweet-samba-that-is-contagious-486886.m4a"; sourceTree = "<group>"; };
 		9405092CC6A1022B18B9866B /* NinniAI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NinniAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98563CA53D18C3FF6567195D /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		989ACF246863847D6CF5D3C5 /* NightModeResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightModeResolver.swift; sourceTree = "<group>"; };
 		9A04AE0B5567ABF96F0194E8 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
+		9D6A692F8FA4C9ACCC05CB88 /* don_vitaliy-time-heartbeat-fusion-169017.m4a */ = {isa = PBXFileReference; path = "don_vitaliy-time-heartbeat-fusion-169017.m4a"; sourceTree = "<group>"; };
+		9E113CF1C0A567E68F08AF36 /* mountaindweller-calm-lullaby-for-irish-harp-243170.m4a */ = {isa = PBXFileReference; path = "mountaindweller-calm-lullaby-for-irish-harp-243170.m4a"; sourceTree = "<group>"; };
 		9EAD80250AA1A9E83DF8C49A /* QuickActionGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionGrid.swift; sourceTree = "<group>"; };
+		9F7D8161CC3D3416F45BC706 /* denis-pavlov-music-calm-baby-lullaby-sweet-dreams-music-box-397059.m4a */ = {isa = PBXFileReference; path = "denis-pavlov-music-calm-baby-lullaby-sweet-dreams-music-box-397059.m4a"; sourceTree = "<group>"; };
 		A37FA2BB21C6147D5356F233 /* Baby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baby.swift; sourceTree = "<group>"; };
 		A56550EA700DFDAC387B191B /* MiniPlayerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerBar.swift; sourceTree = "<group>"; };
+		A5C1BF69CC392E1EE7852E6D /* tunetank-music-box-sleep-lullaby-349471.m4a */ = {isa = PBXFileReference; path = "tunetank-music-box-sleep-lullaby-349471.m4a"; sourceTree = "<group>"; };
+		A60C79D41A2EC0D002D1B750 /* bearian-174hz-396hz-528hz-412308.m4a */ = {isa = PBXFileReference; path = "bearian-174hz-396hz-528hz-412308.m4a"; sourceTree = "<group>"; };
+		A701DE6AA9E4E0806FDBD3C5 /* imaginedragon-meditation-blue-138131.m4a */ = {isa = PBXFileReference; path = "imaginedragon-meditation-blue-138131.m4a"; sourceTree = "<group>"; };
 		B0C759DF79BFDDE57DBB7646 /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
+		B31FEB99DC8AADDF4B7708B1 /* mfcc-baby-baby-kids-children-music-522351.m4a */ = {isa = PBXFileReference; path = "mfcc-baby-baby-kids-children-music-522351.m4a"; sourceTree = "<group>"; };
+		B74DBA80314813EEE54458E4 /* purebinaural-purebinaural-40-hz-gamma-binaural-beats-with-white-noise-484861.m4a */ = {isa = PBXFileReference; path = "purebinaural-purebinaural-40-hz-gamma-binaural-beats-with-white-noise-484861.m4a"; sourceTree = "<group>"; };
 		C04F80C812767AA646D03DA3 /* WelcomeStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeStepView.swift; sourceTree = "<group>"; };
+		C18E84EF2219CA460FF54E9D /* konstantinpazuzustudio-quiet-rain-thunder-rain-and-piano-512040.m4a */ = {isa = PBXFileReference; path = "konstantinpazuzustudio-quiet-rain-thunder-rain-and-piano-512040.m4a"; sourceTree = "<group>"; };
+		C1E5921F4C0F2916C66C7362 /* nonenothingnowhere-396-hz-root-chakra-156263.m4a */ = {isa = PBXFileReference; path = "nonenothingnowhere-396-hz-root-chakra-156263.m4a"; sourceTree = "<group>"; };
+		C4224583694FAAEE94B79D47 /* clavier-music-lullaby-sleep-piano-music-285599.m4a */ = {isa = PBXFileReference; path = "clavier-music-lullaby-sleep-piano-music-285599.m4a"; sourceTree = "<group>"; };
+		C51882FC414F83D4D9CB927A /* prettyjohn1-meditation-495676.m4a */ = {isa = PBXFileReference; path = "prettyjohn1-meditation-495676.m4a"; sourceTree = "<group>"; };
 		C57F61E4EC004C6139FC7F3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA874738CC6FC61A16EB2CFF /* soutera-cosmic-ocean-284361.m4a */ = {isa = PBXFileReference; path = "soutera-cosmic-ocean-284361.m4a"; sourceTree = "<group>"; };
+		D04CC511BA322DF553FB2600 /* low_atmos-desert-night-sleep-atmosphere-513282.m4a */ = {isa = PBXFileReference; path = "low_atmos-desert-night-sleep-atmosphere-513282.m4a"; sourceTree = "<group>"; };
 		D16B61E52DB929066BD6FCE5 /* PremiumGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumGuard.swift; sourceTree = "<group>"; };
+		D2B79CE5BDA2BBE82A1559D3 /* ceeprolific-kiss-the-rain-274811.m4a */ = {isa = PBXFileReference; path = "ceeprolific-kiss-the-rain-274811.m4a"; sourceTree = "<group>"; };
+		D2E4D847414D47D546667A00 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a */ = {isa = PBXFileReference; path = "nonenothingnowhere-639-hz-heart-chakra-156267.m4a"; sourceTree = "<group>"; };
 		D57EDA94895016499BE321F5 /* MilestoneCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCardView.swift; sourceTree = "<group>"; };
 		D8349971C343D101D16815E6 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		D879D9D6E49D15EB85787E4B /* SoundPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerView.swift; sourceTree = "<group>"; };
+		D8DF9FED1B8C579B9C7C5C2B /* relaxingtime-sleep-music-vol15-195425.m4a */ = {isa = PBXFileReference; path = "relaxingtime-sleep-music-vol15-195425.m4a"; sourceTree = "<group>"; };
 		D92378DECB5F98463AE55744 /* SoundCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCategory.swift; sourceTree = "<group>"; };
 		DA6A02F9BC0D45BBBE45846F /* MilestoneTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneTracker.swift; sourceTree = "<group>"; };
+		DDC7AB8909EE2A9D0486CB02 /* SoundSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSeeder.swift; sourceTree = "<group>"; };
+		DEAB2CFCCA3D2F7707C06A42 /* nonenothingnowhere-174-hz-pain-release-156261.m4a */ = {isa = PBXFileReference; path = "nonenothingnowhere-174-hz-pain-release-156261.m4a"; sourceTree = "<group>"; };
 		DFD22A514C2E0605665537C5 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		E7C149F74345D9E6644A9A08 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		E843D1619E95C0A785585ACA /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		E930FEBC533028906F28877D /* tunetank-lullaby-baby-sleep-music-347721.m4a */ = {isa = PBXFileReference; path = "tunetank-lullaby-baby-sleep-music-347721.m4a"; sourceTree = "<group>"; };
 		EFD4AD27BB0F0A8689548D4C /* BabyProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyProfileEditView.swift; sourceTree = "<group>"; };
 		F3649FD7A293B124F61E4C89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F40267CB0DF17CD10B285678 /* ContextResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextResolver.swift; sourceTree = "<group>"; };
+		F896567CAB113271C6172569 /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a */ = {isa = PBXFileReference; path = "nonenothingnowhere-417-hz-sacral-chakra-156264.m4a"; sourceTree = "<group>"; };
+		F97D4B605397F12E75EC80DD /* freemusicforvideo-kids-cartoon-495621.m4a */ = {isa = PBXFileReference; path = "freemusicforvideo-kids-cartoon-495621.m4a"; sourceTree = "<group>"; };
+		FA65EA2317A7D33A032B612F /* oceanframemusic-guitar-relaxation-524560.m4a */ = {isa = PBXFileReference; path = "oceanframemusic-guitar-relaxation-524560.m4a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -163,13 +279,6 @@
 			path = Analytics;
 			sourceTree = "<group>";
 		};
-		25107F9DE080443EDE604B94 /* Heartbeat */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Heartbeat;
-			sourceTree = "<group>";
-		};
 		2564DD493EF151279BEE32CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,13 +299,6 @@
 			children = (
 			);
 			path = Launch;
-			sourceTree = "<group>";
-		};
-		518009F3B6F3942B7ABBC18B /* Ambient */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Ambient;
 			sourceTree = "<group>";
 		};
 		532960D186BD7F173F016F64 /* Onboarding */ = {
@@ -240,6 +342,7 @@
 				A260A14FCD0078BA7EF2102D /* Notification */,
 				0AFC40B00139D6555A59AEB3 /* SleepAnalytics */,
 				C0F4732BC85A1BDB9AE6C7A7 /* StoreKit */,
+				DDC7AB8909EE2A9D0486CB02 /* SoundSeeder.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -286,13 +389,6 @@
 				989ACF246863847D6CF5D3C5 /* NightModeResolver.swift */,
 			);
 			path = ContextEngine;
-			sourceTree = "<group>";
-		};
-		B2D38F009A313889D76FA36D /* Nature */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Nature;
 			sourceTree = "<group>";
 		};
 		B9CEFE568F62C92450987569 /* Extensions */ = {
@@ -366,20 +462,65 @@
 		CA421FD45658EB4E159840CD /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				518009F3B6F3942B7ABBC18B /* Ambient */,
-				25107F9DE080443EDE604B94 /* Heartbeat */,
-				D0577B6E5AD7510E825984EC /* Lullaby */,
-				B2D38F009A313889D76FA36D /* Nature */,
-				F98F8F13DB8696DD61AAEE58 /* WhiteNoise */,
+				9176579F9A566DF8A0B18A2C /* absolutesound-meditation-meditation-music-510801.m4a */,
+				03CE17C46CE891A68D1BF4F3 /* alan_frijns-valley-of-silence-meditation-yoga-relaxation-work-study-sleep-music-122612.m4a */,
+				4925CBDCE28F8873F659BBA6 /* angel4leon-baby-smile-190123.m4a */,
+				2D6C7C22503D9A1989A012E4 /* audiocoffee-positive-happy-kids-background-468931.m4a */,
+				5344614ACDBF9E1716E20BF7 /* backgroundmusicforvideos-lullaby-baby-sleep-music-388567.m4a */,
+				A60C79D41A2EC0D002D1B750 /* bearian-174hz-396hz-528hz-412308.m4a */,
+				D2B79CE5BDA2BBE82A1559D3 /* ceeprolific-kiss-the-rain-274811.m4a */,
+				5439FA2042AC41426302D044 /* clavier-music-dark-rain-deep-relaxing-ambient-soundscape-with-soothing-rain-318232.m4a */,
+				C4224583694FAAEE94B79D47 /* clavier-music-lullaby-sleep-piano-music-285599.m4a */,
+				75E5321FC2CD24F272C7FDB4 /* delon_boomkin-baby-sleep-music-1-sound-effects-297159.m4a */,
+				9F7D8161CC3D3416F45BC706 /* denis-pavlov-music-calm-baby-lullaby-sweet-dreams-music-box-397059.m4a */,
+				2551DB12C6E2FCAA5D13BBC9 /* denis-pavlov-music-lullaby-baby-cradle-song-music-box-233532.m4a */,
+				9D6A692F8FA4C9ACCC05CB88 /* don_vitaliy-time-heartbeat-fusion-169017.m4a */,
+				F97D4B605397F12E75EC80DD /* freemusicforvideo-kids-cartoon-495621.m4a */,
+				742946695EA8668D17A514F8 /* hoggyart-285-hz-417-hz-741-hz-clearing-negative-energy-242900.m4a */,
+				A701DE6AA9E4E0806FDBD3C5 /* imaginedragon-meditation-blue-138131.m4a */,
+				C18E84EF2219CA460FF54E9D /* konstantinpazuzustudio-quiet-rain-thunder-rain-and-piano-512040.m4a */,
+				7488706B6FC8827A2E0054EF /* lazarosv-electric-heartbeat-i-492330.m4a */,
+				651668447BABA1802A1017F1 /* lorenzobuczek-sleepy-rain-116521.m4a */,
+				D04CC511BA322DF553FB2600 /* low_atmos-desert-night-sleep-atmosphere-513282.m4a */,
+				5056D993568264BBE09567C1 /* low_atmos-orbit-sleep-background-514712.m4a */,
+				B31FEB99DC8AADDF4B7708B1 /* mfcc-baby-baby-kids-children-music-522351.m4a */,
+				86B94C6459EDA251E8585092 /* miromaxmusic-fun-kids-music-438477.m4a */,
+				4596DC737E47CB1B1C58860C /* mondamusic-kids-cartoon-499179.m4a */,
+				7027983079D67A16CF679808 /* mondamusic-meditation-512846.m4a */,
+				7EF78AFDBD9C1012E11C41F9 /* monume-lullaby-baby-sleep-music-509508.m4a */,
+				9E113CF1C0A567E68F08AF36 /* mountaindweller-calm-lullaby-for-irish-harp-243170.m4a */,
+				93ADED84898922D4BF27BCE8 /* multimusicas-sweet-samba-that-is-contagious-486886.m4a */,
+				5E38FCE770DE9B798347CE8B /* music_for_video-forest-lullaby-110624.m4a */,
+				8221CEC9E0B290AB833E9C85 /* music_for_video-please-calm-my-mind-125566.m4a */,
+				3255C90C2EA76A7B1D93235D /* music_for_video-pray-for-ukraine-sleep-21715.m4a */,
+				557F1AE5761034846E775AE6 /* music_for_video-sedative-110241.m4a */,
+				DEAB2CFCCA3D2F7707C06A42 /* nonenothingnowhere-174-hz-pain-release-156261.m4a */,
+				C1E5921F4C0F2916C66C7362 /* nonenothingnowhere-396-hz-root-chakra-156263.m4a */,
+				F896567CAB113271C6172569 /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a */,
+				491C33B2086D4AB40D6AE066 /* nonenothingnowhere-432-hz-tune-in-with-nature-156265.m4a */,
+				D2E4D847414D47D546667A00 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a */,
+				FA65EA2317A7D33A032B612F /* oceanframemusic-guitar-relaxation-524560.m4a */,
+				4AD4CABEB3EBFF42252D90D7 /* piano_music-calm-relaxation-122811.m4a */,
+				7FAB9E6209ED1D786BDC93C9 /* pretex-briefing-ambience-341525.m4a */,
+				C51882FC414F83D4D9CB927A /* prettyjohn1-meditation-495676.m4a */,
+				B74DBA80314813EEE54458E4 /* purebinaural-purebinaural-40-hz-gamma-binaural-beats-with-white-noise-484861.m4a */,
+				2EA8596C70A3EF25B4530263 /* quietphase-meditative-meditation-482094.m4a */,
+				D8DF9FED1B8C579B9C7C5C2B /* relaxingtime-sleep-music-vol15-195425.m4a */,
+				7600E53BB3BDEE5AC605E418 /* shadowsandechoes-the-womb-dark-ambient-background-mystery-music-155682.m4a */,
+				5AD97117540C9A9856523563 /* siarhei_korbut-285-hz-star-chakra-484883.m4a */,
+				084FADC44223A15BE9F60EB8 /* sleepvolume-the-quiet-night-lullaby-music-instrumental-346577.m4a */,
+				CA874738CC6FC61A16EB2CFF /* soutera-cosmic-ocean-284361.m4a */,
+				3ACAE1C52CF90F08829A8942 /* the_mountain-baby-joy-130049.m4a */,
+				5EFA6F42ABB723D806D73D91 /* the_mountain-baby-sleep-143300.m4a */,
+				3B2DED412035B5BD4020F7B3 /* the_mountain-soft-loop-130012.m4a */,
+				13A85F79F9E29DD5D114881B /* tunetank-kids-relaxing-lullaby-music-349558.m4a */,
+				E930FEBC533028906F28877D /* tunetank-lullaby-baby-sleep-music-347721.m4a */,
+				3B5C77FDB52DF45D12E085E7 /* tunetank-lullaby-dreamy-children-music-347722.m4a */,
+				A5C1BF69CC392E1EE7852E6D /* tunetank-music-box-sleep-lullaby-349471.m4a */,
+				43B31D496BC3EEEBE32B89D7 /* viacheslavstarostin-baby-kids-children-music-471917.m4a */,
+				71FDFF7816AE74815CFADCF7 /* viacheslavstarostin-kids-baby-children-music-382060.m4a */,
 			);
 			path = Sounds;
-			sourceTree = "<group>";
-		};
-		D0577B6E5AD7510E825984EC /* Lullaby */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lullaby;
 			sourceTree = "<group>";
 		};
 		D67CC280261833420B309604 /* Modifiers */ = {
@@ -420,13 +561,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		F98F8F13DB8696DD61AAEE58 /* WhiteNoise */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WhiteNoise;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -458,7 +592,7 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					D01396F14D8253A930C47784 = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = ZS89AATCJ2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -488,6 +622,63 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D124848CFDA58F6269A76E /* Assets.xcassets in Resources */,
+				63FDB6F2EA85C60B10FD95E8 /* absolutesound-meditation-meditation-music-510801.m4a in Resources */,
+				2F24B47370FF22F912185292 /* alan_frijns-valley-of-silence-meditation-yoga-relaxation-work-study-sleep-music-122612.m4a in Resources */,
+				3B9C7731186E5DBC2DE0CFA6 /* angel4leon-baby-smile-190123.m4a in Resources */,
+				9B74069AA08AE83B946E52F1 /* audiocoffee-positive-happy-kids-background-468931.m4a in Resources */,
+				58596512C92A53F6A1319965 /* backgroundmusicforvideos-lullaby-baby-sleep-music-388567.m4a in Resources */,
+				9F7F4D9F372FDB8DBD57A735 /* bearian-174hz-396hz-528hz-412308.m4a in Resources */,
+				D2E1987E9FE36726E9EF29AC /* ceeprolific-kiss-the-rain-274811.m4a in Resources */,
+				D38C32D4B507444F9132C1D8 /* clavier-music-dark-rain-deep-relaxing-ambient-soundscape-with-soothing-rain-318232.m4a in Resources */,
+				0094E6FE2AE53EA25793AECC /* clavier-music-lullaby-sleep-piano-music-285599.m4a in Resources */,
+				B6F82FD2A5EE0E6736E7B4C2 /* delon_boomkin-baby-sleep-music-1-sound-effects-297159.m4a in Resources */,
+				143BBF8EC7DA2795A5E6EF7A /* denis-pavlov-music-calm-baby-lullaby-sweet-dreams-music-box-397059.m4a in Resources */,
+				1C5EA3BFB16F7465615749A2 /* denis-pavlov-music-lullaby-baby-cradle-song-music-box-233532.m4a in Resources */,
+				C2AE2266692A282A689E2A60 /* don_vitaliy-time-heartbeat-fusion-169017.m4a in Resources */,
+				52AF63399B4F1FEE8DCDFCD7 /* freemusicforvideo-kids-cartoon-495621.m4a in Resources */,
+				DB9BFF32ED6E0AE0DDF3AF9C /* hoggyart-285-hz-417-hz-741-hz-clearing-negative-energy-242900.m4a in Resources */,
+				870FD0BEF894AE36E279CF5B /* imaginedragon-meditation-blue-138131.m4a in Resources */,
+				F6A649CEDA431D5CD3D1511E /* konstantinpazuzustudio-quiet-rain-thunder-rain-and-piano-512040.m4a in Resources */,
+				FAA80B115D2EC06AAB335988 /* lazarosv-electric-heartbeat-i-492330.m4a in Resources */,
+				1ACA5156F1BB426FE8BF9630 /* lorenzobuczek-sleepy-rain-116521.m4a in Resources */,
+				8F10AC01B6DE884ADD0AB8ED /* low_atmos-desert-night-sleep-atmosphere-513282.m4a in Resources */,
+				9DDAD149C6BF8125C1ED7E6E /* low_atmos-orbit-sleep-background-514712.m4a in Resources */,
+				724671B3BE8E29680C6F6ED3 /* mfcc-baby-baby-kids-children-music-522351.m4a in Resources */,
+				52C4782C126A52B9E4B3316D /* miromaxmusic-fun-kids-music-438477.m4a in Resources */,
+				7373D5674E29EF7514F07821 /* mondamusic-kids-cartoon-499179.m4a in Resources */,
+				EB5848E22F4F44AF2ABAF262 /* mondamusic-meditation-512846.m4a in Resources */,
+				732E5CEE2867524A6401DB22 /* monume-lullaby-baby-sleep-music-509508.m4a in Resources */,
+				B18039FF6D804AD5E27B5493 /* mountaindweller-calm-lullaby-for-irish-harp-243170.m4a in Resources */,
+				B5E9A870A51A669943529907 /* multimusicas-sweet-samba-that-is-contagious-486886.m4a in Resources */,
+				367F849AF61FE3BF68B4A079 /* music_for_video-forest-lullaby-110624.m4a in Resources */,
+				973CC9F82EDD1EB673204308 /* music_for_video-please-calm-my-mind-125566.m4a in Resources */,
+				328D59327BFA276523CA1FB2 /* music_for_video-pray-for-ukraine-sleep-21715.m4a in Resources */,
+				17883B7D08E89CAF576B692E /* music_for_video-sedative-110241.m4a in Resources */,
+				FCBD252F8B61D8EE08F981D0 /* nonenothingnowhere-174-hz-pain-release-156261.m4a in Resources */,
+				62867DCEAA1C22E406778C77 /* nonenothingnowhere-396-hz-root-chakra-156263.m4a in Resources */,
+				6E63A91C54760D304095FC1D /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a in Resources */,
+				E1F1F67428049BC2A118737F /* nonenothingnowhere-432-hz-tune-in-with-nature-156265.m4a in Resources */,
+				97D36F77E528297CED0E8298 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a in Resources */,
+				AD5006E7E8BD5FEA373E979E /* oceanframemusic-guitar-relaxation-524560.m4a in Resources */,
+				020BB2BB01E5033ACA64888B /* piano_music-calm-relaxation-122811.m4a in Resources */,
+				3ACC43936D7F409690464F29 /* pretex-briefing-ambience-341525.m4a in Resources */,
+				3FE723672004649BC28F1E8A /* prettyjohn1-meditation-495676.m4a in Resources */,
+				94188DA1696176692836B4DE /* purebinaural-purebinaural-40-hz-gamma-binaural-beats-with-white-noise-484861.m4a in Resources */,
+				A12D0601D124C67CA5BE6F6F /* quietphase-meditative-meditation-482094.m4a in Resources */,
+				B221E4713F171C09B89FE4D6 /* relaxingtime-sleep-music-vol15-195425.m4a in Resources */,
+				6684DF0B1B58D09DB504EA7E /* shadowsandechoes-the-womb-dark-ambient-background-mystery-music-155682.m4a in Resources */,
+				331BCA81CDB39F210940D070 /* siarhei_korbut-285-hz-star-chakra-484883.m4a in Resources */,
+				4B016B2788B61C28E252A33A /* sleepvolume-the-quiet-night-lullaby-music-instrumental-346577.m4a in Resources */,
+				B4D9E22CF23D3C55B7CA2793 /* soutera-cosmic-ocean-284361.m4a in Resources */,
+				F0C32E9504CD52106EA90F2A /* the_mountain-baby-joy-130049.m4a in Resources */,
+				6E77F9783E202F491321A9F8 /* the_mountain-baby-sleep-143300.m4a in Resources */,
+				D1E96F632910BFF0ACB1671A /* the_mountain-soft-loop-130012.m4a in Resources */,
+				F6FD1397D1DA438F4ABD7896 /* tunetank-kids-relaxing-lullaby-music-349558.m4a in Resources */,
+				EF92EEFA0E3474BC63CA1C67 /* tunetank-lullaby-baby-sleep-music-347721.m4a in Resources */,
+				6A22865BB4B82102F288BB58 /* tunetank-lullaby-dreamy-children-music-347722.m4a in Resources */,
+				C1DF83387061DFFC4D5989BB /* tunetank-music-box-sleep-lullaby-349471.m4a in Resources */,
+				321BE9C6341C79926275709D /* viacheslavstarostin-baby-kids-children-music-471917.m4a in Resources */,
+				996B45421E364E7DD36AAFA1 /* viacheslavstarostin-kids-baby-children-music-382060.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +732,7 @@
 				8A669DC9FE00F724112CBC9E /* Sound.swift in Sources */,
 				E3098C436A9CFF732D9C3577 /* SoundCategory.swift in Sources */,
 				BE92471FDBE85A140F5FBA66 /* SoundPickerView.swift in Sources */,
+				D288CF680BC6E8998F5CC7C8 /* SoundSeeder.swift in Sources */,
 				CF2436011E242D3C54BF87E5 /* SoundUsage.swift in Sources */,
 				76CDC5A945273540F1660DD0 /* StoreKitManager.swift in Sources */,
 				7CE1636A33E246E50FAC6A49 /* SuccessScoreView.swift in Sources */,
@@ -593,7 +785,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZS89AATCJ2;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -672,7 +864,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZS89AATCJ2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

@@ -36,6 +36,11 @@ struct NinniAIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    // İlk açılışta ses kataloğunu seed et
+                    let context = sharedModelContainer.mainContext
+                    SoundSeeder.seedIfNeeded(context: context)
+                }
         }
         .modelContainer(sharedModelContainer)
     }

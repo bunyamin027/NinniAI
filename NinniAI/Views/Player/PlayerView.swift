@@ -122,6 +122,9 @@ struct PlayerView: View {
             ) {
                 if appState.audioEngine.isPlaying {
                     appState.audioEngine.stopAll(fadeOut: true)
+                } else if let firstSound = allSounds.first {
+                    // İlk sesi doğrudan çal
+                    appState.audioEngine.play(sound: firstSound)
                 } else {
                     showSoundPicker = true
                 }

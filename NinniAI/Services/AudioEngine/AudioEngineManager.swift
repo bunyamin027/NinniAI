@@ -5,12 +5,8 @@ import Observation
 /// AVAudioEngine üzerine kurulu merkezi ses yönetim servisi.
 /// PRD §3.3: "Ses Karıştırma: Çoklu sesleri aynı anda çalma yeteneği"
 ///
-/// Bu sınıf tüm ses çalma operasyonlarını yönetir:
-/// - Tekli veya çoklu ses çalma
-/// - Seamless loop (SeamlessLooper ile)
-/// - Fade in/out kontrolü (FadeController ile)
-/// - Arka planda çalma (Background Audio)
-/// - Kilit ekranı kontrolü (NowPlayable)
+/// Teknik: AVAudioPCMBuffer + .loops opsiyonu ile sıfır gecikmeli,
+/// kusursuz döngü. scheduleBuffer(.loops) tek çağrıyla sonsuz döngü sağlar.
 @Observable
 final class AudioEngineManager {
     
@@ -39,8 +35,8 @@ final class AudioEngineManager {
     // MARK: - Private
     
     private let engine = AVAudioEngine()
-    private let mainMixerNode: AVAudioMixerNode
-    private var loopers: [String: SeamlessLooper] = [:]
+    private var playerNodes: [String: AVAudioPlayerNode] = [:]
+    private var audioBuffers: [String: AVAudioPCMBuffer] = [:]
     private let fadeController = FadeController()
     private var timerTask: Task<Void, Never>?
     private var countdownTask: Task<Void, Never>?
@@ -48,13 +44,13 @@ final class AudioEngineManager {
     // MARK: - Init
     
     init() {
-        mainMixerNode = engine.mainMixerNode
+        _ = engine.mainMixerNode // mainMixerNode'u initialize et
         configureAudioSession()
     }
     
     // MARK: - Audio Session Configuration
     
-    /// iOS Audio Session'ı arka plan çalma için ayarlar
+    /// iOS Audio Session'ı arka plan + kilit ekranı çalma için ayarlar
     private func configureAudioSession() {
         let session = AVAudioSession.sharedInstance()
         do {
@@ -69,73 +65,113 @@ final class AudioEngineManager {
         }
     }
     
-    // MARK: - Play Controls
+    // MARK: - Play (Sound model ile)
     
-    /// Tek bir sesi çalmaya başla
-    /// - Parameters:
-    ///   - sound: Çalınacak ses modeli
-    ///   - volume: Katman ses seviyesi (0.0 - 1.0)
-    ///   - fadeIn: Fade in uygulansın mı
+    /// Sound modelden ses çal
     func play(sound: Sound, volume: Float = 0.7, fadeIn: Bool = true) {
         guard let url = sound.bundleURL else {
-            print("⚠️ Ses dosyası bulunamadı: \(sound.fileName)")
+            print("⚠️ Ses dosyası bulunamadı: \(sound.fileName).\(sound.fileExtension)")
             return
         }
-        
+        playURL(
+            url: url,
+            identifier: sound.identifier,
+            displayName: sound.displayName,
+            volume: volume,
+            fadeIn: fadeIn
+        )
+    }
+    
+    // MARK: - Play (URL ile — doğrudan dosya)
+    
+    /// URL'den ses çal — AVAudioPCMBuffer + .loops tekniği
+    func playURL(
+        url: URL,
+        identifier: String,
+        displayName: String,
+        volume: Float = 0.7,
+        fadeIn: Bool = true
+    ) {
         guard activeLayers.count < AppConstants.maxMixSounds else {
-            print("⚠️ Maksimum ses karıştırma limitine ulaşıldı")
+            print("⚠️ Maksimum ses karıştırma limitine ulaşıldı (\(AppConstants.maxMixSounds))")
             return
         }
         
         // Zaten çalıyorsa atla
-        guard activeLayers[sound.identifier] == nil else { return }
+        guard activeLayers[identifier] == nil else { return }
         
         do {
-            let looper = try SeamlessLooper(url: url, engine: engine)
-            loopers[sound.identifier] = looper
+            // 1. Ses dosyasını oku
+            let audioFile = try AVAudioFile(forReading: url)
+            let format = audioFile.processingFormat
+            let frameCount = AVAudioFrameCount(audioFile.length)
             
-            let layer = AudioLayer(
-                identifier: sound.identifier,
-                displayName: sound.displayName,
-                volume: volume,
-                isPlaying: true
-            )
-            activeLayers[sound.identifier] = layer
+            guard let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: frameCount) else {
+                print("⚠️ PCM buffer oluşturulamadı: \(identifier)")
+                return
+            }
             
-            looper.playerNode.volume = fadeIn ? 0 : volume * masterVolume
+            try audioFile.read(into: buffer)
             
+            // 2. PlayerNode oluştur ve engine'e bağla
+            let playerNode = AVAudioPlayerNode()
+            engine.attach(playerNode)
+            engine.connect(playerNode, to: engine.mainMixerNode, format: format)
+            
+            // 3. Engine'i başlat (henüz çalışmıyorsa)
             if !engine.isRunning {
                 try engine.start()
             }
             
-            looper.start()
+            // 4. Buffer'ı sonsuz döngüde schedule et
+            playerNode.scheduleBuffer(buffer, at: nil, options: .loops)
             
+            // 5. Fade-in ayarı
+            playerNode.volume = fadeIn ? 0 : volume * masterVolume
+            
+            // 6. Çalmaya başla
+            playerNode.play()
+            
+            // 7. Fade-in uygula
             if fadeIn {
                 fadeController.fadeIn(
-                    node: looper.playerNode,
+                    node: playerNode,
                     to: volume * masterVolume,
                     duration: AppConstants.defaultFadeInDuration
                 )
             }
             
+            // 8. State güncelle
+            playerNodes[identifier] = playerNode
+            audioBuffers[identifier] = buffer
+            activeLayers[identifier] = AudioLayer(
+                identifier: identifier,
+                displayName: displayName,
+                volume: volume,
+                isPlaying: true
+            )
             isPlaying = true
             
             if sessionStartTime == nil {
                 sessionStartTime = .now
             }
             
+            print("✅ Ses çalınıyor: \(displayName) [\(identifier)]")
+            
         } catch {
-            print("⚠️ Ses çalınamadı (\(sound.identifier)): \(error.localizedDescription)")
+            print("⚠️ Ses çalınamadı (\(identifier)): \(error.localizedDescription)")
         }
     }
     
+    // MARK: - Stop Controls
+    
     /// Belirli bir ses katmanını durdur
     func stop(identifier: String, fadeOut: Bool = true) {
-        guard let looper = loopers[identifier] else { return }
+        guard let node = playerNodes[identifier] else { return }
         
         if fadeOut {
             fadeController.fadeOut(
-                node: looper.playerNode,
+                node: node,
                 duration: AppConstants.defaultFadeOutDuration
             ) { [weak self] in
                 self?.removeLayer(identifier: identifier)
@@ -153,10 +189,15 @@ final class AudioEngineManager {
                 stop(identifier: identifier, fadeOut: true)
             }
         } else {
-            for (_, looper) in loopers {
-                looper.stop()
+            for (_, node) in playerNodes {
+                node.stop()
             }
-            loopers.removeAll()
+            // Engine'den detach et
+            for (_, node) in playerNodes {
+                engine.detach(node)
+            }
+            playerNodes.removeAll()
+            audioBuffers.removeAll()
             activeLayers.removeAll()
             
             if engine.isRunning {
@@ -171,9 +212,9 @@ final class AudioEngineManager {
     
     /// Belirli bir katmanın ses seviyesini ayarla
     func setVolume(_ volume: Float, for identifier: String) {
-        guard let looper = loopers[identifier] else { return }
+        guard let node = playerNodes[identifier] else { return }
         activeLayers[identifier]?.volume = volume
-        looper.playerNode.volume = volume * masterVolume
+        node.volume = volume * masterVolume
     }
     
     // MARK: - Timer
@@ -191,7 +232,6 @@ final class AudioEngineManager {
         timerDurationMinutes = minutes
         remainingSeconds = TimeInterval(minutes * 60)
         
-        // Countdown task
         countdownTask = Task { @MainActor [weak self] in
             while let self = self,
                   let remaining = self.remainingSeconds,
@@ -204,7 +244,6 @@ final class AudioEngineManager {
             }
         }
         
-        // Stop task
         timerTask = Task { [weak self] in
             try? await Task.sleep(for: .seconds(TimeInterval(minutes * 60)))
             guard !Task.isCancelled, let self else { return }
@@ -227,14 +266,14 @@ final class AudioEngineManager {
     // MARK: - Private Helpers
     
     private func removeLayer(identifier: String) {
-        loopers[identifier]?.stop()
+        playerNodes[identifier]?.stop()
         
-        // Node'u engine'den çıkarmadan önce detach et
-        if let looper = loopers[identifier] {
-            engine.detach(looper.playerNode)
+        if let node = playerNodes[identifier] {
+            engine.detach(node)
         }
         
-        loopers.removeValue(forKey: identifier)
+        playerNodes.removeValue(forKey: identifier)
+        audioBuffers.removeValue(forKey: identifier)
         activeLayers.removeValue(forKey: identifier)
         
         if activeLayers.isEmpty {
@@ -249,22 +288,19 @@ final class AudioEngineManager {
     
     private func updateMasterVolume() {
         for (identifier, layer) in activeLayers {
-            loopers[identifier]?.playerNode.volume = layer.volume * masterVolume
+            playerNodes[identifier]?.volume = layer.volume * masterVolume
         }
     }
     
     // MARK: - Computed
     
-    /// Aktif ses sayısı
     var activeLayerCount: Int { activeLayers.count }
     
-    /// Şu anki oturumun süresi
     var sessionDuration: TimeInterval {
         guard let start = sessionStartTime else { return 0 }
         return Date.now.timeIntervalSince(start)
     }
     
-    /// Aktif ses identifier'ları
     var activeSoundIdentifiers: [String] {
         Array(activeLayers.keys)
     }
