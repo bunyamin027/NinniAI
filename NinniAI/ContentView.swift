@@ -76,9 +76,11 @@ struct ContentView: View {
             .tint(AppTheme.accentPrimary)
             .preferredColorScheme(.dark)
             
-            // Mini Player (tab bar üstünde)
-            MiniPlayerBar()
-                .padding(.bottom, 50)
+            // Mini Player (tab bar üstünde, sadece Player sekmesi dışındayken görünür)
+            if appState.selectedTab != .player {
+                MiniPlayerBar()
+                    .padding(.bottom, 50)
+            }
         }
         .fullScreenCover(isPresented: $appState.isFullPlayerPresented) {
             PlayerView()

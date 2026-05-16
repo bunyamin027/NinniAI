@@ -83,6 +83,7 @@
 		B4D9E22CF23D3C55B7CA2793 /* soutera-cosmic-ocean-284361.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CA874738CC6FC61A16EB2CFF /* soutera-cosmic-ocean-284361.m4a */; };
 		B5E9A870A51A669943529907 /* multimusicas-sweet-samba-that-is-contagious-486886.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 93ADED84898922D4BF27BCE8 /* multimusicas-sweet-samba-that-is-contagious-486886.m4a */; };
 		B6F82FD2A5EE0E6736E7B4C2 /* delon_boomkin-baby-sleep-music-1-sound-effects-297159.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 75E5321FC2CD24F272C7FDB4 /* delon_boomkin-baby-sleep-music-1-sound-effects-297159.m4a */; };
+		B778B747B592C2147E0F9D21 /* SoundDataMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F238CC9A0A7F0B794BCD6F88 /* SoundDataMap.swift */; };
 		BE92471FDBE85A140F5FBA66 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D879D9D6E49D15EB85787E4B /* SoundPickerView.swift */; };
 		C1DF83387061DFFC4D5989BB /* tunetank-music-box-sleep-lullaby-349471.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A5C1BF69CC392E1EE7852E6D /* tunetank-music-box-sleep-lullaby-349471.m4a */; };
 		C2AE2266692A282A689E2A60 /* don_vitaliy-time-heartbeat-fusion-169017.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9D6A692F8FA4C9ACCC05CB88 /* don_vitaliy-time-heartbeat-fusion-169017.m4a */; };
@@ -227,6 +228,7 @@
 		E843D1619E95C0A785585ACA /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		E930FEBC533028906F28877D /* tunetank-lullaby-baby-sleep-music-347721.m4a */ = {isa = PBXFileReference; path = "tunetank-lullaby-baby-sleep-music-347721.m4a"; sourceTree = "<group>"; };
 		EFD4AD27BB0F0A8689548D4C /* BabyProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyProfileEditView.swift; sourceTree = "<group>"; };
+		F238CC9A0A7F0B794BCD6F88 /* SoundDataMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SoundDataMap.swift; sourceTree = "<group>"; };
 		F3649FD7A293B124F61E4C89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F40267CB0DF17CD10B285678 /* ContextResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextResolver.swift; sourceTree = "<group>"; };
 		F896567CAB113271C6172569 /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a */ = {isa = PBXFileReference; path = "nonenothingnowhere-417-hz-sacral-chakra-156264.m4a"; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				D92378DECB5F98463AE55744 /* SoundCategory.swift */,
 				2F6ABB9039EC46A3238978AE /* SoundUsage.swift */,
 				E7C149F74345D9E6644A9A08 /* UserSettings.swift */,
+				F238CC9A0A7F0B794BCD6F88 /* SoundDataMap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -576,8 +579,6 @@
 			dependencies = (
 			);
 			name = NinniAI;
-			packageProductDependencies = (
-			);
 			productName = NinniAI;
 			productReference = 9405092CC6A1022B18B9866B /* NinniAI.app */;
 			productType = "com.apple.product-type.application";
@@ -741,6 +742,7 @@
 				82EA7A7928B9CE1139FCCAB5 /* View+Extensions.swift in Sources */,
 				FBED5BC3DAD95F8ECC470B65 /* WeeklyReportView.swift in Sources */,
 				A17E864F53DF8D7A8547D8A2 /* WelcomeStepView.swift in Sources */,
+				B778B747B592C2147E0F9D21 /* SoundDataMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

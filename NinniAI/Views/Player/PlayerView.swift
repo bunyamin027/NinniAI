@@ -2,145 +2,273 @@ import SwiftUI
 import SwiftData
 
 // MARK: - Player View
-/// Ana Player ekranı — uykulu ebeveyn dostu tasarım.
-/// PRD §3.3: "Uykulu ebeveyn dostu büyük play butonu, tek dokunuşta başlatma"
-///
-/// Bu ekran şu bileşenleri içerir:
-/// - Dalga animasyonu arka planı
-/// - Devasa play/pause butonu
-/// - Aktif ses katmanları listesi
-/// - Ses seviyesi kontrolü
-/// - Zamanlayıcı seçici
 struct PlayerView: View {
-    
     @Environment(AppState.self) private var appState
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Sound.sortOrder) private var allSounds: [Sound]
     
-    @State private var showSoundPicker = false
     @State private var showTimerPicker = false
-    @State private var wavePhase: CGFloat = 0
+    @State private var selectedCategory: SoundCategory = .whiteNoise
     
     var body: some View {
         ZStack {
             // Arka plan
             GradientBackground(appState.audioEngine.isPlaying ? .playerActive : .default)
             
-            // Dalga animasyonu (aktifken)
-            if appState.audioEngine.isPlaying {
-                WaveAnimationView(phase: $wavePhase)
-                    .opacity(0.3)
-            }
+            // Dalga animasyonu kaldırıldı (Kullanıcı isteği: overlap/layout shift yapmaması için)
             
             VStack(spacing: 0) {
-                // Üst başlık
-                headerSection
+                // Üst Başlık (Agentic Header)
+                agenticHeaderSection
                 
                 Spacer()
                 
-                // Aktif katmanlar (çalan sesler)
-                if !appState.audioEngine.activeLayers.isEmpty {
-                    activeLayersSection
-                }
-                
-                Spacer()
-                
-                // Ana play butonu
+                // Ana Play Butonu (Antigravity Centerpiece)
                 playButtonSection
                 
+                // Akıllı Zamanlayıcı Çubuğu
+                smartTimerBar
+                    .padding(.top, AppTheme.spacingXL)
+                    .padding(.horizontal, AppTheme.spacingXL)
+                
                 Spacer()
                 
-                // Alt kontroller (timer + ses seçici)
-                bottomControlsSection
+                // Master Volume
+                masterVolumeSlider
+                    .padding(.horizontal, AppTheme.spacingXL)
+                    .padding(.bottom, AppTheme.spacingLG)
+                
+                // Manuel Seçim Alanı (Kategori ve Sesler)
+                explorationSection
             }
-            .padding(.horizontal, AppTheme.spacingLG)
             .padding(.vertical, AppTheme.spacingMD)
-        }
-        .sheet(isPresented: $showSoundPicker) {
-            SoundPickerView()
         }
         .sheet(isPresented: $showTimerPicker) {
             TimerPickerView()
         }
-    }
-    
-    // MARK: - Header Section
-    
-    private var headerSection: some View {
-        VStack(spacing: AppTheme.spacingSM) {
-            Text(headerTitle)
-                .font(.title2)
-                .fontWeight(.semibold)
-                .foregroundStyle(AppTheme.textPrimary)
-            
-            if let remaining = appState.audioEngine.remainingSeconds, remaining > 0 {
-                Text(formatTime(remaining))
-                    .font(.system(.title3, design: .monospaced))
-                    .fontWeight(.medium)
-                    .foregroundStyle(AppTheme.accentPrimary)
+        .onAppear {
+            if appState.audioEngine.activeLayer == nil && !allSounds.isEmpty {
+                // Sadece görsel olarak ilk sesi hazırda tutmak için (isteğe bağlı)
             }
         }
-        .padding(.top, AppTheme.spacingLG)
     }
     
-    private var headerTitle: String {
-        if appState.audioEngine.isPlaying {
-            return "Çalıyor..."
+    // MARK: - Agentic Header
+    private var agenticHeaderSection: some View {
+        VStack(spacing: AppTheme.spacingXS) {
+            Text("SİSTEM ÖNERİSİ")
+                .font(.system(size: 12, weight: .bold, design: .rounded))
+                .tracking(2)
+                .foregroundStyle(AppTheme.textSecondary)
+                .textCase(.uppercase)
+                .opacity(0.8)
+            
+            Text(currentSoundName)
+                .font(.system(size: 32, weight: .bold, design: .rounded))
+                .foregroundStyle(AppTheme.textPrimary)
+                .multilineTextAlignment(.center)
         }
-        return "Bir ses seçin"
+        .padding(.top, AppTheme.spacingXL)
     }
     
-    // MARK: - Active Layers Section
+    private var currentSoundName: String {
+        appState.audioEngine.activeLayer?.displayName ?? allSounds.first?.displayName ?? "Kozmik Frekans"
+    }
     
-    private var activeLayersSection: some View {
-        VStack(spacing: AppTheme.spacingSM) {
-            ForEach(Array(appState.audioEngine.activeLayers.values)) { layer in
-                ActiveLayerRow(
-                    layer: layer,
-                    onVolumeChange: { volume in
-                        appState.audioEngine.setVolume(volume, for: layer.identifier)
-                    },
-                    onRemove: {
-                        withAnimation(AppTheme.animationDefault) {
-                            appState.audioEngine.stop(identifier: layer.identifier)
+    // MARK: - Play Button Section (Antigravity Style)
+    private var playButtonSection: some View {
+        Button(action: {
+            if appState.audioEngine.activeLayer == nil {
+                if let firstSound = allSounds.first {
+                    appState.audioEngine.play(sound: firstSound)
+                }
+            } else {
+                appState.audioEngine.togglePlayPause()
+            }
+        }) {
+            ZStack {
+                // Soft Shadow / Antigravity Effect
+                Circle()
+                    .fill(Color(.systemBackground))
+                    .frame(width: 140, height: 140)
+                    .shadow(color: .black.opacity(0.15), radius: 30, x: 10, y: 15)
+                    .shadow(color: .white.opacity(0.1), radius: 20, x: -10, y: -10)
+                
+                // İç Kısım
+                Circle()
+                    .fill(
+                        LinearGradient(
+                            colors: [Color(.secondarySystemBackground).opacity(0.5), Color(.systemBackground)],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .frame(width: 130, height: 130)
+                
+                Image(systemName: appState.audioEngine.isPlaying ? "pause.fill" : "play.fill")
+                    .font(.system(size: 48, weight: .semibold))
+                    .foregroundStyle(AppTheme.accentPrimary)
+                    // İkon için hafif inner glow hissi
+                    .shadow(color: AppTheme.accentPrimary.opacity(0.3), radius: 10, x: 0, y: 5)
+            }
+        }
+        .buttonStyle(AntigravityButtonStyle())
+    }
+    
+    // MARK: - Smart Timer Bar
+    private var smartTimerBar: some View {
+        Button(action: { showTimerPicker = true }) {
+            ZStack(alignment: .leading) {
+                // Arka plan soft bar
+                Capsule()
+                    .fill(.ultraThinMaterial)
+                    .frame(height: 44)
+                    .shadow(color: AppTheme.shadowColorDark, radius: 10, y: 5)
+                
+                // İlerleme dolumu
+                if let remaining = appState.audioEngine.remainingSeconds, appState.audioEngine.timerDurationMinutes > 0 {
+                    let totalSeconds = Double(appState.audioEngine.timerDurationMinutes * 60)
+                    let progress = 1.0 - (remaining / totalSeconds)
+                    
+                    GeometryReader { geo in
+                        Capsule()
+                            .fill(AppTheme.accentPrimary.opacity(0.3))
+                            .frame(width: max(0, geo.size.width * progress))
+                            .animation(.linear(duration: 1.0), value: progress)
+                    }
+                    .frame(height: 44)
+                }
+                
+                // İkon ve Süre
+                HStack {
+                    Image(systemName: "timer")
+                        .font(.subheadline)
+                    
+                    if let remaining = appState.audioEngine.remainingSeconds, remaining > 0 {
+                        Text(formatTime(remaining))
+                            .font(.system(.subheadline, design: .monospaced))
+                            .fontWeight(.medium)
+                    } else {
+                        Text("Zamanlayıcı Kapalı")
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                    }
+                    
+                    Spacer()
+                    
+                    Image(systemName: "chevron.right")
+                        .font(.caption)
+                        .foregroundStyle(AppTheme.textTertiary)
+                }
+                .foregroundStyle(appState.audioEngine.remainingSeconds != nil ? AppTheme.accentPrimary : AppTheme.textSecondary)
+                .padding(.horizontal, AppTheme.spacingMD)
+            }
+            .frame(height: 44)
+        }
+        .buttonStyle(.plain)
+    }
+    
+    // MARK: - Exploration Section (Category & Sounds)
+    private var explorationSection: some View {
+        VStack(alignment: .leading, spacing: AppTheme.spacingMD) {
+            
+            // 1. Kategoriler
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: AppTheme.spacingSM) {
+                    ForEach(SoundCategory.allCases) { category in
+                        CategoryChipView(
+                            category: category,
+                            isSelected: selectedCategory == category
+                        ) {
+                            withAnimation(AppTheme.animationDefault) {
+                                selectedCategory = category
+                            }
                         }
                     }
-                )
-            }
-        }
-        .transition(.opacity.combined(with: .scale(scale: 0.95)))
-    }
-    
-    // MARK: - Play Button Section
-    
-    private var playButtonSection: some View {
-        VStack(spacing: AppTheme.spacingLG) {
-            PulseButton(
-                isActive: appState.audioEngine.isPlaying,
-                icon: appState.audioEngine.isPlaying ? "pause.fill" : "play.fill",
-                size: 90
-            ) {
-                if appState.audioEngine.isPlaying {
-                    appState.audioEngine.stopAll(fadeOut: true)
-                } else if let firstSound = allSounds.first {
-                    // İlk sesi doğrudan çal
-                    appState.audioEngine.play(sound: firstSound)
-                } else {
-                    showSoundPicker = true
                 }
+                .padding(.horizontal, AppTheme.spacingLG)
             }
             
-            // Master volume slider
-            if appState.audioEngine.isPlaying {
-                masterVolumeSlider
-                    .transition(.opacity.combined(with: .move(edge: .bottom)))
+            // 2. Keşfet (Seçili Kategori Sesleri)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: AppTheme.spacingSM) {
+                    ForEach(allSounds.filter { $0.category == selectedCategory }) { sound in
+                        ExplorerSoundItemView(
+                            sound: sound,
+                            isSelected: appState.audioEngine.activeLayer?.identifier == sound.identifier
+                        ) {
+                            appState.audioEngine.play(sound: sound)
+                        }
+                    }
+                }
+                .padding(.horizontal, AppTheme.spacingLG)
+            }
+            .padding(.bottom, AppTheme.spacingLG)
+        }
+    }
+    
+    private struct CategoryChipView: View {
+        let category: SoundCategory
+        let isSelected: Bool
+        let action: () -> Void
+        
+        var body: some View {
+            Button(action: action) {
+                Text(category.displayTitle)
+                    .font(.subheadline)
+                    .fontWeight(isSelected ? .bold : .medium)
+                    .padding(.horizontal, AppTheme.spacingMD)
+                    .padding(.vertical, AppTheme.spacingSM)
+                    .background(
+                        Capsule()
+                            .fill(isSelected ? AnyShapeStyle(AppTheme.accentPrimary.opacity(0.2)) : AnyShapeStyle(.ultraThinMaterial))
+                    )
+                    .background(
+                        Capsule()
+                            .stroke(isSelected ? AppTheme.accentPrimary.opacity(0.5) : .white.opacity(0.1), lineWidth: 1)
+                    )
+                    .foregroundStyle(isSelected ? AppTheme.accentPrimary : AppTheme.textSecondary)
+            }
+        }
+    }
+
+    private struct ExplorerSoundItemView: View {
+        let sound: Sound
+        let isSelected: Bool
+        let action: () -> Void
+        
+        var body: some View {
+            Button(action: action) {
+                VStack(spacing: AppTheme.spacingXS) {
+                    ZStack {
+                        Circle()
+                            .fill(isSelected ? AnyShapeStyle(AppTheme.accentPrimary.opacity(0.2)) : AnyShapeStyle(Color.white.opacity(0.05)))
+                            .frame(width: 64, height: 64)
+                        
+                        Image(systemName: sound.category.iconName)
+                            .font(.title2)
+                            .foregroundStyle(isSelected ? AppTheme.accentPrimary : AppTheme.textSecondary)
+                        
+                        if isSelected {
+                            Circle()
+                                .stroke(AppTheme.accentPrimary, lineWidth: 2)
+                                .frame(width: 64, height: 64)
+                        }
+                    }
+                    
+                    Text(sound.displayName)
+                        .font(.caption)
+                        .fontWeight(.medium)
+                        .foregroundStyle(isSelected ? AppTheme.accentPrimary : AppTheme.textSecondary)
+                        .lineLimit(1)
+                }
+                .padding(.horizontal, AppTheme.spacingXS)
             }
         }
     }
     
     private var masterVolumeSlider: some View {
         @Bindable var state = appState
-        
         return HStack(spacing: AppTheme.spacingSM) {
             Image(systemName: "speaker.fill")
                 .font(.caption)
@@ -159,48 +287,12 @@ struct PlayerView: View {
                 .font(.caption)
                 .foregroundStyle(AppTheme.textTertiary)
         }
-        .padding(.horizontal, AppTheme.spacingXL)
     }
-    
-    // MARK: - Bottom Controls
-    
-    private var bottomControlsSection: some View {
-        HStack(spacing: AppTheme.spacingXL) {
-            // Ses ekle
-            ControlButton(
-                icon: "plus.circle.fill",
-                label: "Ses Ekle",
-                badge: appState.audioEngine.activeLayerCount
-            ) {
-                showSoundPicker = true
-            }
-            
-            // Zamanlayıcı
-            ControlButton(
-                icon: "timer",
-                label: timerLabel,
-                isActive: appState.audioEngine.remainingSeconds != nil
-            ) {
-                showTimerPicker = true
-            }
-        }
-        .padding(.bottom, AppTheme.spacingLG)
-    }
-    
-    private var timerLabel: String {
-        if let remaining = appState.audioEngine.remainingSeconds {
-            return formatTime(remaining)
-        }
-        return "Zamanlayıcı"
-    }
-    
-    // MARK: - Helpers
     
     private func formatTime(_ seconds: TimeInterval) -> String {
         let hours = Int(seconds) / 3600
         let minutes = Int(seconds) % 3600 / 60
         let secs = Int(seconds) % 60
-        
         if hours > 0 {
             return String(format: "%d:%02d:%02d", hours, minutes, secs)
         }
@@ -208,143 +300,17 @@ struct PlayerView: View {
     }
 }
 
-// MARK: - Active Layer Row
-
-private struct ActiveLayerRow: View {
-    let layer: AudioLayer
-    let onVolumeChange: (Float) -> Void
-    let onRemove: () -> Void
-    
-    @State private var volume: Float
-    
-    init(layer: AudioLayer, onVolumeChange: @escaping (Float) -> Void, onRemove: @escaping () -> Void) {
-        self.layer = layer
-        self.onVolumeChange = onVolumeChange
-        self.onRemove = onRemove
-        self._volume = State(initialValue: layer.volume)
-    }
-    
-    var body: some View {
-        GlassCard(cornerRadius: AppTheme.cornerRadiusMD, padding: AppTheme.spacingSM) {
-            HStack(spacing: AppTheme.spacingSM) {
-                // Ses adı
-                Text(layer.displayName)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .foregroundStyle(AppTheme.textPrimary)
-                    .lineLimit(1)
-                
-                Spacer()
-                
-                // Volume slider (compact)
-                Slider(
-                    value: Binding(
-                        get: { Double(volume) },
-                        set: {
-                            volume = Float($0)
-                            onVolumeChange(volume)
-                        }
-                    ),
-                    in: 0...1
-                )
-                .tint(AppTheme.accentPrimary)
-                .frame(width: 100)
-                
-                // Kaldır butonu
-                Button(action: onRemove) {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.title3)
-                        .foregroundStyle(AppTheme.textTertiary)
-                }
-                .buttonStyle(.plain)
-            }
-        }
+// MARK: - Antigravity Button Style
+struct AntigravityButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: configuration.isPressed)
     }
 }
 
-// MARK: - Control Button
-
-private struct ControlButton: View {
-    let icon: String
-    let label: String
-    var badge: Int = 0
-    var isActive: Bool = false
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: AppTheme.spacingXS) {
-                ZStack(alignment: .topTrailing) {
-                    Image(systemName: icon)
-                        .font(.title2)
-                        .foregroundStyle(
-                            isActive ? AppTheme.accentPrimary : AppTheme.textSecondary
-                        )
-                    
-                    if badge > 0 {
-                        Text("\(badge)")
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundStyle(.white)
-                            .padding(4)
-                            .background(AppTheme.accentPrimary)
-                            .clipShape(Circle())
-                            .offset(x: 8, y: -4)
-                    }
-                }
-                
-                Text(label)
-                    .font(.caption2)
-                    .foregroundStyle(AppTheme.textTertiary)
-            }
-        }
-        .buttonStyle(.plain)
-    }
-}
-
-// MARK: - Wave Animation View
-
-private struct WaveAnimationView: View {
-    @Binding var phase: CGFloat
-    
-    var body: some View {
-        TimelineView(.animation(minimumInterval: 1.0 / 30.0)) { timeline in
-            Canvas { context, size in
-                let midY = size.height * 0.5
-                let time = timeline.date.timeIntervalSinceReferenceDate
-                
-                for i in 0..<3 {
-                    let amplitude = CGFloat(20 - i * 5)
-                    let frequency = CGFloat(0.8 + Double(i) * 0.3)
-                    let speed = CGFloat(0.5 + Double(i) * 0.2)
-                    let opacity = 0.3 - Double(i) * 0.08
-                    
-                    var path = Path()
-                    path.move(to: CGPoint(x: 0, y: midY))
-                    
-                    for x in stride(from: 0, through: size.width, by: 2) {
-                        let relativeX = x / size.width
-                        let y = midY + sin(
-                            relativeX * .pi * 2 * frequency + time * speed
-                        ) * amplitude
-                        path.addLine(to: CGPoint(x: x, y: y))
-                    }
-                    
-                    path.addLine(to: CGPoint(x: size.width, y: size.height))
-                    path.addLine(to: CGPoint(x: 0, y: size.height))
-                    path.closeSubpath()
-                    
-                    context.fill(
-                        path,
-                        with: .color(AppTheme.accentPrimary.opacity(opacity))
-                    )
-                }
-            }
-        }
-    }
-}
 
 // MARK: - Preview
-
 #Preview {
     PlayerView()
         .environment(AppState())

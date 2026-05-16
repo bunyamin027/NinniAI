@@ -183,8 +183,7 @@ struct DashboardView: View {
     }
     
     private var activeLayersText: String {
-        let names = appState.audioEngine.activeLayers.values.map(\.displayName)
-        return names.joined(separator: " + ")
+        return appState.audioEngine.activeLayer?.displayName ?? "Ses"
     }
     
     // MARK: - Last Session Card

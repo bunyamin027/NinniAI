@@ -83,7 +83,7 @@ struct SoundPickerView: View {
                     ForEach(filteredSounds, id: \.identifier) { sound in
                         SoundGridItem(
                             sound: sound,
-                            isActive: appState.audioEngine.activeLayers[sound.identifier] != nil
+                            isActive: appState.audioEngine.activeLayer?.identifier == sound.identifier
                         ) {
                             toggleSound(sound)
                         }
@@ -112,8 +112,8 @@ struct SoundPickerView: View {
     // MARK: - Actions
     
     private func toggleSound(_ sound: Sound) {
-        if appState.audioEngine.activeLayers[sound.identifier] != nil {
-            appState.audioEngine.stop(identifier: sound.identifier)
+        if appState.audioEngine.activeLayer?.identifier == sound.identifier {
+            appState.audioEngine.stopAll(fadeOut: true)
         } else {
             appState.audioEngine.play(sound: sound, volume: sound.defaultVolume)
         }

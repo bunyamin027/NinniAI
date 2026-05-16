@@ -34,7 +34,6 @@ final class FadeController {
         
         let nodeHash = ObjectIdentifier(node).hashValue
         let totalSteps = Int(duration / stepInterval)
-        let volumeStep = targetVolume / Float(totalSteps)
         
         node.volume = 0
         

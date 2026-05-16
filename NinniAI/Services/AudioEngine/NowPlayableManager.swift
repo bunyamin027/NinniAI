@@ -35,7 +35,7 @@ final class NowPlayableManager {
         
         // Play
         commandCenter.playCommand.isEnabled = true
-        commandCenter.playCommand.addTarget { [weak self] _ in
+        commandCenter.playCommand.addTarget { _ in
             // TODO: Faz 3'te AudioEngineManager.resume() ile bağlanacak
             return .success
         }

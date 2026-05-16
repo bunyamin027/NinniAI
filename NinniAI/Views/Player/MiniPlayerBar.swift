@@ -65,10 +65,10 @@ struct MiniPlayerBar: View {
     }
     
     private var activeSoundsText: String {
-        let names = appState.audioEngine.activeLayers.values.map(\.displayName)
-        if names.isEmpty { return "Çalıyor..." }
-        if names.count == 1 { return names[0] }
-        return "\(names[0]) + \(names.count - 1) diğer"
+        if let name = appState.audioEngine.activeLayer?.displayName {
+            return name
+        }
+        return "Çalıyor..."
     }
     
     private func formatTime(_ seconds: TimeInterval) -> String {

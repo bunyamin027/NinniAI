@@ -16,88 +16,77 @@ struct TimerPickerView: View {
             ZStack {
                 GradientBackground()
                 
-                VStack(spacing: AppTheme.spacingXL) {
-                    // Başlık
-                    VStack(spacing: AppTheme.spacingSM) {
-                        Image(systemName: "timer")
-                            .font(.system(size: 40))
-                            .foregroundStyle(AppTheme.accentPrimary)
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: AppTheme.spacingLG) {
+                        // Başlık
+                        VStack(spacing: AppTheme.spacingXS) {
+                            Image(systemName: "timer")
+                                .font(.system(size: 32))
+                                .foregroundStyle(AppTheme.accentPrimary)
+                            
+                            Text("Zamanlayıcı")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(AppTheme.textPrimary)
+                            
+                            Text("Süre bittiğinde sesler yavaşça kapanır")
+                                .font(.caption)
+                                .foregroundStyle(AppTheme.textSecondary)
+                        }
+                        .padding(.top, AppTheme.spacingMD)
                         
-                        Text("Zamanlayıcı")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(AppTheme.textPrimary)
-                        
-                        Text("Süre bittiğinde sesler yavaşça kapanır")
-                            .font(.subheadline)
-                            .foregroundStyle(AppTheme.textSecondary)
-                    }
-                    .padding(.top, AppTheme.spacingXL)
-                    
-                    // Preset butonları
-                    LazyVGrid(
-                        columns: [
-                            GridItem(.flexible()),
-                            GridItem(.flexible()),
-                            GridItem(.flexible())
-                        ],
-                        spacing: AppTheme.spacingSM
-                    ) {
-                        ForEach(AppConstants.timerPresets, id: \.self) { minutes in
-                            TimerPresetButton(
-                                minutes: minutes,
-                                isSelected: selectedMinutes == minutes
-                            ) {
-                                withAnimation(AppTheme.animationDefault) {
-                                    selectedMinutes = minutes
+                        // Preset butonları (2x2 Grid)
+                        LazyVGrid(
+                            columns: [
+                                GridItem(.flexible(), spacing: AppTheme.spacingMD),
+                                GridItem(.flexible(), spacing: AppTheme.spacingMD)
+                            ],
+                            spacing: AppTheme.spacingMD
+                        ) {
+                            ForEach([15, 30, 45, 60], id: \.self) { minutes in
+                                TimerPresetButton(
+                                    minutes: minutes,
+                                    isSelected: selectedMinutes == minutes
+                                ) {
+                                    withAnimation(AppTheme.animationDefault) {
+                                        selectedMinutes = minutes
+                                    }
+                                    appState.audioEngine.startTimer(minutes: minutes)
+                                    dismiss()
                                 }
                             }
                         }
+                        .padding(.horizontal, AppTheme.spacingLG)
                         
-                        // Süresiz seçenek
+                        // Süresiz Seçeneği
                         TimerPresetButton(
                             minutes: 0,
                             isSelected: selectedMinutes == 0,
                             label: "∞",
-                            subtitle: "Süresiz"
+                            subtitle: "Süresiz (Kapatana Kadar Çalar)"
                         ) {
                             withAnimation(AppTheme.animationDefault) {
                                 selectedMinutes = 0
                             }
-                        }
-                    }
-                    .padding(.horizontal, AppTheme.spacingMD)
-                    
-                    Spacer()
-                    
-                    // Başlat butonu
-                    Button {
-                        appState.audioEngine.startTimer(minutes: selectedMinutes)
-                        dismiss()
-                    } label: {
-                        Text(selectedMinutes > 0 ? "Zamanlayıcıyı Başlat" : "Süresiz Çal")
-                            .font(.headline)
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, AppTheme.spacingMD)
-                            .background(AppTheme.playerGradient)
-                            .clipShape(Capsule())
-                    }
-                    .padding(.horizontal, AppTheme.spacingLG)
-                    
-                    // İptal butonu (aktif timer varsa)
-                    if appState.audioEngine.remainingSeconds != nil {
-                        Button {
-                            appState.audioEngine.cancelTimer()
+                            appState.audioEngine.startTimer(minutes: 0)
                             dismiss()
-                        } label: {
-                            Text("Zamanlayıcıyı İptal Et")
-                                .font(.subheadline)
-                                .foregroundStyle(AppTheme.error)
+                        }
+                        .padding(.horizontal, AppTheme.spacingLG)
+                        
+                        // İptal butonu (aktif timer varsa)
+                        if appState.audioEngine.remainingSeconds != nil {
+                            Button {
+                                appState.audioEngine.cancelTimer()
+                                dismiss()
+                            } label: {
+                                Text("Zamanlayıcıyı İptal Et")
+                                    .font(.subheadline)
+                                    .foregroundStyle(AppTheme.error)
+                            }
                         }
                     }
+                    .padding(.bottom, AppTheme.spacingLG)
                 }
-                .padding(.bottom, AppTheme.spacingXL)
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbarColorScheme(.dark, for: .navigationBar)
@@ -108,7 +97,7 @@ struct TimerPickerView: View {
                 }
             }
         }
-        .presentationDetents([.medium])
+        .presentationDetents([.medium, .large])
         .presentationDragIndicator(.visible)
         .preferredColorScheme(.dark)
         .onAppear {

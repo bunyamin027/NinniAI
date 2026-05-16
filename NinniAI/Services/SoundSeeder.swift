@@ -14,9 +14,50 @@ enum SoundSeeder {
     static func seedIfNeeded(context: ModelContext) {
         // Zaten seed edilmiş mi kontrol et
         let descriptor = FetchDescriptor<Sound>()
-        let count = (try? context.fetchCount(descriptor)) ?? 0
-        guard count == 0 else {
-            print("✅ Sound seed zaten mevcut (\(count) ses)")
+        let existingSounds = (try? context.fetch(descriptor)) ?? []
+        
+        guard existingSounds.isEmpty else {
+            // Zaten seed edilmiş, verileri SoundDataMap ile eşitleyip güncelle
+            var updatedCount = 0
+            for sound in existingSounds {
+                if let mappedTrack = SoundDataMap.track(forFilename: sound.fileName) {
+                    let category = SoundDataMap.allSections.first { $0.tracks.contains(mappedTrack) }?.category ?? sound.category
+                    
+                    var didUpdate = false
+                    
+                    if sound.displayName != mappedTrack.displayName {
+                        sound.displayName = mappedTrack.displayName
+                        didUpdate = true
+                    }
+                    if sound.soundDescription != mappedTrack.description {
+                        sound.soundDescription = mappedTrack.description
+                        didUpdate = true
+                    }
+                    if sound.categoryRawValue != category.rawValue {
+                        sound.categoryRawValue = category.rawValue
+                        didUpdate = true
+                    }
+                    if sound.isPremium != mappedTrack.isPremium {
+                        sound.isPremium = mappedTrack.isPremium
+                        didUpdate = true
+                    }
+                    if sound.sortOrder != mappedTrack.sortOrder {
+                        sound.sortOrder = mappedTrack.sortOrder
+                        didUpdate = true
+                    }
+                    
+                    if didUpdate {
+                        updatedCount += 1
+                    }
+                }
+            }
+            
+            if updatedCount > 0 {
+                try? context.save()
+                print("✅ \(updatedCount) mevcut ses dosyası SoundDataMap isimleriyle güncellendi")
+            } else {
+                print("✅ Sound seed zaten mevcut ve güncel (\(existingSounds.count) ses)")
+            }
             return
         }
         
@@ -29,28 +70,34 @@ enum SoundSeeder {
         let sortedURLs = soundURLs.sorted { $0.lastPathComponent < $1.lastPathComponent }
         
         for (index, url) in sortedURLs.enumerated() {
-            let fileNameWithExt = url.lastPathComponent
             let fileName = url.deletingPathExtension().lastPathComponent
             
-            let displayName = generateDisplayName(from: fileName)
-            let category = detectCategory(from: fileName)
-            let isPremium = index >= 15 // İlk 15 ses ücretsiz, geri kalanı premium
+            // Önce SoundDataMap'ten premium UI verisini ara
+            let mappedTrack = SoundDataMap.track(forFilename: fileName)
+            
+            let displayName = mappedTrack?.displayName ?? generateDisplayName(from: fileName)
+            let category = mappedTrack.flatMap { track in
+                SoundDataMap.allSections.first { $0.tracks.contains(track) }?.category
+            } ?? detectCategory(from: fileName)
+            let isPremium = mappedTrack?.isPremium ?? (index >= 15)
+            let sortOrder = mappedTrack?.sortOrder ?? index
             
             let sound = Sound(
                 identifier: fileName,
                 displayName: displayName,
+                soundDescription: mappedTrack?.description,
                 fileName: fileName,
                 fileExtension: "m4a",
                 category: category,
                 durationInSeconds: 60,
                 isPremium: isPremium,
-                sortOrder: index
+                sortOrder: sortOrder
             )
             context.insert(sound)
         }
         
         try? context.save()
-        print("✅ \(sortedURLs.count) ses dosyası seed edildi")
+        print("✅ \(sortedURLs.count) ses dosyası seed edildi (SoundDataMap aktif)")
     }
     
     // MARK: - Display Name Generator
