@@ -3,153 +3,259 @@ import SwiftData
 import Charts
 
 // MARK: - Analytics Dashboard View
-/// Uyku analitiği ana ekranı.
-/// PRD §3.4: "SwiftData ile toplanan verilerin görselleştirilmesi."
-///
-/// Haftalık uyku grafiği, başarı puanı ve özet istatistikleri gösterir.
+/// Uyku analitiği ana ekranı (Antigravity Tasarımı).
 struct AnalyticsDashboardView: View {
     
-    @Environment(AppState.self) private var appState
-    @Query(sort: \SleepSession.startedAt, order: .reverse) private var sessions: [SleepSession]
-    @Query private var allSettings: [UserSettings]
+    @State private var showPaywall = false
     
-    private var baby: Baby? { allSettings.first?.baby }
-    
-    /// Son 7 günün oturumları
-    private var weekSessions: [SleepSession] {
-        let weekAgo = Date.now.daysAgo(7)
-        return sessions.filter {
-            $0.startedAt >= weekAgo && $0.endedAt != nil
-        }
+    // Geçici Dummy Data
+    private struct DailySleep: Identifiable {
+        let id = UUID()
+        let day: String
+        let hours: Double
     }
     
-    /// Toplam uyku süresi (bu hafta, saat)
-    private var totalSleepHours: Double {
-        weekSessions.compactMap(\.durationInMinutes).reduce(0, +) / 60.0
-    }
-    
-    /// Ortalama oturum süresi (dakika)
-    private var averageSessionMinutes: Double {
-        let durations = weekSessions.compactMap(\.durationInMinutes)
-        guard !durations.isEmpty else { return 0 }
-        return durations.reduce(0, +) / Double(durations.count)
-    }
-    
-    /// Toplam kesinti sayısı
-    private var totalInterruptions: Int {
-        weekSessions.reduce(0) { $0 + $1.interruptionCount }
-    }
+    private let dummyChartData: [DailySleep] = [
+        DailySleep(day: "Pzt", hours: 11.0),
+        DailySleep(day: "Sal", hours: 12.5),
+        DailySleep(day: "Çar", hours: 13.0),
+        DailySleep(day: "Per", hours: 12.2),
+        DailySleep(day: "Cum", hours: 14.1),
+        DailySleep(day: "Cmt", hours: 13.5),
+        DailySleep(day: "Paz", hours: 12.5)
+    ]
     
     var body: some View {
         ZStack {
-            GradientBackground()
+            // Gradient Background
+            LinearGradient(
+                colors: [Color(red: 0.08, green: 0.08, blue: 0.15), Color(red: 0.12, green: 0.1, blue: 0.25)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
             
             ScrollView(showsIndicators: false) {
-                VStack(spacing: AppTheme.spacingLG) {
-                    // Başlık
-                    headerSection
-                        .padding(.top, AppTheme.spacingMD)
+                VStack(spacing: 32) {
+                    smartInsightCard
+                        .padding(.top, 16)
                     
-                    // Özet kartları
-                    summaryCards
+                    antigravityRings
                     
-                    // Haftalık grafik
-                    SleepChartView(sessions: weekSessions)
+                    softTrendChart
                     
-                    // Başarı puanı
-                    SuccessScoreView(sessions: weekSessions)
+                    proLayer
                     
-                    // Haftalık rapor
-                    WeeklyReportView(
-                        totalHours: totalSleepHours,
-                        avgMinutes: averageSessionMinutes,
-                        sessionCount: weekSessions.count,
-                        interruptions: totalInterruptions
-                    )
-                    
-                    Spacer(minLength: 100)
+                    Spacer(minLength: 80)
                 }
-                .padding(.horizontal, AppTheme.spacingMD)
+                .padding(.horizontal, 20)
             }
+        }
+        .sheet(isPresented: $showPaywall) {
+            PaywallView()
         }
     }
     
-    // MARK: - Header
-    
-    private var headerSection: some View {
-        VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-            Text("Uyku Analitiği")
+    // MARK: - 1. Akıllı İçgörü Kartı
+    private var smartInsightCard: some View {
+        let babyName = "Beren" // Şimdilik dummy, ileride SwiftData'dan gelecek
+        return HStack(alignment: .top, spacing: 16) {
+            Image(systemName: "sparkles")
+                .foregroundStyle(Color(red: 0.85, green: 0.71, blue: 0.89)) // Lavanta
                 .font(.title2)
-                .fontWeight(.bold)
-                .foregroundStyle(AppTheme.textPrimary)
             
-            Text("Son 7 günlük uyku verileriniz")
+            Text("\(babyName) son 3 gündür gündüz uykularında 'Kozmik Rahim' frekansıyla %40 daha hızlı uykuya dalıyor.")
                 .font(.subheadline)
-                .foregroundStyle(AppTheme.textSecondary)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, AppTheme.spacingSM)
-    }
-    
-    // MARK: - Summary Cards
-    
-    private var summaryCards: some View {
-        HStack(spacing: AppTheme.spacingSM) {
-            SummaryCard(
-                icon: "clock.fill",
-                title: "Toplam",
-                value: String(format: "%.1f sa", totalSleepHours),
-                color: AppTheme.accentPrimary
-            )
+                .lineSpacing(4)
+                .foregroundStyle(.white.opacity(0.9))
             
-            SummaryCard(
-                icon: "moon.fill",
-                title: "Oturum",
-                value: "\(weekSessions.count)",
-                color: AppTheme.accentSecondary
-            )
-            
-            SummaryCard(
-                icon: "bell.slash.fill",
-                title: "Kesinti",
-                value: "\(totalInterruptions)",
-                color: totalInterruptions < 5 ? AppTheme.success : AppTheme.warning
-            )
+            Spacer(minLength: 0)
         }
+        .padding(20)
+        .background(.ultraThinMaterial)
+        .environment(\.colorScheme, .dark)
+        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .shadow(color: Color(red: 0.85, green: 0.71, blue: 0.89).opacity(0.15), radius: 15, x: 0, y: 8)
     }
-}
 
-// MARK: - Summary Card
-private struct SummaryCard: View {
-    let icon: String
-    let title: String
-    let value: String
-    let color: Color
-    
-    var body: some View {
-        GlassCard(cornerRadius: AppTheme.cornerRadiusMD, padding: AppTheme.spacingSM) {
-            VStack(spacing: AppTheme.spacingXS) {
-                Image(systemName: icon)
-                    .font(.title3)
-                    .foregroundStyle(color)
+    // MARK: - 2. Antigravity Uyku Halkaları
+    private var antigravityRings: some View {
+        VStack(spacing: 24) {
+            ZStack {
+                // Dış Halka Zemin
+            Circle()
+                .stroke(Color.indigo.opacity(0.2), lineWidth: 16)
+                .frame(width: 220, height: 220)
+            
+            // Dış Halka İlerleme
+            Circle()
+                .trim(from: 0, to: 0.85) // 14 hedefin 12.5'i gibi
+                .stroke(
+                    AngularGradient(
+                        colors: [Color.indigo, Color(red: 0.85, green: 0.71, blue: 0.89)],
+                        center: .center,
+                        startAngle: .degrees(-90),
+                        endAngle: .degrees(270)
+                    ),
+                    style: StrokeStyle(lineWidth: 16, lineCap: .round)
+                )
+                .frame(width: 220, height: 220)
+                .rotationEffect(.degrees(-90))
+                .shadow(color: Color.indigo.opacity(0.4), radius: 10, x: 0, y: 0)
+            
+            // İç Halka Zemin
+            Circle()
+                .stroke(Color.purple.opacity(0.1), lineWidth: 12)
+                .frame(width: 170, height: 170)
+            
+            // İç Halka İlerleme
+            Circle()
+                .trim(from: 0, to: 0.6)
+                .stroke(
+                    AngularGradient(
+                        colors: [Color.purple, Color.blue],
+                        center: .center,
+                        startAngle: .degrees(-90),
+                        endAngle: .degrees(270)
+                    ),
+                    style: StrokeStyle(lineWidth: 12, lineCap: .round)
+                )
+                .frame(width: 170, height: 170)
+                .rotationEffect(.degrees(-90))
+            
+            // Merkez Metinleri
+            VStack(spacing: 4) {
+                Text("12.5 Saat")
+                    .font(.system(size: 32, weight: .bold, design: .rounded))
+                    .foregroundStyle(.white)
                 
-                Text(value)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundStyle(AppTheme.textPrimary)
-                
-                Text(title)
-                    .font(.caption2)
-                    .foregroundStyle(AppTheme.textTertiary)
+                Text("Hedef: 14 Saat")
+                    .font(.subheadline)
+                    .foregroundStyle(.white.opacity(0.6))
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, AppTheme.spacingXS)
+            }
+            
+            // Lejant (Açıklama)
+            HStack(spacing: 24) {
+                HStack(spacing: 6) {
+                    Circle().fill(Color.indigo).frame(width: 8, height: 8)
+                    Text("Toplam Uyku").font(.caption).foregroundStyle(.white.opacity(0.8))
+                }
+                HStack(spacing: 6) {
+                    Circle().fill(Color.purple).frame(width: 8, height: 8)
+                    Text("Kesintisiz Uyku").font(.caption).foregroundStyle(.white.opacity(0.8))
+                }
+            }
+        }
+        .padding(.vertical, 16)
+    }
+
+    // MARK: - 3. Yumuşak Trend Grafiği (Charts)
+    private var softTrendChart: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Son 7 Gün")
+                .font(.headline)
+                .foregroundStyle(.white)
+            
+            Chart(dummyChartData) { item in
+                AreaMark(
+                    x: .value("Gün", item.day),
+                    y: .value("Saat", item.hours)
+                )
+                .interpolationMethod(.catmullRom)
+                .foregroundStyle(
+                    LinearGradient(
+                        colors: [Color(red: 0.85, green: 0.71, blue: 0.89).opacity(0.5), Color.indigo.opacity(0.0)],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
+                
+                LineMark(
+                    x: .value("Gün", item.day),
+                    y: .value("Saat", item.hours)
+                )
+                .interpolationMethod(.catmullRom)
+                .foregroundStyle(Color(red: 0.85, green: 0.71, blue: 0.89))
+                .lineStyle(StrokeStyle(lineWidth: 3))
+            }
+            .frame(height: 180)
+            .chartXAxis {
+                AxisMarks(position: .bottom) { _ in
+                    AxisValueLabel()
+                        .foregroundStyle(.white.opacity(0.6))
+                }
+            }
+            .chartYAxis {
+                AxisMarks(position: .leading, values: [10, 12, 14, 16]) { _ in
+                    AxisGridLine(stroke: StrokeStyle(lineWidth: 1, dash: [4]))
+                        .foregroundStyle(.white.opacity(0.1))
+                    AxisValueLabel()
+                        .foregroundStyle(.white.opacity(0.6))
+                }
+            }
+        }
+        .padding(20)
+        .background(.ultraThinMaterial)
+        .environment(\.colorScheme, .dark)
+        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+    }
+
+    // MARK: - 4. Pro Katmanı (Freemium Blur Kancası)
+    private var proLayer: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Derin Analizler")
+                .font(.headline)
+                .foregroundStyle(.white)
+            
+            ZStack {
+                // Fake Blurred Content
+                VStack(spacing: 16) {
+                    ForEach(0..<2, id: \.self) { _ in
+                        HStack {
+                            Circle().fill(.white.opacity(0.2)).frame(width: 40, height: 40)
+                            VStack(alignment: .leading, spacing: 6) {
+                                RoundedRectangle(cornerRadius: 4).fill(.white.opacity(0.2)).frame(width: 120, height: 12)
+                                RoundedRectangle(cornerRadius: 4).fill(.white.opacity(0.1)).frame(width: 80, height: 10)
+                            }
+                            Spacer()
+                            RoundedRectangle(cornerRadius: 4).fill(.white.opacity(0.2)).frame(width: 40, height: 20)
+                        }
+                        .padding()
+                        .background(.white.opacity(0.05))
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                    }
+                }
+                .blur(radius: 8) // Gizemli Blur Etkisi
+                .allowsHitTesting(false) // Alt katman tıklamaları çalmasın
+                
+                // Pro CTA Butonu
+                Button(action: {
+                    showPaywall = true
+                }) {
+                    HStack(spacing: 8) {
+                        Image(systemName: "lock.fill")
+                            .foregroundStyle(Color(red: 1.0, green: 0.85, blue: 0.4)) // Altın/Sarı
+                        
+                        Text("Derin analizler için Premium'a geç")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.white)
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 14)
+                    .background(Color.black.opacity(0.6))
+                    .clipShape(Capsule())
+                    .overlay(
+                        Capsule().stroke(Color(red: 1.0, green: 0.85, blue: 0.4).opacity(0.5), lineWidth: 1)
+                    )
+                    .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 5)
+                }
+            }
         }
     }
 }
 
 #Preview {
     AnalyticsDashboardView()
-        .environment(AppState())
-        .modelContainer(PreviewSampleData.container)
 }

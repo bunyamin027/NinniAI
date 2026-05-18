@@ -41,6 +41,12 @@ struct NinniAIApp: App {
                     let context = sharedModelContainer.mainContext
                     SoundSeeder.seedIfNeeded(context: context)
                 }
+                .onOpenURL { url in
+                    if url.host == "stopSleep" {
+                        LiveActivityManager.shared.stopLiveActivity()
+                        // Optional: also stop audio playback if needed
+                    }
+                }
         }
         .modelContainer(sharedModelContainer)
     }

@@ -49,3 +49,37 @@ targets:
         UIBackgroundModes:
           - audio
         NSMicrophoneUsageDescription: "NinniAI ses kayıt özelliği için mikrofon erişimi gerektirir."
+        NSSupportsLiveActivities: YES
+        CFBundleURLTypes:
+          - CFBundleURLSchemes:
+              - ninniAI
+            CFBundleURLName: com.ninni.ai
+    dependencies:
+      - target: NinniAIWidget
+
+  NinniAIWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: NinniAIWidget
+      - path: NinniAI/Models/SleepAttributes.swift
+    info:
+      path: NinniAIWidget/Info.plist
+      properties:
+        CFBundleDevelopmentRegion: "$(DEVELOPMENT_LANGUAGE)"
+        CFBundleExecutable: "$(EXECUTABLE_NAME)"
+        CFBundleIdentifier: "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        CFBundleInfoDictionaryVersion: "6.0"
+        CFBundleName: "$(PRODUCT_NAME)"
+        CFBundlePackageType: "XPC!"
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        NSExtension:
+          NSExtensionPointIdentifier: "com.apple.widgetkit-extension"
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: NO
+        PRODUCT_BUNDLE_IDENTIFIER: com.ninni.ai.Widget
+        INFOPLIST_KEY_CFBundleDisplayName: NinniAI Widget
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1,2"
