@@ -223,41 +223,115 @@ struct SettingsView: View {
         }
     }
     
-    // MARK: - About Section
+    // MARK: - About Section (Antigravity Tasarım)
     
     private var aboutSection: some View {
-        GlassCard {
-            VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-                settingSectionTitle("Hakkında", icon: "info.circle.fill")
+        VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
+            settingSectionTitle("Hakkında", icon: "info.circle.fill")
+                .padding(.leading, 4)
+            
+            VStack(spacing: 10) {
+                premiumAboutLinkRow(
+                    title: "Gizlilik Politikası",
+                    icon: "lock.shield.fill",
+                    iconColor: Color(red: 0.7, green: 0.5, blue: 1.0),
+                    url: URL(string: "https://ninniai.com/privacy")!
+                )
                 
-                settingLink("Gizlilik Politikası", url: AppConstants.privacyPolicyURL)
-                settingLink("Kullanım Şartları", url: AppConstants.termsOfServiceURL)
-                settingLink("Destek", url: AppConstants.supportURL)
+                premiumAboutLinkRow(
+                    title: "Kullanım Şartları (EULA)",
+                    icon: "doc.text.fill",
+                    iconColor: Color(red: 0.4, green: 0.8, blue: 1.0),
+                    url: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
+                )
                 
-                Button { showLegal = true } label: {
-                    HStack {
-                        Text("Yasal Bilgiler")
-                            .font(.subheadline)
+                premiumAboutLinkRow(
+                    title: "Destek & Geri Bildirim",
+                    icon: "envelope.fill",
+                    iconColor: Color(red: 0.4, green: 0.9, blue: 0.7),
+                    url: AppConstants.supportEmailURL
+                )
+                
+                Button {
+                    showLegal = true
+                } label: {
+                    HStack(spacing: AppTheme.spacingSM) {
+                        Image(systemName: "building.columns.fill")
+                            .font(.headline)
+                            .foregroundStyle(Color(red: 1.0, green: 0.7, blue: 0.3))
+                            .frame(width: 28)
+                        
+                        Text("Yasal Bilgiler & Lisanslar")
+                            .font(.subheadline.weight(.medium))
                             .foregroundStyle(AppTheme.textPrimary)
+                        
                         Spacer()
+                        
                         Image(systemName: "chevron.right")
                             .font(.caption)
                             .foregroundStyle(AppTheme.textTertiary)
                     }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                    .background(
+                        RoundedRectangle(cornerRadius: AppTheme.cornerRadiusMD, style: .continuous)
+                            .fill(.white.opacity(0.06))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: AppTheme.cornerRadiusMD, style: .continuous)
+                            .stroke(.white.opacity(0.1), lineWidth: 1)
+                    )
+                    .shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 4)
                 }
-                
-                HStack {
-                    Text("Sürüm")
-                        .font(.subheadline)
-                        .foregroundStyle(AppTheme.textPrimary)
-                    Spacer()
-                    Text("\(AppConstants.appVersion) (\(AppConstants.appBuild))")
-                        .font(.caption)
-                        .foregroundStyle(AppTheme.textTertiary)
-                }
+                .buttonStyle(.plain)
+            }
+            
+            // Dinamik Sürüm Bilgisi
+            HStack {
+                Spacer()
+                let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
+                let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+                Text("Sürüm \(version) (Build \(build))")
+                    .font(.caption2.weight(.medium))
+                    .foregroundStyle(.white.opacity(0.35))
+                    .padding(.top, 6)
+                Spacer()
             }
         }
     }
+    
+    private func premiumAboutLinkRow(title: String, icon: String, iconColor: Color, url: URL) -> some View {
+        Link(destination: url) {
+            HStack(spacing: AppTheme.spacingSM) {
+                Image(systemName: icon)
+                    .font(.headline)
+                    .foregroundStyle(iconColor)
+                    .frame(width: 28)
+                
+                Text(title)
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(AppTheme.textPrimary)
+                
+                Spacer()
+                
+                Image(systemName: "arrow.up.right")
+                    .font(.caption)
+                    .foregroundStyle(AppTheme.textTertiary)
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 14)
+            .background(
+                RoundedRectangle(cornerRadius: AppTheme.cornerRadiusMD, style: .continuous)
+                    .fill(.white.opacity(0.06))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: AppTheme.cornerRadiusMD, style: .continuous)
+                    .stroke(.white.opacity(0.1), lineWidth: 1)
+            )
+            .shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 4)
+        }
+    }
+
     
     // MARK: - Danger Zone
     

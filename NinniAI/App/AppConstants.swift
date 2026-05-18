@@ -83,7 +83,8 @@ enum AppConstants {
     // MARK: - URLs
     
     static let privacyPolicyURL = URL(string: "https://ninni.ai/privacy")!
-    static let termsOfServiceURL = URL(string: "https://ninni.ai/terms")!
-    static let supportURL = URL(string: "https://ninni.ai/support")!
+    static let termsOfServiceURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
+    static let supportURL = URL(string: "mailto:bunyaminkahraman027@gmail.com")!
+    static let supportEmailURL = URL(string: "mailto:bunyaminkahraman027@gmail.com")!
     static let instagramURL = URL(string: "https://instagram.com/ninniai")!
 }

@@ -274,6 +274,8 @@ struct PaywallView: View {
                 Link("Gizlilik Politikası", destination: AppConstants.privacyPolicyURL)
                 Text("•").foregroundStyle(AppTheme.textTertiary)
                 Link("Kullanım Şartları", destination: AppConstants.termsOfServiceURL)
+                Text("•").foregroundStyle(AppTheme.textTertiary)
+                Link("Destek", destination: AppConstants.supportEmailURL)
             }
             .font(.system(size: 10))
             .foregroundStyle(AppTheme.accentPrimary.opacity(0.7))
