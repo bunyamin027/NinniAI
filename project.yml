@@ -46,6 +46,8 @@ targets:
     info:
       path: NinniAI/Info.plist
       properties:
+        CFBundleIconName: AppIcon
+        CFBundleDisplayName: NinniAI
         UIBackgroundModes:
           - audio
         NSMicrophoneUsageDescription: "NinniAI ses kayıt özelliği için mikrofon erişimi gerektirir."
@@ -66,6 +68,7 @@ targets:
     info:
       path: NinniAIWidget/Info.plist
       properties:
+        CFBundleDisplayName: NinniAI Widget
         CFBundleDevelopmentRegion: "$(DEVELOPMENT_LANGUAGE)"
         CFBundleExecutable: "$(EXECUTABLE_NAME)"
         CFBundleIdentifier: "$(PRODUCT_BUNDLE_IDENTIFIER)"
