@@ -14,16 +14,8 @@ struct DashboardView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var allSettings: [UserSettings]
     @Query(sort: \SleepSession.startedAt, order: .reverse) private var recentSessions: [SleepSession]
-    @Query(
-        filter: #Predicate<Milestone> { !$0.isSeen },
-        sort: \Milestone.achievedAt,
-        order: .reverse
-    ) private var unseenMilestones: [Milestone]
     
     @Query private var allSounds: [Sound]
-    
-    @State private var showMilestoneCard = false
-    @State private var activeMilestone: Milestone?
     
     // Agentic Dashboard State
     @AppStorage("lastWakeUpTime") private var lastWakeUpTime: Double = Date.now.timeIntervalSince1970
@@ -52,23 +44,13 @@ struct DashboardView: View {
                 normalDashboard
             }
             
-            // Milestone kutlama overlay
-            if showMilestoneCard, let milestone = activeMilestone {
-                MilestoneCardView(
-                    milestone: milestone,
-                    onDismiss: dismissMilestone
-                )
-                .transition(.opacity.combined(with: .scale(scale: 0.9)))
-                .zIndex(10)
-            }
         }
         .onAppear {
             refreshContext()
-            checkForMilestones()
         }
         .sheet(isPresented: $showTimePickerSheet) {
             timePickerSheet
-                .presentationDetents([.fraction(0.3)])
+                .presentationDetents([.fraction(0.45)])
                 .presentationDragIndicator(.visible)
         }
     }
@@ -428,25 +410,6 @@ struct DashboardView: View {
     
     private func refreshContext() {
         appState.contextEngine.resolve(baby: baby)
-    }
-    
-    private func checkForMilestones() {
-        if let milestone = unseenMilestones.first {
-            activeMilestone = milestone
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                withAnimation(AppTheme.animationSlow) {
-                    showMilestoneCard = true
-                }
-            }
-        }
-    }
-    
-    private func dismissMilestone() {
-        activeMilestone?.isSeen = true
-        withAnimation(AppTheme.animationSlow) {
-            showMilestoneCard = false
-            activeMilestone = nil
-        }
     }
     
     private func formatTime(_ seconds: TimeInterval) -> String {

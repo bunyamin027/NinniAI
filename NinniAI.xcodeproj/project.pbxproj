@@ -50,7 +50,6 @@
 		6684DF0B1B58D09DB504EA7E /* shadowsandechoes-the-womb-dark-ambient-background-mystery-music-155682.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7600E53BB3BDEE5AC605E418 /* shadowsandechoes-the-womb-dark-ambient-background-mystery-music-155682.m4a */; };
 		6A0945F3FD36789B951A0234 /* NowPlayableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8D25689C95D2CF9E11129 /* NowPlayableManager.swift */; };
 		6A22865BB4B82102F288BB58 /* tunetank-lullaby-dreamy-children-music-347722.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3B5C77FDB52DF45D12E085E7 /* tunetank-lullaby-dreamy-children-music-347722.m4a */; };
-		6B107A8100DA38C71EEB4CFA /* MilestoneCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57EDA94895016499BE321F5 /* MilestoneCardView.swift */; };
 		6E63A91C54760D304095FC1D /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F896567CAB113271C6172569 /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a */; };
 		6E77F9783E202F491321A9F8 /* the_mountain-baby-sleep-143300.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5EFA6F42ABB723D806D73D91 /* the_mountain-baby-sleep-143300.m4a */; };
 		6F4A367FA87CE7D42636BD17 /* ContextResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40267CB0DF17CD10B285678 /* ContextResolver.swift */; };
@@ -256,7 +255,6 @@
 		D16B61E52DB929066BD6FCE5 /* PremiumGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumGuard.swift; sourceTree = "<group>"; };
 		D2B79CE5BDA2BBE82A1559D3 /* ceeprolific-kiss-the-rain-274811.m4a */ = {isa = PBXFileReference; path = "ceeprolific-kiss-the-rain-274811.m4a"; sourceTree = "<group>"; };
 		D2E4D847414D47D546667A00 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a */ = {isa = PBXFileReference; path = "nonenothingnowhere-639-hz-heart-chakra-156267.m4a"; sourceTree = "<group>"; };
-		D57EDA94895016499BE321F5 /* MilestoneCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCardView.swift; sourceTree = "<group>"; };
 		D8349971C343D101D16815E6 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		D879D9D6E49D15EB85787E4B /* SoundPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerView.swift; sourceTree = "<group>"; };
 		D8DF9FED1B8C579B9C7C5C2B /* relaxingtime-sleep-music-vol15-195425.m4a */ = {isa = PBXFileReference; path = "relaxingtime-sleep-music-vol15-195425.m4a"; sourceTree = "<group>"; };
@@ -360,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				DFD22A514C2E0605665537C5 /* DashboardView.swift */,
-				D57EDA94895016499BE321F5 /* MilestoneCardView.swift */,
 				41F801049DD4E36B12FDE40A /* NightModeView.swift */,
 				9EAD80250AA1A9E83DF8C49A /* QuickActionGrid.swift */,
 			);
@@ -802,7 +799,6 @@
 				EA4C6FB3CBAE5F6F0CC8047D /* LegalView.swift in Sources */,
 				0435E15D8B052E359B1A4D5A /* LiveActivityManager.swift in Sources */,
 				11C52438F26EE58D8B5F216C /* Milestone.swift in Sources */,
-				6B107A8100DA38C71EEB4CFA /* MilestoneCardView.swift in Sources */,
 				C93214BE7F7344CAB060CF5E /* MilestoneTracker.swift in Sources */,
 				35EC9F1D0DB55394CA2E8822 /* MiniPlayerBar.swift in Sources */,
 				D75263F83767EF164D5B1350 /* NightModeResolver.swift in Sources */,
