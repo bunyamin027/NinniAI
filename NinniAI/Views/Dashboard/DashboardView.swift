@@ -77,11 +77,11 @@ struct DashboardView: View {
     
     private var normalDashboard: some View {
         ZStack {
-            // Gece mavisi / Antigravity gradient arkaplan
+            // Theme: Deep navy blue (#020617 / #0f172a)
             LinearGradient(
-                colors: [Color(red: 0.08, green: 0.08, blue: 0.15), Color(red: 0.12, green: 0.1, blue: 0.25)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
+                colors: [Color(hex: "020617"), Color(hex: "0F172A")],
+                startPoint: .top,
+                endPoint: .bottom
             )
             .ignoresSafeArea()
             
@@ -106,172 +106,187 @@ struct DashboardView: View {
     // MARK: - Smart Header
     
     private var smartHeaderSection: some View {
-        VStack(alignment: .leading, spacing: AppTheme.spacingXS) {
-            let babyName = baby?.name ?? "Bebeğiniz"
-            let ageText = baby != nil ? "\(baby!.ageInMonths) aylık" : ""
+        VStack(alignment: .leading, spacing: 6) {
+            let babyName = baby?.name ?? "Beren"
+            let ageText = baby != nil ? "\(baby!.ageInMonths) aylık" : "7 aylık"
+            let recommended = recommendedSleep
             
-            Text("\(context.greeting), \(babyName) bugün tam \(ageText).")
-                .font(.system(size: 24, weight: .semibold, design: .rounded))
+            Text("\(babyName) nasıl? \(babyName) bugün tam \(ageText).")
+                .font(.system(size: 26, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
-                .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 2)
+                .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
             
-            Text("Bugün hedef: \(recommendedSleep) saat uyku")
+            Text("Bugün hedef: \(recommended) saat uyku")
                 .font(.subheadline)
-                .fontWeight(.medium)
-                .foregroundStyle(.white.opacity(0.7))
+                .foregroundStyle(Color(hex: "94A3B8")) // Light gray
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, AppTheme.spacingSM)
+        .padding(.horizontal, 4)
     }
     
     // MARK: - Agent Suggestion Card
     
+    @State private var pulseGlow = false
+    
+    private var suggestedSound: Sound? {
+        if context.isNightMode {
+            return allSounds.first(where: { $0.displayName.contains("Anne Karnı") || $0.categoryRawValue == "white_noise" }) ?? allSounds.first
+        } else {
+            return allSounds.first(where: { $0.displayName.contains("Okyanus") || $0.categoryRawValue == "nature" }) ?? allSounds.first
+        }
+    }
+    
     private var agentSuggestionCard: some View {
-        VStack(spacing: AppTheme.spacingMD) {
-            HStack {
-                Image(systemName: "sparkles")
-                    .foregroundStyle(Color(red: 0.85, green: 0.71, blue: 0.89)) // Pastel lavanta
-                    .font(.title2)
-                
-                Text(isBabyAwake ? "Uyku Koçu" : "Uyku Modu")
-                    .font(.headline)
+        VStack(spacing: 24) {
+            // Header
+            HStack(alignment: .top) {
+                // Status Badge
+                Text(isBabyAwake ? "Uyanık" : "Uyuyor")
+                    .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(
+                        ZStack {
+                            Capsule()
+                                .fill(Color(hex: "0F172A").opacity(0.8))
+                            Capsule()
+                                .stroke(isBabyAwake ? AppTheme.accentPrimary : Color.indigo, lineWidth: 1)
+                        }
+                    )
+                    .shadow(color: isBabyAwake ? AppTheme.accentPrimary.opacity(pulseGlow ? 0.6 : 0.2) : Color.indigo.opacity(pulseGlow ? 0.6 : 0.2), radius: pulseGlow ? 12 : 4)
+                    .onAppear {
+                        withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
+                            pulseGlow = true
+                        }
+                    }
                 
                 Spacer()
                 
-                if isBabyAwake {
-                    Text("Uyanık")
-                        .font(.caption2).bold()
-                        .padding(.horizontal, 10).padding(.vertical, 5)
-                        .background(Color.green.opacity(0.2))
-                        .foregroundStyle(.green)
-                        .clipShape(Capsule())
-                } else {
-                    Text("Uyuyor")
-                        .font(.caption2).bold()
-                        .padding(.horizontal, 10).padding(.vertical, 5)
-                        .background(Color.indigo.opacity(0.3))
-                        .foregroundStyle(Color(red: 0.7, green: 0.7, blue: 1.0))
-                        .clipShape(Capsule())
-                }
-            }
-            
-            VStack(spacing: AppTheme.spacingSM) {
-                if isBabyAwake {
-                    Text("Tahmini Uyku Vakti")
-                        .font(.subheadline)
-                        .foregroundStyle(.white.opacity(0.7))
-                    
-                    Text(nextSleepWindowText)
-                        .font(.system(size: 34, weight: .bold, design: .rounded))
-                        .foregroundStyle(Color(red: 0.85, green: 0.71, blue: 0.89))
-                        .shadow(color: Color(red: 0.85, green: 0.71, blue: 0.89).opacity(0.5), radius: 10, x: 0, y: 0)
-                    
-                    Text("Uyanık kaldığı süreye ve gelişim ayına göre hesaplandı.")
-                        .font(.system(size: 11, weight: .regular))
-                        .foregroundStyle(.white.opacity(0.4))
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 4)
-                } else {
-                    Text("Şu An Uykuda")
-                        .font(.subheadline)
-                        .foregroundStyle(.white.opacity(0.7))
-                    
-                    Text(currentSleepDurationText)
-                        .font(.system(size: 34, weight: .bold, design: .rounded))
-                        .foregroundStyle(Color(red: 0.6, green: 0.8, blue: 1.0)) // soft mavi
-                        .shadow(color: Color(red: 0.6, green: 0.8, blue: 1.0).opacity(0.5), radius: 10, x: 0, y: 0)
-                    
-                    Text("dinleniyor...")
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundStyle(.white.opacity(0.4))
-                        .padding(.top, 2)
-                }
-            }
-            .padding(.vertical, AppTheme.spacingMD)
-            
-            if isBabyAwake {
-                Button(action: {
-                    if let oceanSound = allSounds.first(where: { $0.fileName == "soutera-cosmic-ocean-284361" }) {
-                        appState.audioEngine.play(sound: oceanSound)
-                    }
-                }) {
-                    HStack(spacing: AppTheme.spacingSM) {
-                        Image(systemName: "play.circle.fill")
-                            .font(.title3)
-                        Text("Esnemeler başlamadan okyanus sesini hazırlayalım.")
-                            .font(.caption)
-                            .fontWeight(.medium)
-                    }
-                    .padding(.horizontal, AppTheme.spacingMD)
-                    .padding(.vertical, AppTheme.spacingSM)
-                    .foregroundStyle(.white)
-                    .background(.ultraThinMaterial)
-                    .environment(\.colorScheme, .dark)
-                    .clipShape(Capsule())
-                    .shadow(color: Color(red: 0.85, green: 0.71, blue: 0.89).opacity(0.3), radius: 8, x: 0, y: 4)
-                }
-                .buttonStyle(.plain)
-            } else {
-                Text("Büyüme hormonu salgılanıyor, rüyalara daldı.")
+                Text("UYKU KOÇU (PRO)")
                     .font(.caption)
-                    .fontWeight(.medium)
-                    .foregroundStyle(Color(red: 0.6, green: 0.8, blue: 1.0).opacity(0.9))
-                    .multilineTextAlignment(.center)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color(hex: "94A3B8"))
+                    .tracking(1)
+            }
+            
+            // Center Content
+            VStack(spacing: 8) {
+                Text(isBabyAwake ? "Tahmini Uyku Vakti" : "Şu An Uykuda")
+                    .font(.subheadline)
+                    .foregroundStyle(Color(hex: "94A3B8"))
+                
+                Text(isBabyAwake ? nextSleepWindowText : currentSleepDurationText)
+                    .font(.system(size: 38, weight: .bold, design: .rounded))
+                    .foregroundStyle(.white)
+            }
+            
+            // Subtle Player Interface
+            if isBabyAwake {
+                HStack {
+                    Text(suggestedSound?.displayName ?? "Okyanus Sesi")
+                        .font(.subheadline)
+                        .foregroundStyle(Color(hex: "94A3B8"))
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        if let sound = suggestedSound {
+                            appState.audioEngine.play(sound: sound)
+                        }
+                        appState.selectedTab = .player
+                    }) {
+                        Image(systemName: "play.fill")
+                            .font(.system(size: 14))
+                            .foregroundStyle(.white)
+                            .frame(width: 32, height: 32)
+                            .background(Color.white.opacity(0.1))
+                            .clipShape(Circle())
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+                .background(Color.white.opacity(0.04))
+                .clipShape(RoundedRectangle(cornerRadius: 16))
             }
         }
-        .padding(AppTheme.spacingLG)
-        .background(.ultraThinMaterial)
+        .padding(24)
+        .background(Color(hex: "1E293B").opacity(0.5)) // Dark elegant card
         .environment(\.colorScheme, .dark)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusXL, style: .continuous))
-        .shadow(color: .black.opacity(0.2), radius: 25, x: 0, y: 12)
+        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .stroke(Color.white.opacity(0.05), lineWidth: 1)
+        )
+        .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 10)
+        .premiumLocked()
     }
     
     // MARK: - Quick Trackers
     
     private var quickTrackersSection: some View {
-        HStack(spacing: AppTheme.spacingMD) {
+        HStack(spacing: 16) {
+            // Left: Amber glowing Sun
             Button(action: {
                 selectedTime = Date()
                 isSettingWakeTime = true
                 showTimePickerSheet = true
             }) {
-                HStack {
+                VStack(spacing: 12) {
                     Image(systemName: "sun.max.fill")
-                        .foregroundStyle(.yellow)
-                    Text("Bebek Uyandı")
+                        .font(.title2)
+                        .foregroundStyle(Color(hex: "FBBF24"))
+                        .shadow(color: Color(hex: "FBBF24").opacity(0.6), radius: 8)
+                    
+                    Text("Bebek\nUyandı")
                         .font(.subheadline)
-                        .fontWeight(.medium)
-                        .foregroundStyle(.white)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(Color(hex: "FDE68A"))
+                        .multilineTextAlignment(.center)
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, AppTheme.spacingMD)
-                .background(.ultraThinMaterial)
-                .environment(\.colorScheme, .dark)
-                .clipShape(Capsule())
-                .shadow(color: isBabyAwake ? Color.yellow.opacity(0.15) : .clear, radius: 10, x: 0, y: 5)
+                .padding(.vertical, 24)
+                .background(
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color(hex: "452A0F").opacity(0.6)) // Amber dark base
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color(hex: "B45309").opacity(0.5), lineWidth: 1)
+                    }
+                )
+                .shadow(color: Color(hex: "B45309").opacity(0.2), radius: 15, x: 0, y: 8)
             }
             .buttonStyle(.plain)
             
+            // Right: Indigo glowing Moon
             Button(action: {
                 selectedTime = Date()
                 isSettingWakeTime = false
                 showTimePickerSheet = true
             }) {
-                HStack {
+                VStack(spacing: 12) {
                     Image(systemName: "moon.stars.fill")
-                        .foregroundStyle(Color(red: 0.85, green: 0.71, blue: 0.89))
-                    Text("Bebek Uyudu")
+                        .font(.title2)
+                        .foregroundStyle(Color(hex: "A78BFA"))
+                        .shadow(color: Color(hex: "A78BFA").opacity(0.6), radius: 8)
+                    
+                    Text("Bebek\nUyudu")
                         .font(.subheadline)
-                        .fontWeight(.medium)
-                        .foregroundStyle(.white)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(Color(hex: "E0E7FF"))
+                        .multilineTextAlignment(.center)
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, AppTheme.spacingMD)
-                .background(.ultraThinMaterial)
-                .environment(\.colorScheme, .dark)
-                .clipShape(Capsule())
-                .shadow(color: !isBabyAwake ? Color(red: 0.85, green: 0.71, blue: 0.89).opacity(0.15) : .clear, radius: 10, x: 0, y: 5)
+                .padding(.vertical, 24)
+                .background(
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color(hex: "1E1B4B").opacity(0.6)) // Indigo dark base
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color(hex: "4338CA").opacity(0.5), lineWidth: 1)
+                    }
+                )
+                .shadow(color: Color(hex: "4338CA").opacity(0.2), radius: 15, x: 0, y: 8)
             }
             .buttonStyle(.plain)
         }
@@ -280,22 +295,26 @@ struct DashboardView: View {
     // MARK: - Pediatric Coach Advice
     
     private var developmentCard: some View {
-        HStack(alignment: .top, spacing: AppTheme.spacingMD) {
+        HStack(alignment: .top, spacing: 16) {
             Image(systemName: "lightbulb.fill")
-                .foregroundStyle(.yellow)
-                .font(.title3)
+                .foregroundStyle(Color(hex: "FDE047")) // Soft yellow
+                .font(.title2)
+                .shadow(color: Color(hex: "FDE047").opacity(0.5), radius: 8)
             
-            Text(coachAdviceText)
-                .font(.footnote)
+            Text("Ayrılık Kaygısı Dönemi: Uykuya dalışta yanınızda olmak isteyebilir. Rutinleri koruyun.")
+                .font(.subheadline)
                 .lineSpacing(4)
-                .foregroundStyle(.white.opacity(0.85))
+                .foregroundStyle(Color(hex: "E2E8F0"))
             
             Spacer(minLength: 0)
         }
-        .padding(AppTheme.spacingLG)
-        .background(.ultraThinMaterial)
-        .environment(\.colorScheme, .dark)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadiusLG, style: .continuous))
+        .padding(20)
+        .background(Color(hex: "334155").opacity(0.4)) // Soft dark gray
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .stroke(Color.white.opacity(0.05), lineWidth: 1)
+        )
     }
     
     // MARK: - Agentic Logic Helpers

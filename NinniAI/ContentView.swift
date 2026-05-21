@@ -9,6 +9,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var allSettings: [UserSettings]
     @State private var appState = AppState()
+    @State private var subscriptionManager = SubscriptionManager(storeKit: StoreKitManager())
     @State private var showOnboarding = true
     
     /// Onboarding tamamlanmış mı? (SwiftData'dan okunur)
@@ -30,6 +31,10 @@ struct ContentView: View {
             }
         }
         .environment(appState)
+        .environment(subscriptionManager)
+        .sheet(isPresented: $subscriptionManager.showPaywall) {
+            PaywallView()
+        }
         .onAppear {
             showOnboarding = !isOnboardingDone
             appState.isOnboardingCompleted = isOnboardingDone

@@ -76,6 +76,7 @@
 		97D36F77E528297CED0E8298 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D2E4D847414D47D546667A00 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a */; };
 		996B45421E364E7DD36AAFA1 /* viacheslavstarostin-kids-baby-children-music-382060.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 71FDFF7816AE74815CFADCF7 /* viacheslavstarostin-kids-baby-children-music-382060.m4a */; };
 		9B74069AA08AE83B946E52F1 /* audiocoffee-positive-happy-kids-background-468931.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D6C7C22503D9A1989A012E4 /* audiocoffee-positive-happy-kids-background-468931.m4a */; };
+		9D92E7C56DECDC35F42C3CCC /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F945E10E52536CF07C750 /* SubscriptionManager.swift */; };
 		9DDAD149C6BF8125C1ED7E6E /* low_atmos-orbit-sleep-background-514712.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5056D993568264BBE09567C1 /* low_atmos-orbit-sleep-background-514712.m4a */; };
 		9F7F4D9F372FDB8DBD57A735 /* bearian-174hz-396hz-528hz-412308.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A60C79D41A2EC0D002D1B750 /* bearian-174hz-396hz-528hz-412308.m4a */; };
 		A05A1372C5C31277F212A01E /* SoundDataMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C299D202996DC3040DEEE /* SoundDataMap.swift */; };
@@ -90,6 +91,7 @@
 		B4D9E22CF23D3C55B7CA2793 /* soutera-cosmic-ocean-284361.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CA874738CC6FC61A16EB2CFF /* soutera-cosmic-ocean-284361.m4a */; };
 		B5E9A870A51A669943529907 /* multimusicas-sweet-samba-that-is-contagious-486886.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 93ADED84898922D4BF27BCE8 /* multimusicas-sweet-samba-that-is-contagious-486886.m4a */; };
 		B6F82FD2A5EE0E6736E7B4C2 /* delon_boomkin-baby-sleep-music-1-sound-effects-297159.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 75E5321FC2CD24F272C7FDB4 /* delon_boomkin-baby-sleep-music-1-sound-effects-297159.m4a */; };
+		B858556F674F559E215657C8 /* PremiumLockModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC5D3CBF9E642545F26CFFD /* PremiumLockModifier.swift */; };
 		BE92471FDBE85A140F5FBA66 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D879D9D6E49D15EB85787E4B /* SoundPickerView.swift */; };
 		C1DF83387061DFFC4D5989BB /* tunetank-music-box-sleep-lullaby-349471.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A5C1BF69CC392E1EE7852E6D /* tunetank-music-box-sleep-lullaby-349471.m4a */; };
 		C2AE2266692A282A689E2A60 /* don_vitaliy-time-heartbeat-fusion-169017.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9D6A692F8FA4C9ACCC05CB88 /* don_vitaliy-time-heartbeat-fusion-169017.m4a */; };
@@ -198,6 +200,7 @@
 		651668447BABA1802A1017F1 /* lorenzobuczek-sleepy-rain-116521.m4a */ = {isa = PBXFileReference; path = "lorenzobuczek-sleepy-rain-116521.m4a"; sourceTree = "<group>"; };
 		6956FAE358BD77218EEAC8F2 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		6A40B44CBD77A317A82625A7 /* SleepProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepProblem.swift; sourceTree = "<group>"; };
+		6AC5D3CBF9E642545F26CFFD /* PremiumLockModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumLockModifier.swift; sourceTree = "<group>"; };
 		6DED68684B0E29FF736B93D7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7027983079D67A16CF679808 /* mondamusic-meditation-512846.m4a */ = {isa = PBXFileReference; path = "mondamusic-meditation-512846.m4a"; sourceTree = "<group>"; };
 		71FDFF7816AE74815CFADCF7 /* viacheslavstarostin-kids-baby-children-music-382060.m4a */ = {isa = PBXFileReference; path = "viacheslavstarostin-kids-baby-children-music-382060.m4a"; sourceTree = "<group>"; };
@@ -239,6 +242,7 @@
 		AEAF3FF24BB56BB9D4A83DF6 /* NinniAIWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = NinniAIWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C759DF79BFDDE57DBB7646 /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
 		B31FEB99DC8AADDF4B7708B1 /* mfcc-baby-baby-kids-children-music-522351.m4a */ = {isa = PBXFileReference; path = "mfcc-baby-baby-kids-children-music-522351.m4a"; sourceTree = "<group>"; };
+		B65F945E10E52536CF07C750 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		B74DBA80314813EEE54458E4 /* purebinaural-purebinaural-40-hz-gamma-binaural-beats-with-white-noise-484861.m4a */ = {isa = PBXFileReference; path = "purebinaural-purebinaural-40-hz-gamma-binaural-beats-with-white-noise-484861.m4a"; sourceTree = "<group>"; };
 		C04F80C812767AA646D03DA3 /* WelcomeStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeStepView.swift; sourceTree = "<group>"; };
 		C18E84EF2219CA460FF54E9D /* konstantinpazuzustudio-quiet-rain-thunder-rain-and-piano-512040.m4a */ = {isa = PBXFileReference; path = "konstantinpazuzustudio-quiet-rain-thunder-rain-and-piano-512040.m4a"; sourceTree = "<group>"; };
@@ -465,6 +469,7 @@
 			children = (
 				D16B61E52DB929066BD6FCE5 /* PremiumGuard.swift */,
 				D8349971C343D101D16815E6 /* StoreKitManager.swift */,
+				B65F945E10E52536CF07C750 /* SubscriptionManager.swift */,
 			);
 			path = StoreKit;
 			sourceTree = "<group>";
@@ -578,6 +583,7 @@
 		D67CC280261833420B309604 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				6AC5D3CBF9E642545F26CFFD /* PremiumLockModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -808,6 +814,7 @@
 				8ED2719EA37324B78E56F9C8 /* PaywallView.swift in Sources */,
 				5E8DDE5307835ACD240D1626 /* PlayerView.swift in Sources */,
 				57000CC0C0C236A65E1ACAC4 /* PremiumGuard.swift in Sources */,
+				B858556F674F559E215657C8 /* PremiumLockModifier.swift in Sources */,
 				D2D8F0860F7900EBA63E2EF3 /* PreviewSampleData.swift in Sources */,
 				93F04DB28C7B86AEFD0CAD6E /* PulseButton.swift in Sources */,
 				D1F81C8628D5F203669FDC71 /* QuickActionGrid.swift in Sources */,
@@ -825,6 +832,7 @@
 				D288CF680BC6E8998F5CC7C8 /* SoundSeeder.swift in Sources */,
 				CF2436011E242D3C54BF87E5 /* SoundUsage.swift in Sources */,
 				76CDC5A945273540F1660DD0 /* StoreKitManager.swift in Sources */,
+				9D92E7C56DECDC35F42C3CCC /* SubscriptionManager.swift in Sources */,
 				7CE1636A33E246E50FAC6A49 /* SuccessScoreView.swift in Sources */,
 				EDA0735A94D7E89B6460A9EE /* TimerPickerView.swift in Sources */,
 				D69161B3AA1A904DE34312AF /* UserSettings.swift in Sources */,

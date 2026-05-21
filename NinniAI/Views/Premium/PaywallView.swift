@@ -1,289 +1,589 @@
 import SwiftUI
+import SwiftData
 import StoreKit
 
 // MARK: - Paywall View
-/// Premium Paywall ekranı.
-/// PRD §5: "Zarif bir Premium ekranıyla karşılaşmalıdır."
+/// Premium Paywall ekranı — "Kişisel Uyku Koçu" vizyonu.
 /// Apple Guideline 3.1.2 uyumlu: Abonelik şartları açıkça belirtilir.
+/// Kartlar doğrudan satın alma tetikler — ayrı CTA butonu yok.
 struct PaywallView: View {
     
     @Environment(\.dismiss) private var dismiss
+    @Query private var allSettings: [UserSettings]
     @State private var storeKit = StoreKitManager()
-    @State private var selectedPlan: PremiumPlan = .yearly
     @State private var isPurchasing = false
+    @State private var selectedPlan: PremiumPlan = .yearly
+    @State private var products: [Product] = []
+    
+    // Animasyon
+    @State private var crownFloat = false
+    @State private var glowPulse = false
+    
+    private var babyName: String {
+        allSettings.first?.baby?.name ?? "Bebeğiniz"
+    }
     
     var body: some View {
         ZStack {
-            GradientBackground(.onboarding)
+            // Gece mavisi / lavanta degradeli arka plan
+            paywallBackground
             
             ScrollView(showsIndicators: false) {
-                VStack(spacing: AppTheme.spacingLG) {
+                VStack(spacing: 24) {
                     // Kapat butonu
-                    HStack {
-                        Spacer()
-                        Button { dismiss() } label: {
-                            Image(systemName: "xmark.circle.fill")
-                                .font(.title2)
-                                .foregroundStyle(AppTheme.textTertiary)
-                        }
-                    }
-                    .padding(.horizontal, AppTheme.spacingSM)
+                    closeButton
                     
-                    // Hero bölümü
+                    // Hero — duygusal koç başlığı
                     heroSection
                     
-                    // Özellik listesi
+                    // Özellikler
                     featuresSection
                     
-                    // Plan seçimi
-                    planSelectionSection
-                    
-                    // CTA butonu
-                    ctaButton
+                    // Direct Purchase kartları
+                    planCards
                     
                     // Geri yükleme
-                    Button("Satın Alımları Geri Yükle") {
+                    Button("Satın Alımları Geçmişe Dönük Yükle") {
                         Task { await storeKit.restorePurchases() }
                     }
                     .font(.caption)
-                    .foregroundStyle(AppTheme.textTertiary)
+                    .foregroundStyle(.white.opacity(0.35))
                     
-                    // Yasal metin (Apple 3.1.2)
+                    // Yasal metin & linkler (Apple 3.1.2)
                     legalDisclosure
                     
-                    Spacer(minLength: AppTheme.spacingXL)
+                    Spacer(minLength: 20)
                 }
                 .padding(.horizontal, AppTheme.spacingMD)
             }
         }
         .preferredColorScheme(.dark)
+        .onAppear {
+            withAnimation(.easeInOut(duration: 2.5).repeatForever(autoreverses: true)) {
+                crownFloat = true
+            }
+            withAnimation(.easeInOut(duration: 3.0).repeatForever(autoreverses: true)) {
+                glowPulse = true
+            }
+        }
+        .task {
+            do {
+                products = try await Product.products(for: ["ninniai.monthly", "ninniai.yearly"])
+            } catch {
+                print("🔴 Ürünler yüklenemedi: \(error.localizedDescription)")
+            }
+        }
     }
     
-    // MARK: - Hero
+    // MARK: - Paywall Background
+    
+    private var paywallBackground: some View {
+        ZStack {
+            LinearGradient(
+                colors: [
+                    Color(hex: "080C18"),
+                    Color(hex: "15103A"),
+                    Color(hex: "1A0E3E"),
+                    Color(hex: "0D0B20")
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+            
+            // Üst lavanta glow
+            Circle()
+                .fill(
+                    RadialGradient(
+                        colors: [
+                            Color(hex: "A78BFA").opacity(glowPulse ? 0.18 : 0.10),
+                            Color.clear
+                        ],
+                        center: .center,
+                        startRadius: 40,
+                        endRadius: 220
+                    )
+                )
+                .frame(width: 440, height: 440)
+                .offset(y: -180)
+                .blur(radius: 30)
+            
+            // Alt amber glow
+            Circle()
+                .fill(
+                    RadialGradient(
+                        colors: [
+                            Color(hex: "FBBF24").opacity(0.06),
+                            Color.clear
+                        ],
+                        center: .center,
+                        startRadius: 20,
+                        endRadius: 160
+                    )
+                )
+                .frame(width: 300, height: 300)
+                .offset(y: 340)
+                .blur(radius: 40)
+        }
+    }
+    
+    // MARK: - Close Button
+    
+    private var closeButton: some View {
+        HStack {
+            Spacer()
+            Button { dismiss() } label: {
+                Image(systemName: "xmark")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.white.opacity(0.5))
+                    .frame(width: 32, height: 32)
+                    .background(.ultraThinMaterial, in: Circle())
+                    .environment(\.colorScheme, .dark)
+            }
+        }
+        .padding(.top, 8)
+        .padding(.trailing, 4)
+    }
+    
+    // MARK: - Hero (Koç Odaklı)
     
     private var heroSection: some View {
-        VStack(spacing: AppTheme.spacingMD) {
+        VStack(spacing: 14) {
+            // Kavisli Metin ve Simge Kompozisyonu
             ZStack {
+                // Neon glow arka planı
                 Circle()
                     .fill(
                         RadialGradient(
-                            colors: [AppTheme.accentPrimary.opacity(0.2), .clear],
-                            center: .center, startRadius: 20, endRadius: 80
+                            colors: [
+                                Color(hex: "A78BFA").opacity(glowPulse ? 0.35 : 0.20),
+                                Color(hex: "7C3AED").opacity(0.1),
+                                Color.clear
+                            ],
+                            center: .center,
+                            startRadius: 10,
+                            endRadius: 75
                         )
                     )
-                    .frame(width: 140, height: 140)
+                    .frame(width: 150, height: 150)
+                    .blur(radius: 10)
                 
-                Image(systemName: "crown.fill")
-                    .font(.system(size: 56))
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [AppTheme.warning, Color(hex: "F59E0B")],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
+                // Cam benzeri (glassmorphism) rozet çemberi
+                Circle()
+                    .fill(.white.opacity(0.04))
+                    .frame(width: 110, height: 110)
+                    .background(
+                        Circle()
+                            .fill(.ultraThinMaterial)
+                            .environment(\.colorScheme, .dark)
                     )
+                    .overlay(
+                        Circle()
+                            .stroke(
+                                LinearGradient(
+                                    colors: [
+                                        .white.opacity(0.3),
+                                        .white.opacity(0.05),
+                                        Color(hex: "A78BFA").opacity(0.4)
+                                    ],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                ),
+                                lineWidth: 1.5
+                            )
+                    )
+                    .shadow(color: Color(hex: "7C3AED").opacity(0.25), radius: 10, x: 0, y: 8)
+                
+                // Simge Kompozisyonu: Hilal Ay, Taç ve Parıltılar
+                ZStack {
+                    // Hilal Ay
+                    Image(systemName: "moon.fill")
+                        .font(.system(size: 34))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [Color(hex: "FCD34D"), Color(hex: "FBBF24")],
+                                startPoint: .topTrailing,
+                                endPoint: .bottomLeading
+                            )
+                        )
+                        .offset(x: -8, y: -6)
+                        .rotationEffect(.degrees(-15))
+                    
+                    // Taç
+                    Image(systemName: "crown.fill")
+                        .font(.system(size: 26))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [Color(hex: "FFD700"), Color(hex: "FBBF24"), Color(hex: "F59E0B")],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .shadow(color: Color(hex: "FBBF24").opacity(0.4), radius: 6)
+                        .offset(x: 10, y: 12)
+                        .offset(y: crownFloat ? -3 : 3)
+                    
+                    // Parıltılar / Yıldızlar
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 18))
+                        .foregroundStyle(Color(hex: "A78BFA"))
+                        .offset(x: -24, y: 22)
+                        .opacity(glowPulse ? 0.9 : 0.5)
+                    
+                    Image(systemName: "sparkle")
+                        .font(.system(size: 12))
+                        .foregroundStyle(Color(hex: "FBBF24"))
+                        .offset(x: 28, y: -20)
+                        .opacity(glowPulse ? 0.9 : 0.4)
+                }
+                
+                // Kavisli Metin "NİNNİ AI PRO"
+                CurvedTextView(text: "NİNNİ AI PRO", radius: 66)
+                    .offset(y: 4)
             }
+            .frame(width: 160, height: 160)
             
-            Text("NinniAI Pro")
-                .font(.system(size: 32, weight: .bold, design: .rounded))
-                .foregroundStyle(AppTheme.textPrimary)
-            
-            Text("Bebeğinizin uyku deneyimini\nbir üst seviyeye taşıyın")
-                .font(.subheadline)
-                .foregroundStyle(AppTheme.textSecondary)
+            // Duygusal koç başlığı — bebek adıyla
+            Text("\(babyName)'in Uyku Koçu")
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
+                .lineSpacing(2)
+                .minimumScaleFactor(0.7)
+            
+            Text("Profesyonel Uyku Danışmanı.")
+                .font(.subheadline)
+                .foregroundStyle(.white.opacity(0.7))
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.7)
         }
     }
     
-    // MARK: - Features
+    // MARK: - Features (Value Proposition)
     
     private var featuresSection: some View {
-        VStack(spacing: AppTheme.spacingSM) {
-            featureRow(icon: "music.note.list", text: "100+ premium ses ve ninni")
-            featureRow(icon: "slider.horizontal.3", text: "Sınırsız ses karıştırma")
-            featureRow(icon: "chart.xyaxis.line", text: "Gelişmiş uyku analitiği ve grafikler")
-            featureRow(icon: "heart.fill", text: "Sınırsız favori rutin")
-            featureRow(icon: "brain.head.profile", text: "Akıllı öneriler ve otonom rutinler")
-            featureRow(icon: "applewatch", text: "Apple Watch desteği")
+        VStack(spacing: 0) {
+            featureRow(
+                icon: "clock.badge.checkmark.fill",
+                iconColor: Color(hex: "A78BFA"),
+                text: "Ay ve gelişime göre otonom uyku pencereleri"
+            )
+            featureDivider
+            featureRow(
+                icon: "chart.line.uptrend.xyaxis",
+                iconColor: Color(hex: "60A5FA"),
+                text: "Günlük uyku trendleri ve derin analizler"
+            )
+            featureDivider
+            featureRow(
+                icon: "moon.stars.fill",
+                iconColor: Color(hex: "C4B5FD"),
+                text: "Kilit ekranından anlık uyku takibi"
+            )
+            featureDivider
+            featureRow(
+                icon: "sparkles",
+                iconColor: Color(hex: "FCD34D"),
+                text: "Kesintisiz, reklamsız ve dingin deneyim"
+            )
         }
-        .padding(.horizontal, AppTheme.spacingSM)
+        .padding(.vertical, 4)
+        .background(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(.white.opacity(0.04))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .stroke(.white.opacity(0.08), lineWidth: 1)
+        )
     }
     
-    private func featureRow(icon: String, text: String) -> some View {
-        HStack(spacing: AppTheme.spacingSM) {
-            Image(systemName: "checkmark.circle.fill")
-                .font(.subheadline)
-                .foregroundStyle(AppTheme.success)
-            
+    private func featureRow(icon: String, iconColor: Color, text: String) -> some View {
+        HStack(spacing: 12) {
             Image(systemName: icon)
-                .font(.caption)
-                .foregroundStyle(AppTheme.accentPrimary)
-                .frame(width: 20)
+                .font(.system(size: 16))
+                .foregroundStyle(iconColor)
+                .frame(width: 34, height: 34)
+                .background(
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(iconColor.opacity(0.12))
+                )
             
             Text(text)
                 .font(.subheadline)
-                .foregroundStyle(AppTheme.textPrimary)
+                .foregroundStyle(.white.opacity(0.85))
             
             Spacer()
+            
+            Image(systemName: "checkmark")
+                .font(.caption.weight(.bold))
+                .foregroundStyle(AppTheme.success)
         }
-        .padding(.vertical, 6)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
     }
     
-    // MARK: - Plan Selection
+    private var featureDivider: some View {
+        Rectangle()
+            .fill(.white.opacity(0.06))
+            .frame(height: 1)
+            .padding(.horizontal, 16)
+    }
     
-    private var planSelectionSection: some View {
-        VStack(spacing: AppTheme.spacingSM) {
-            planCard(
+    // MARK: - Direct Purchase Cards
+    
+    private var planCards: some View {
+        let yearlyProduct = products.first(where: { $0.id == "ninniai.yearly" })
+        let monthlyProduct = products.first(where: { $0.id == "ninniai.monthly" })
+        
+        return HStack(spacing: 12) {
+            // ── Yıllık — AVANTAJLI (parlayan kart) ──
+            purchaseCard(
                 plan: .yearly,
-                price: storeKit.yearlyProduct?.displayPrice ?? "₺499,99/yıl",
-                subtitle: "En Popüler • Aylık ₺41,67",
-                badge: "TASARRUF"
+                label: "Yıllık",
+                price: yearlyProduct?.displayPrice ?? "₺499,99",
+                period: "/yıl",
+                detail: "Aylık sadece ₺41,67",
+                badge: "%40 TASARRUF",
+                isSelected: selectedPlan == .yearly
             )
             
-            planCard(
+            // ── Aylık — sade kart ──
+            purchaseCard(
                 plan: .monthly,
-                price: storeKit.monthlyProduct?.displayPrice ?? "₺69,99/ay",
-                subtitle: "Her ay yenilenir",
-                badge: nil
-            )
-            
-            planCard(
-                plan: .lifetime,
-                price: storeKit.lifetimeProduct?.displayPrice ?? "₺999,99",
-                subtitle: "Tek seferlik ödeme • Sonsuza kadar",
-                badge: "ÖMÜR BOYU"
+                label: "Aylık",
+                price: monthlyProduct?.displayPrice ?? "₺99,99",
+                period: "/ay",
+                detail: "Her ay yenilenir",
+                badge: nil,
+                isSelected: selectedPlan == .monthly
             )
         }
     }
     
-    private func planCard(
+    private func purchaseCard(
         plan: PremiumPlan,
+        label: String,
         price: String,
-        subtitle: String,
-        badge: String?
+        period: String,
+        detail: String,
+        badge: String?,
+        isSelected: Bool
     ) -> some View {
         Button {
-            withAnimation(AppTheme.animationDefault) {
-                selectedPlan = plan
-            }
+            triggerPurchase(plan: plan)
         } label: {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack(spacing: AppTheme.spacingSM) {
-                        Text(plan.displayTitle)
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(AppTheme.textPrimary)
-                        
-                        if let badge {
-                            Text(badge)
-                                .font(.system(size: 9, weight: .bold))
-                                .foregroundStyle(.white)
-                                .padding(.horizontal, 6)
-                                .padding(.vertical, 2)
-                                .background(AppTheme.accentPrimary)
-                                .clipShape(Capsule())
-                        }
-                    }
-                    
-                    Text(subtitle)
-                        .font(.caption)
-                        .foregroundStyle(AppTheme.textTertiary)
+            VStack(spacing: 12) {
+                // Badge
+                if let badge {
+                    Text(badge)
+                        .font(.system(size: 9, weight: .heavy))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(
+                            Capsule().fill(
+                                LinearGradient(
+                                    colors: [Color(hex: "A78BFA"), Color(hex: "7C3AED")],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                        )
+                } else {
+                    Spacer().frame(height: 22)
                 }
                 
-                Spacer()
+                Text(label)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.white)
                 
-                Text(price)
-                    .font(.subheadline)
-                    .fontWeight(.bold)
+                // Fiyat
+                HStack(alignment: .firstTextBaseline, spacing: 1) {
+                    Text(price)
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(isSelected ? AppTheme.accentPrimary : .white.opacity(0.8))
+                    
+                    Text(period)
+                        .font(.caption2.weight(.medium))
+                        .foregroundStyle(.white.opacity(0.4))
+                }
+                
+                Text(detail)
+                    .font(.system(size: 10, weight: .medium))
                     .foregroundStyle(
-                        selectedPlan == plan ? AppTheme.accentPrimary : AppTheme.textSecondary
+                        isSelected
+                        ? AppTheme.success.opacity(0.85)
+                        : .white.opacity(0.35)
                     )
-            }
-            .padding(AppTheme.spacingMD)
-            .background {
-                RoundedRectangle(cornerRadius: AppTheme.cornerRadiusMD)
-                    .fill(.ultraThinMaterial)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: AppTheme.cornerRadiusMD)
-                            .stroke(
-                                selectedPlan == plan
-                                ? AppTheme.accentPrimary
-                                : Color.white.opacity(0.08),
-                                lineWidth: selectedPlan == plan ? 2 : 1
+                
+                // Kart içi CTA
+                Text(isSelected ? "Hemen Başla" : "Seç")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 10)
+                    .background(
+                        Capsule().fill(
+                            isSelected
+                            ? LinearGradient(
+                                colors: [Color(hex: "A78BFA"), Color(hex: "7C3AED")],
+                                startPoint: .leading,
+                                endPoint: .trailing
                             )
-                    }
+                            : LinearGradient(
+                                colors: [.white.opacity(0.12), .white.opacity(0.06)],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                    )
+                    .padding(.top, 4)
             }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 20)
+            .padding(.horizontal, 14)
+            .contentShape(Rectangle()) // Tıklama alanını tüm karta yayar
+            .background(
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .fill(.ultraThinMaterial)
+                    .environment(\.colorScheme, .dark)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .stroke(
+                        isSelected
+                        ? LinearGradient(
+                            colors: [
+                                AppTheme.accentPrimary.opacity(0.7),
+                                AppTheme.accentPrimary.opacity(0.2)
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                        : LinearGradient(
+                            colors: [.white.opacity(0.1), .white.opacity(0.04)],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        lineWidth: isSelected ? 1.5 : 1
+                    )
+            )
+            // Soft lavanta glow — sadece highlighted kart
+            .shadow(
+                color: isSelected ? AppTheme.accentPrimary.opacity(0.2) : .clear,
+                radius: 20, x: 0, y: 10
+            )
         }
-        .buttonStyle(.plain)
-        .sensoryFeedback(.selection, trigger: selectedPlan)
+        .buttonStyle(PlainButtonStyle())
+        .disabled(isPurchasing)
+        .sensoryFeedback(.impact(weight: .medium), trigger: isPurchasing)
     }
     
-    // MARK: - CTA Button
+    // MARK: - Purchase Trigger
     
-    private var ctaButton: some View {
-        Button {
-            Task {
-                isPurchasing = true
-                let product: Product? = {
-                    switch selectedPlan {
-                    case .monthly:  return storeKit.monthlyProduct
-                    case .yearly:   return storeKit.yearlyProduct
-                    case .lifetime: return storeKit.lifetimeProduct
+    private func triggerPurchase(plan: PremiumPlan) {
+        selectedPlan = plan
+        print("🟢 ÖDEME TETİKLENDİ: \(plan)")
+        Task {
+            isPurchasing = true
+            defer { isPurchasing = false }
+            do {
+                let productId = (plan == .yearly) ? "ninniai.yearly" : "ninniai.monthly"
+                if let product = products.first(where: { $0.id == productId }) {
+                    // StoreKit 2 yerel satın alma mekanizması doğrudan tetiklenir
+                    let result = try await product.purchase()
+                    
+                    switch result {
+                    case .success(let verification):
+                        if case .verified(let transaction) = verification {
+                            await transaction.finish()
+                            await storeKit.updateSubscriptionStatus()
+                        }
+                    default:
+                        break
                     }
-                }()
-                if let product {
-                    _ = await storeKit.purchase(product)
-                }
-                isPurchasing = false
-            }
-        } label: {
-            HStack(spacing: AppTheme.spacingSM) {
-                if isPurchasing {
-                    ProgressView()
-                        .tint(.white)
                 } else {
-                    Text("Premium'a Geç")
-                        .font(.headline)
-                    Image(systemName: "arrow.right")
-                        .font(.headline)
+                    print("🔴 Ürün bulunamadı: \(productId)")
                 }
+            } catch {
+                print("🔴 STOREKIT HATASI: \(error)")
             }
-            .foregroundStyle(.white)
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 18)
-            .background(AppTheme.playerGradient)
-            .clipShape(Capsule())
-            .shadow(color: AppTheme.shadowColorPrimary, radius: 16, y: 8)
         }
-        .buttonStyle(.plain)
-        .disabled(isPurchasing)
-        .padding(.top, AppTheme.spacingSM)
     }
     
     // MARK: - Legal Disclosure (Apple 3.1.2)
     
     private var legalDisclosure: some View {
-        VStack(spacing: AppTheme.spacingXS) {
+        VStack(spacing: 12) {
             Text("Abonelik, seçilen plana göre otomatik olarak yenilenir. İstediğiniz zaman Ayarlar > Apple Kimliği > Abonelikler üzerinden iptal edebilirsiniz. İptal, mevcut dönemin sonunda geçerli olur.")
                 .font(.system(size: 10))
-                .foregroundStyle(AppTheme.textTertiary)
+                .foregroundStyle(.white.opacity(0.28))
                 .multilineTextAlignment(.center)
             
-            HStack(spacing: AppTheme.spacingMD) {
-                Link("Gizlilik Politikası", destination: AppConstants.privacyPolicyURL)
-                Text("•").foregroundStyle(AppTheme.textTertiary)
-                Link("Kullanım Şartları", destination: AppConstants.termsOfServiceURL)
-                Text("•").foregroundStyle(AppTheme.textTertiary)
-                Link("Destek", destination: AppConstants.supportEmailURL)
+            HStack(spacing: 10) {
+                Link("Gizlilik Politikası & Kullanım Şartları", destination: URL(string: "https://bunyamin027.github.io/Legal/#privacy")!)
+                
+                Text("•")
+                    .foregroundStyle(.white.opacity(0.2))
+                
+                Link("EULA", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+            }
+            .font(.system(size: 10, weight: .medium))
+            .foregroundStyle(.white.opacity(0.4))
+            
+            // Mikro İmza
+            VStack(spacing: 2) {
+                Text("Developer: Kahramandev")
+                Text("Destek: bunyaminkahraman027@icloud.com")
             }
             .font(.system(size: 10))
-            .foregroundStyle(AppTheme.accentPrimary.opacity(0.7))
+            .foregroundStyle(.white.opacity(0.25))
+            .multilineTextAlignment(.center)
+            .padding(.top, 4)
         }
-        .padding(.horizontal, AppTheme.spacingMD)
+        .padding(.horizontal, AppTheme.spacingSM)
+    }
+}
+
+// MARK: - Curved Text Component
+struct CurvedTextView: View {
+    let text: String
+    let radius: Double
+    
+    var body: some View {
+        ZStack {
+            ForEach(Array(text.enumerated()), id: \.offset) { index, letter in
+                CharacterView(letter: letter, index: index, totalCount: text.count, radius: radius)
+            }
+        }
+        .frame(width: radius * 2, height: radius * 2)
+    }
+}
+
+struct CharacterView: View {
+    let letter: Character
+    let index: Int
+    let totalCount: Int
+    let radius: Double
+    
+    var body: some View {
+        // Upward-curving yay: Üst tarafa ortalanmış (-90 derecenin etrafında)
+        // Karakter sayısına göre yay açıklığı (span) hesaplanır.
+        let angleSpan = 72.0 // Karakterlerin yayılacağı toplam açı derecesi
+        let startAngle = -90.0 - (angleSpan / 2.0)
+        let angle = startAngle + (Double(index) * (angleSpan / Double(max(1, totalCount - 1))))
+        
+        Text(String(letter))
+            .font(.system(size: 10, weight: .black, design: .rounded))
+            .foregroundStyle(.white)
+            .shadow(color: Color(hex: "A78BFA").opacity(0.8), radius: 3)
+            .offset(y: -radius)
+            .rotationEffect(Angle(degrees: angle))
     }
 }
 
 #Preview {
     PaywallView()
+        .modelContainer(PreviewSampleData.container)
 }

@@ -1,0 +1,44 @@
+{
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/Interruption.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/Interruption.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/Interruption.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/Interruption.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/Interruption.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/Interruption.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/AudioEngine/FadeController.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/FadeController.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/FadeController.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/FadeController.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/FadeController.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/FadeController.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Settings/LegalView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/LegalView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/LegalView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/LegalView.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/LegalView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/LegalView.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Shared/Components/GlassCard.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GlassCard.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GlassCard.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GlassCard.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GlassCard.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GlassCard.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Shared/Components/GradientBackground.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GradientBackground.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GradientBackground.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GradientBackground.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GradientBackground.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GradientBackground.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Shared/Extensions/Date+Extensions.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/Date+Extensions.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/Date+Extensions.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/Date+Extensions.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/Date+Extensions.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/Date+Extensions.swiftdeps"
+  }
+}

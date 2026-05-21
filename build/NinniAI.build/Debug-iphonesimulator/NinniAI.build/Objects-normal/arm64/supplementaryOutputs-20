@@ -1,0 +1,37 @@
+{
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/UserSettings.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/UserSettings.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/UserSettings.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/UserSettings.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/UserSettings.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/UserSettings.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Analytics/WeeklyReportView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/WeeklyReportView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/WeeklyReportView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/WeeklyReportView.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/WeeklyReportView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/WeeklyReportView.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Onboarding/WelcomeStepView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/WelcomeStepView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/WelcomeStepView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/WelcomeStepView.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/WelcomeStepView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/WelcomeStepView.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Shared/Extensions/View+Extensions.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/View+Extensions.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/View+Extensions.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/View+Extensions.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/View+Extensions.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/View+Extensions.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps"
+  }
+}

@@ -48,6 +48,21 @@ extension View {
     }
 }
 
+// MARK: - Premium Lock Extension
+/// Premium kilit modifikatörü için kolay erişim.
+/// Herhangi bir View'a `.premiumLocked()` ekleyerek premium gateway uygulayın.
+///
+/// Kullanım:
+/// ```swift
+/// SomeProFeatureView()
+///     .premiumLocked()
+/// ```
+extension View {
+    func premiumLocked() -> some View {
+        self.modifier(PremiumLockModifier())
+    }
+}
+
 // MARK: - Shimmer Modifier
 /// Yükleme sırasında içerik üzerinde kayan ışık efekti.
 /// Onboarding "Analiz İllüzyonu" ve veri yükleme durumlarında kullanılır.

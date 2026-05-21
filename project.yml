@@ -72,7 +72,7 @@ targets:
         CFBundleInfoDictionaryVersion: "6.0"
         CFBundleName: "$(PRODUCT_NAME)"
         CFBundlePackageType: "XPC!"
-        CFBundleShortVersionString: "1.0"
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "1"
         NSExtension:
           NSExtensionPointIdentifier: "com.apple.widgetkit-extension"

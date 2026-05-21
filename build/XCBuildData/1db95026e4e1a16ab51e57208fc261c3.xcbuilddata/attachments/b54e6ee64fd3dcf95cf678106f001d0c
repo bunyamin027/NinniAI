@@ -1,0 +1,569 @@
+{
+  "" : {
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAI-primary.dia",
+    "emit-module-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAI-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAI-primary-emit-module.dia",
+    "pch" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAI-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAI-primary.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/App/AppConstants.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppConstants.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppConstants.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppConstants.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppConstants.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppConstants.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppConstants.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppConstants.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppConstants~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/App/AppState.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppState.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppState.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppState.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppState.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppState.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppState.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppState.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppState~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/App/AppTheme.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppTheme.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppTheme.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppTheme.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppTheme.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppTheme.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppTheme.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppTheme.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AppTheme~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/ContentView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContentView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContentView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContentView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContentView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContentView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContentView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/Baby.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Baby.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Baby.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Baby.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Baby.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Baby.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Baby.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Baby.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Baby~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/Interruption.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Interruption.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Interruption.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Interruption.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Interruption.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Interruption.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Interruption.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Interruption.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Interruption~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/Milestone.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Milestone.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Milestone.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Milestone.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Milestone.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Milestone.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Milestone.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Milestone.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Milestone~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/SleepAttributes.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepAttributes.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepAttributes.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepAttributes.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepAttributes.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepAttributes.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepAttributes.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepAttributes.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepAttributes~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/SleepProblem.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblem.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblem.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblem.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblem.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblem.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblem.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblem.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblem~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/SleepSession.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepSession.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepSession.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepSession.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepSession.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepSession.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepSession.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepSession.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepSession~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/Sound.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Sound.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Sound.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Sound.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Sound.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Sound.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Sound.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Sound.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Sound~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/SoundCategory.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundCategory.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundCategory.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundCategory.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundCategory.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundCategory.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundCategory.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundCategory.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundCategory~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/SoundDataMap.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundDataMap.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundDataMap.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundDataMap.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundDataMap.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundDataMap.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundDataMap.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundDataMap.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundDataMap~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/SoundUsage.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundUsage.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundUsage.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundUsage.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundUsage.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundUsage.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundUsage.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundUsage.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundUsage~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/UserSettings.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/UserSettings.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/UserSettings.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/UserSettings.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/UserSettings.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/UserSettings.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/UserSettings.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/UserSettings.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/UserSettings~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/NinniAIApp.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAIApp.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAIApp.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAIApp.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAIApp.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAIApp.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAIApp.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAIApp.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NinniAIApp~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Preview Content/PreviewSampleData.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PreviewSampleData.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PreviewSampleData.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PreviewSampleData.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PreviewSampleData.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PreviewSampleData.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PreviewSampleData.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PreviewSampleData.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PreviewSampleData~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/AudioEngine/AudioEngineManager.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AudioEngineManager.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AudioEngineManager.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AudioEngineManager.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AudioEngineManager.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AudioEngineManager.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AudioEngineManager.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AudioEngineManager.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AudioEngineManager~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/AudioEngine/FadeController.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/FadeController.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/FadeController.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/FadeController.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/FadeController.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/FadeController.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/FadeController.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/FadeController.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/FadeController~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/AudioEngine/NowPlayableManager.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NowPlayableManager.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NowPlayableManager.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NowPlayableManager.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NowPlayableManager.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NowPlayableManager.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NowPlayableManager.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NowPlayableManager.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NowPlayableManager~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/AudioEngine/SeamlessLooper.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SeamlessLooper.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SeamlessLooper.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SeamlessLooper.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SeamlessLooper.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SeamlessLooper.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SeamlessLooper.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SeamlessLooper.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SeamlessLooper~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/ContextEngine/ContextResolver.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContextResolver.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContextResolver.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContextResolver.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContextResolver.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContextResolver.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContextResolver.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContextResolver.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/ContextResolver~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/ContextEngine/MilestoneTracker.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneTracker.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneTracker.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneTracker.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneTracker.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneTracker.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneTracker.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneTracker.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneTracker~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/ContextEngine/NightModeResolver.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeResolver.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeResolver.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeResolver.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeResolver.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeResolver.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeResolver.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeResolver.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeResolver~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/LiveActivityManager.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LiveActivityManager.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LiveActivityManager.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LiveActivityManager.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LiveActivityManager.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LiveActivityManager.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LiveActivityManager.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LiveActivityManager.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LiveActivityManager~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/Notification/NotificationManager.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NotificationManager.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NotificationManager.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NotificationManager.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NotificationManager.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NotificationManager.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NotificationManager.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NotificationManager.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NotificationManager~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/SoundSeeder.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundSeeder.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundSeeder.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundSeeder.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundSeeder.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundSeeder.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundSeeder.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundSeeder.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundSeeder~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/StoreKit/PremiumGuard.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PremiumGuard.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PremiumGuard.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PremiumGuard.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PremiumGuard.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PremiumGuard.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PremiumGuard.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PremiumGuard.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PremiumGuard~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/StoreKit/StoreKitManager.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/StoreKitManager.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/StoreKitManager.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/StoreKitManager.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/StoreKitManager.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/StoreKitManager.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/StoreKitManager.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/StoreKitManager.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/StoreKitManager~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Analytics/AnalyticsDashboardView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalyticsDashboardView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalyticsDashboardView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalyticsDashboardView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalyticsDashboardView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalyticsDashboardView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalyticsDashboardView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalyticsDashboardView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalyticsDashboardView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Analytics/SleepChartView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepChartView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepChartView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepChartView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepChartView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepChartView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepChartView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepChartView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepChartView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Analytics/SuccessScoreView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SuccessScoreView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SuccessScoreView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SuccessScoreView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SuccessScoreView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SuccessScoreView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SuccessScoreView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SuccessScoreView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SuccessScoreView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Analytics/WeeklyReportView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WeeklyReportView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WeeklyReportView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WeeklyReportView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WeeklyReportView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WeeklyReportView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WeeklyReportView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WeeklyReportView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WeeklyReportView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Dashboard/DashboardView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/DashboardView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/DashboardView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/DashboardView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/DashboardView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/DashboardView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/DashboardView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/DashboardView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/DashboardView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Dashboard/MilestoneCardView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneCardView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneCardView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneCardView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneCardView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneCardView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneCardView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneCardView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MilestoneCardView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Dashboard/NightModeView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/NightModeView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Dashboard/QuickActionGrid.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/QuickActionGrid.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/QuickActionGrid.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/QuickActionGrid.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/QuickActionGrid.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/QuickActionGrid.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/QuickActionGrid.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/QuickActionGrid.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/QuickActionGrid~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Onboarding/AnalysisAnimationView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalysisAnimationView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalysisAnimationView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalysisAnimationView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalysisAnimationView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalysisAnimationView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalysisAnimationView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalysisAnimationView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/AnalysisAnimationView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Onboarding/BabyInfoStepView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyInfoStepView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyInfoStepView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyInfoStepView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyInfoStepView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyInfoStepView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyInfoStepView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyInfoStepView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyInfoStepView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Onboarding/OnboardingContainerView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/OnboardingContainerView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/OnboardingContainerView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/OnboardingContainerView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/OnboardingContainerView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/OnboardingContainerView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/OnboardingContainerView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/OnboardingContainerView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/OnboardingContainerView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Onboarding/SleepProblemsStepView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblemsStepView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblemsStepView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblemsStepView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblemsStepView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblemsStepView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblemsStepView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblemsStepView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SleepProblemsStepView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Onboarding/WelcomeStepView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WelcomeStepView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WelcomeStepView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WelcomeStepView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WelcomeStepView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WelcomeStepView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WelcomeStepView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WelcomeStepView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/WelcomeStepView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Player/MiniPlayerBar.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MiniPlayerBar.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MiniPlayerBar.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MiniPlayerBar.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MiniPlayerBar.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MiniPlayerBar.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MiniPlayerBar.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MiniPlayerBar.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/MiniPlayerBar~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Player/PlayerView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PlayerView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PlayerView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PlayerView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PlayerView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PlayerView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PlayerView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PlayerView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PlayerView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Player/SoundPickerView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundPickerView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundPickerView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundPickerView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundPickerView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundPickerView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundPickerView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundPickerView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SoundPickerView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Player/TimerPickerView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/TimerPickerView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/TimerPickerView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/TimerPickerView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/TimerPickerView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/TimerPickerView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/TimerPickerView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/TimerPickerView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/TimerPickerView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Premium/PaywallView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PaywallView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PaywallView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PaywallView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PaywallView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PaywallView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PaywallView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PaywallView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PaywallView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Settings/BabyProfileEditView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyProfileEditView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyProfileEditView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyProfileEditView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyProfileEditView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyProfileEditView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyProfileEditView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyProfileEditView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/BabyProfileEditView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Settings/LegalView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LegalView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LegalView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LegalView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LegalView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LegalView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LegalView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LegalView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/LegalView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Settings/SettingsView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SettingsView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SettingsView.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SettingsView.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SettingsView.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SettingsView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SettingsView.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/SettingsView~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Shared/Components/GlassCard.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GlassCard.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GlassCard.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GlassCard.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GlassCard.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GlassCard.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GlassCard.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GlassCard.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GlassCard~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Shared/Components/GradientBackground.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GradientBackground.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GradientBackground.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GradientBackground.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GradientBackground.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GradientBackground.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GradientBackground.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GradientBackground.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GradientBackground~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Shared/Components/PulseButton.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PulseButton.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PulseButton.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PulseButton.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PulseButton.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PulseButton.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PulseButton.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PulseButton.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/PulseButton~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Shared/Extensions/Date+Extensions.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Date+Extensions.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Date+Extensions.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Date+Extensions.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Date+Extensions.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Date+Extensions.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Date+Extensions.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Date+Extensions.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/Date+Extensions~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Shared/Extensions/View+Extensions.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/View+Extensions.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/View+Extensions.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/View+Extensions.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/View+Extensions.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/View+Extensions.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/View+Extensions.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/View+Extensions.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/View+Extensions~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/x86_64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

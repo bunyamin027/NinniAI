@@ -1,0 +1,37 @@
+{
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/SoundUsage.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SoundUsage.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SoundUsage.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SoundUsage.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SoundUsage.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SoundUsage.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/SoundSeeder.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SoundSeeder.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SoundSeeder.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SoundSeeder.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SoundSeeder.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SoundSeeder.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Services/StoreKit/StoreKitManager.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/StoreKitManager.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/StoreKitManager.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/StoreKitManager.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/StoreKitManager.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/StoreKitManager.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Analytics/SuccessScoreView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SuccessScoreView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SuccessScoreView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SuccessScoreView.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SuccessScoreView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/SuccessScoreView.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Views/Player/TimerPickerView.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/TimerPickerView.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/TimerPickerView.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/TimerPickerView.dia",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/TimerPickerView.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAI.build/Objects-normal/arm64/TimerPickerView.swiftdeps"
+  }
+}

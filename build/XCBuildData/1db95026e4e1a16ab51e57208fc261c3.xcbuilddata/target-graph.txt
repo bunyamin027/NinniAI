@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'NinniAI' in project 'NinniAI'
+➜ Explicit dependency on target 'NinniAIWidget' in project 'NinniAI'
+Target 'NinniAIWidget' in project 'NinniAI' (no dependencies)

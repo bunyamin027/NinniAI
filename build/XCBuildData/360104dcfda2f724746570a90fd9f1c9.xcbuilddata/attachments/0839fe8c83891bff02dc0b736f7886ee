@@ -1,0 +1,39 @@
+{
+  "" : {
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidget-primary.dia",
+    "emit-module-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidget-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidget-primary-emit-module.dia",
+    "pch" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidget-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidget-primary.swiftdeps"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAI/Models/SleepAttributes.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepAttributes.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepAttributes.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepAttributes.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepAttributes.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepAttributes.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepAttributes.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepAttributes.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepAttributes~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAIWidget/NinniAIWidgetBundle.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidgetBundle.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidgetBundle.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidgetBundle.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidgetBundle.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidgetBundle.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidgetBundle.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidgetBundle.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/NinniAIWidgetBundle~partial.swiftmodule"
+  },
+  "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/NinniAIWidget/SleepLiveActivity.swift" : {
+    "const-values" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepLiveActivity.swiftconstvalues",
+    "dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepLiveActivity.d",
+    "diagnostics" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepLiveActivity.dia",
+    "index-unit-output-path" : "/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepLiveActivity.o",
+    "llvm-bc" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepLiveActivity.bc",
+    "object" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepLiveActivity.o",
+    "swift-dependencies" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepLiveActivity.swiftdeps",
+    "swiftmodule" : "/Users/teknopark/Desktop/mobil/1- appstore/3- NinniAI/build/NinniAI.build/Debug-iphonesimulator/NinniAIWidget.build/Objects-normal/arm64/SleepLiveActivity~partial.swiftmodule"
+  }
+}
