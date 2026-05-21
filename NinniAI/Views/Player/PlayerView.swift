@@ -214,20 +214,33 @@ struct PlayerView: View {
         
         var body: some View {
             Button(action: action) {
-                Text(category.displayTitle)
-                    .font(.subheadline)
-                    .fontWeight(isSelected ? .bold : .medium)
-                    .padding(.horizontal, AppTheme.spacingMD)
-                    .padding(.vertical, AppTheme.spacingSM)
-                    .background(
-                        Capsule()
-                            .fill(isSelected ? AnyShapeStyle(AppTheme.accentPrimary.opacity(0.2)) : AnyShapeStyle(.ultraThinMaterial))
-                    )
-                    .background(
-                        Capsule()
-                            .stroke(isSelected ? AppTheme.accentPrimary.opacity(0.5) : .white.opacity(0.1), lineWidth: 1)
-                    )
-                    .foregroundStyle(isSelected ? AppTheme.accentPrimary : AppTheme.textSecondary)
+                HStack(spacing: 4) {
+                    Text(category.displayTitle)
+                        .font(.subheadline)
+                        .fontWeight(isSelected ? .bold : .medium)
+                    
+                    if category == .lullaby {
+                        HStack(spacing: 2) {
+                            Image(systemName: "crown.fill")
+                                .font(.system(size: 8))
+                            Text("PRO")
+                                .font(.system(size: 9, weight: .bold))
+                        }
+                        .foregroundStyle(AppTheme.warning)
+                        .padding(.leading, 2)
+                    }
+                }
+                .padding(.horizontal, AppTheme.spacingMD)
+                .padding(.vertical, AppTheme.spacingSM)
+                .background(
+                    Capsule()
+                        .fill(isSelected ? AnyShapeStyle(AppTheme.accentPrimary.opacity(0.2)) : AnyShapeStyle(.ultraThinMaterial))
+                )
+                .background(
+                    Capsule()
+                        .stroke(isSelected ? AppTheme.accentPrimary.opacity(0.5) : .white.opacity(0.1), lineWidth: 1)
+                )
+                .foregroundStyle(isSelected ? AppTheme.accentPrimary : AppTheme.textSecondary)
             }
         }
     }

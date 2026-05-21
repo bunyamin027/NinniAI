@@ -244,7 +244,7 @@ struct PaywallView: View {
             .frame(width: 160, height: 160)
             
             // Duygusal koç başlığı — bebek adıyla
-            Text("\(babyName)'in Uyku Koçu")
+            Text("\(babyName)'s Sleep Coach")
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)

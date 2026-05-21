@@ -136,6 +136,17 @@ private struct CategoryChip: View {
                 Text(category.displayTitle)
                     .font(.subheadline)
                     .fontWeight(.medium)
+                
+                if category == .lullaby {
+                    HStack(spacing: 2) {
+                        Image(systemName: "crown.fill")
+                            .font(.system(size: 8))
+                        Text("PRO")
+                            .font(.system(size: 9, weight: .bold))
+                    }
+                    .foregroundStyle(AppTheme.warning)
+                    .padding(.leading, 2)
+                }
             }
             .padding(.horizontal, AppTheme.spacingMD)
             .padding(.vertical, AppTheme.spacingSM)

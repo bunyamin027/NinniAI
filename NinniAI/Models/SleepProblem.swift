@@ -33,7 +33,7 @@ enum SleepProblem: String, Codable, CaseIterable, Identifiable {
     var id: String { rawValue }
     
     /// Kullanıcıya gösterilecek başlık
-    var displayTitle: String {
+    var displayTitle: LocalizedStringResource {
         switch self {
         case .difficultyFallingAsleep: return "Uykuya dalma güçlüğü"
         case .frequentNightWaking:     return "Gece sık uyanma"
@@ -47,7 +47,7 @@ enum SleepProblem: String, Codable, CaseIterable, Identifiable {
     }
     
     /// Kullanıcıya gösterilecek açıklama
-    var displayDescription: String {
+    var displayDescription: LocalizedStringResource {
         switch self {
         case .difficultyFallingAsleep:
             return "Bebeğiniz yatağa konulduğunda uzun süre uykuya dalamıyor."

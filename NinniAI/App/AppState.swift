@@ -49,7 +49,7 @@ enum AppTab: String, CaseIterable, Identifiable {
     
     var id: String { rawValue }
     
-    var title: String {
+    var title: LocalizedStringResource {
         switch self {
         case .dashboard: return "Ana Sayfa"
         case .player:    return "Sesler"

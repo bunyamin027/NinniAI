@@ -7,12 +7,14 @@ import SwiftData
 struct SettingsView: View {
     
     @Environment(\.modelContext) private var modelContext
+    @Environment(SubscriptionManager.self) private var subscriptionManager
     @Query private var allSettings: [UserSettings]
     
     @State private var showPaywall = false
     @State private var showBabyEdit = false
     @State private var showLegal = false
     @State private var showDeleteConfirm = false
+    @State private var showSupport = false
     @State private var notificationManager = NotificationManager()
     
     private var settings: UserSettings? { allSettings.first }
@@ -44,7 +46,7 @@ struct SettingsView: View {
                     // Bildirimler
                     notificationSection
                     
-                    // Player ayarları
+                    // Oynatıcı ayarları
                     playerSection
                     
                     // Hakkında ve yasal
@@ -68,6 +70,9 @@ struct SettingsView: View {
         }
         .sheet(isPresented: $showLegal) {
             LegalView()
+        }
+        .sheet(isPresented: $showSupport) {
+            DeveloperSupportView()
         }
     }
     
@@ -158,7 +163,7 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
                 settingSectionTitle("Bildirimler", icon: "bell.fill")
                 
-                settingToggle(
+                premiumSettingToggle(
                     "Uyku Hatırlatma",
                     isOn: Binding(
                         get: { settings?.isSleepReminderEnabled ?? true },
@@ -166,7 +171,7 @@ struct SettingsView: View {
                     )
                 )
                 
-                settingToggle(
+                premiumSettingToggle(
                     "Milestone Bildirimleri",
                     isOn: Binding(
                         get: { settings?.isMilestoneNotificationEnabled ?? true },
@@ -174,7 +179,7 @@ struct SettingsView: View {
                     )
                 )
                 
-                settingToggle(
+                premiumSettingToggle(
                     "Haftalık Rapor",
                     isOn: Binding(
                         get: { settings?.isWeeklyReportEnabled ?? true },
@@ -199,29 +204,10 @@ struct SettingsView: View {
                         set: { settings?.continuePlaybackInBackground = $0 }
                     )
                 )
-                
-                HStack {
-                    Text("Varsayılan Zamanlayıcı")
-                        .font(.subheadline)
-                        .foregroundStyle(AppTheme.textPrimary)
-                    Spacer()
-                    Text("\(settings?.defaultTimerDurationMinutes ?? 30) dk")
-                        .font(.subheadline)
-                        .foregroundStyle(AppTheme.textSecondary)
-                }
-                
-                HStack {
-                    Text("Fade Out Süresi")
-                        .font(.subheadline)
-                        .foregroundStyle(AppTheme.textPrimary)
-                    Spacer()
-                    Text("\(settings?.fadeOutDurationSeconds ?? 10) sn")
-                        .font(.subheadline)
-                        .foregroundStyle(AppTheme.textSecondary)
-                }
             }
         }
     }
+    
     
     // MARK: - About Section (Antigravity Tasarım)
     
@@ -235,7 +221,7 @@ struct SettingsView: View {
                     title: "Gizlilik Politikası",
                     icon: "lock.shield.fill",
                     iconColor: Color(red: 0.7, green: 0.5, blue: 1.0),
-                    url: URL(string: "https://ninniai.com/privacy")!
+                    url: URL(string: "https://bunyamin027.github.io/Legal/#privacy")!
                 )
                 
                 premiumAboutLinkRow(
@@ -245,12 +231,38 @@ struct SettingsView: View {
                     url: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
                 )
                 
-                premiumAboutLinkRow(
-                    title: "Destek & Geri Bildirim",
-                    icon: "envelope.fill",
-                    iconColor: Color(red: 0.4, green: 0.9, blue: 0.7),
-                    url: AppConstants.supportEmailURL
-                )
+                Button {
+                    showSupport = true
+                } label: {
+                    HStack(spacing: AppTheme.spacingSM) {
+                        Image(systemName: "envelope.fill")
+                            .font(.headline)
+                            .foregroundStyle(Color(red: 0.4, green: 0.9, blue: 0.7))
+                            .frame(width: 28)
+                        
+                        Text("Destek & Geri Bildirim")
+                            .font(.subheadline.weight(.medium))
+                            .foregroundStyle(AppTheme.textPrimary)
+                        
+                        Spacer()
+                        
+                        Image(systemName: "chevron.right")
+                            .font(.caption)
+                            .foregroundStyle(AppTheme.textTertiary)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                    .background(
+                        RoundedRectangle(cornerRadius: AppTheme.cornerRadiusMD, style: .continuous)
+                            .fill(.white.opacity(0.06))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: AppTheme.cornerRadiusMD, style: .continuous)
+                            .stroke(.white.opacity(0.1), lineWidth: 1)
+                    )
+                    .shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 4)
+                }
+                .buttonStyle(.plain)
                 
                 Button {
                     showLegal = true
@@ -383,6 +395,39 @@ struct SettingsView: View {
         .tint(AppTheme.accentPrimary)
     }
     
+    private func premiumSettingToggle(_ title: String, isOn: Binding<Bool>) -> some View {
+        HStack {
+            Text(title)
+                .font(.subheadline)
+                .foregroundStyle(AppTheme.textPrimary)
+            
+            Spacer()
+            
+            if subscriptionManager.isPro {
+                Toggle("", isOn: isOn)
+                    .labelsHidden()
+                    .tint(AppTheme.accentPrimary)
+            } else {
+                Button {
+                    subscriptionManager.showPaywall = true
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: "lock.fill")
+                            .font(.caption2)
+                        Text("PRO")
+                            .font(.caption2.weight(.bold))
+                    }
+                    .foregroundStyle(AppTheme.warning)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(AppTheme.warning.opacity(0.15))
+                    .clipShape(Capsule())
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
+    
     private func settingLink(_ title: String, url: URL) -> some View {
         Link(destination: url) {
             HStack {
@@ -393,6 +438,65 @@ struct SettingsView: View {
                 Image(systemName: "arrow.up.right")
                     .font(.caption)
                     .foregroundStyle(AppTheme.textTertiary)
+            }
+        }
+    }
+}
+
+// MARK: - Developer Support View
+struct DeveloperSupportView: View {
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View {
+        ZStack {
+            GradientBackground()
+                .ignoresSafeArea()
+            
+            VStack(spacing: AppTheme.spacingXL) {
+                HStack {
+                    Spacer()
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title2)
+                            .foregroundStyle(.white.opacity(0.6))
+                    }
+                }
+                .padding(.top, AppTheme.spacingMD)
+                .padding(.trailing, AppTheme.spacingMD)
+                
+                Spacer()
+                
+                GlassCard {
+                    VStack(spacing: AppTheme.spacingMD) {
+                        Image(systemName: "laptopcomputer")
+                            .font(.system(size: 40))
+                            .foregroundStyle(AppTheme.accentPrimary)
+                            .padding(.bottom, 8)
+                        
+                        Text("Destek & Geliştirici")
+                            .font(.title2.weight(.bold))
+                            .foregroundStyle(.white)
+                        
+                        VStack(alignment: .center, spacing: 8) {
+                            Text("Developer: Kahramandev")
+                                .font(.subheadline)
+                            Text("Email: bunyaminkahraman027@icloud.com")
+                                .font(.subheadline)
+                            Text("Website: bunyamin027.github.io/Legal")
+                                .font(.subheadline)
+                        }
+                        .foregroundStyle(.white.opacity(0.8))
+                        .padding(.top, 4)
+                        .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, AppTheme.spacingMD)
+                }
+                .padding(.horizontal, AppTheme.spacingLG)
+                
+                Spacer()
             }
         }
     }
