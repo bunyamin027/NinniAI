@@ -238,13 +238,13 @@ struct PaywallView: View {
                 }
                 
                 // Kavisli Metin "NİNNİ AI PRO"
-                CurvedTextView(text: "NİNNİ AI PRO", radius: 66)
+                CurvedTextView(text: "NİNNİ AI PRO", radius: 72)
                     .offset(y: 4)
             }
-            .frame(width: 160, height: 160)
+            .frame(width: 170, height: 170)
             
             // Duygusal koç başlığı — bebek adıyla
-            Text("\(babyName)'s Sleep Coach")
+            Text("\(babyName) için Uyku Koçu")
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
@@ -341,9 +341,9 @@ struct PaywallView: View {
             purchaseCard(
                 plan: .yearly,
                 label: "Yıllık",
-                price: yearlyProduct?.displayPrice ?? "₺499,99",
+                price: yearlyProduct?.displayPrice ?? "–",
                 period: "/yıl",
-                detail: "Aylık sadece ₺41,67",
+                detail: yearlyMonthlyDetail(for: yearlyProduct),
                 badge: "%40 TASARRUF",
                 isSelected: selectedPlan == .yearly
             )
@@ -352,13 +352,26 @@ struct PaywallView: View {
             purchaseCard(
                 plan: .monthly,
                 label: "Aylık",
-                price: monthlyProduct?.displayPrice ?? "₺99,99",
+                price: monthlyProduct?.displayPrice ?? "–",
                 period: "/ay",
                 detail: "Her ay yenilenir",
                 badge: nil,
                 isSelected: selectedPlan == .monthly
             )
         }
+    }
+    
+    // MARK: - Yearly Per-Month Calculation
+    
+    /// Yıllık fiyatı 12'ye bölerek kullanıcının yerel para birimi formatında aylık maliyeti hesaplar.
+    private func yearlyMonthlyDetail(for product: Product?) -> String {
+        guard let product else { return "–" }
+        let monthlyPrice = product.price / 12
+        // Ürünün kendi locale ve para birimini kullanarak formatla
+        let formatted = monthlyPrice.formatted(
+            .currency(code: product.priceFormatStyle.currencyCode)
+        )
+        return "Aylık sadece \(formatted)"
     }
     
     private func purchaseCard(
@@ -522,20 +535,33 @@ struct PaywallView: View {
                 .multilineTextAlignment(.center)
             
             HStack(spacing: 10) {
-                Link("Gizlilik Politikası & Kullanım Şartları", destination: URL(string: "https://bunyamin027.github.io/Legal/#privacy")!)
+                ParentalGateButton(destination: URL(string: "https://bunyamin027.github.io/Legal/#privacy")!) {
+                    Text("Gizlilik Politikası")
+                }
                 
                 Text("•")
                     .foregroundStyle(.white.opacity(0.2))
                 
-                Link("EULA", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+                ParentalGateButton(destination: URL(string: "https://bunyamin027.github.io/Legal/#terms")!) {
+                    Text("Kullanım Şartları")
+                }
+                
+                Text("•")
+                    .foregroundStyle(.white.opacity(0.2))
+                
+                ParentalGateButton(destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!) {
+                    Text("EULA")
+                }
             }
             .font(.system(size: 10, weight: .medium))
             .foregroundStyle(.white.opacity(0.4))
             
             // Mikro İmza
             VStack(spacing: 2) {
-                Text("Developer: Kahramandev")
-                Text("Destek: bunyaminkahraman027@icloud.com")
+                Text("Geliştirici: Kahramandev")
+                ParentalGateButton(destination: URL(string: "mailto:bunyaminkahraman027@icloud.com")!) {
+                    Text("Destek: bunyaminkahraman027@icloud.com")
+                }
             }
             .font(.system(size: 10))
             .foregroundStyle(.white.opacity(0.25))
@@ -570,12 +596,12 @@ struct CharacterView: View {
     var body: some View {
         // Upward-curving yay: Üst tarafa ortalanmış (-90 derecenin etrafında)
         // Karakter sayısına göre yay açıklığı (span) hesaplanır.
-        let angleSpan = 72.0 // Karakterlerin yayılacağı toplam açı derecesi
+        let angleSpan = 140.0 // Karakterlerin yayılacağı toplam açı derecesi
         let startAngle = -90.0 - (angleSpan / 2.0)
         let angle = startAngle + (Double(index) * (angleSpan / Double(max(1, totalCount - 1))))
         
         Text(String(letter))
-            .font(.system(size: 10, weight: .black, design: .rounded))
+            .font(.system(size: 13, weight: .black, design: .rounded))
             .foregroundStyle(.white)
             .shadow(color: Color(hex: "A78BFA").opacity(0.8), radius: 3)
             .offset(y: -radius)

@@ -50,6 +50,7 @@
 		6684DF0B1B58D09DB504EA7E /* shadowsandechoes-the-womb-dark-ambient-background-mystery-music-155682.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7600E53BB3BDEE5AC605E418 /* shadowsandechoes-the-womb-dark-ambient-background-mystery-music-155682.m4a */; };
 		6A0945F3FD36789B951A0234 /* NowPlayableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8D25689C95D2CF9E11129 /* NowPlayableManager.swift */; };
 		6A22865BB4B82102F288BB58 /* tunetank-lullaby-dreamy-children-music-347722.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3B5C77FDB52DF45D12E085E7 /* tunetank-lullaby-dreamy-children-music-347722.m4a */; };
+		6DE2B9644D766A72A1D60336 /* ParentalGateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18864C2D10F00A7ABC62D19E /* ParentalGateButton.swift */; };
 		6E63A91C54760D304095FC1D /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F896567CAB113271C6172569 /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a */; };
 		6E77F9783E202F491321A9F8 /* the_mountain-baby-sleep-143300.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5EFA6F42ABB723D806D73D91 /* the_mountain-baby-sleep-143300.m4a */; };
 		6F4A367FA87CE7D42636BD17 /* ContextResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40267CB0DF17CD10B285678 /* ContextResolver.swift */; };
@@ -159,6 +160,7 @@
 		04E8D25689C95D2CF9E11129 /* NowPlayableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayableManager.swift; sourceTree = "<group>"; };
 		084FADC44223A15BE9F60EB8 /* sleepvolume-the-quiet-night-lullaby-music-instrumental-346577.m4a */ = {isa = PBXFileReference; path = "sleepvolume-the-quiet-night-lullaby-music-instrumental-346577.m4a"; sourceTree = "<group>"; };
 		13A85F79F9E29DD5D114881B /* tunetank-kids-relaxing-lullaby-music-349558.m4a */ = {isa = PBXFileReference; path = "tunetank-kids-relaxing-lullaby-music-349558.m4a"; sourceTree = "<group>"; };
+		18864C2D10F00A7ABC62D19E /* ParentalGateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalGateButton.swift; sourceTree = "<group>"; };
 		2551DB12C6E2FCAA5D13BBC9 /* denis-pavlov-music-lullaby-baby-cradle-song-music-box-233532.m4a */ = {isa = PBXFileReference; path = "denis-pavlov-music-lullaby-baby-cradle-song-music-box-233532.m4a"; sourceTree = "<group>"; };
 		25DE2DD58374E984A09FBB7C /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		2B11A72F390511B89D415EC0 /* SleepLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLiveActivity.swift; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 			children = (
 				00D32A3570DA382B1DFFA14A /* GlassCard.swift */,
 				34747F7ECA897960E367F5AE /* GradientBackground.swift */,
+				18864C2D10F00A7ABC62D19E /* ParentalGateButton.swift */,
 				7274C9FB2AC4254BB25F12CB /* PulseButton.swift */,
 			);
 			path = Components;
@@ -807,6 +810,7 @@
 				73D061BC6FAC3EF5D6A59D04 /* NotificationManager.swift in Sources */,
 				6A0945F3FD36789B951A0234 /* NowPlayableManager.swift in Sources */,
 				7099220DB421E19FF31038EA /* OnboardingContainerView.swift in Sources */,
+				6DE2B9644D766A72A1D60336 /* ParentalGateButton.swift in Sources */,
 				8ED2719EA37324B78E56F9C8 /* PaywallView.swift in Sources */,
 				5E8DDE5307835ACD240D1626 /* PlayerView.swift in Sources */,
 				57000CC0C0C236A65E1ACAC4 /* PremiumGuard.swift in Sources */,
@@ -885,7 +889,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = ZS89AATCJ2;
 				ENABLE_PREVIEWS = YES;
@@ -964,7 +968,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZS89AATCJ2;
 				ENABLE_NS_ASSERTIONS = NO;

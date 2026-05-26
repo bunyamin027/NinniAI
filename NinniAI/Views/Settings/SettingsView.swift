@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import StoreKit
 
 // MARK: - Settings View
 /// Uygulama ayarları ekranı.
@@ -7,6 +8,7 @@ import SwiftData
 struct SettingsView: View {
     
     @Environment(\.modelContext) private var modelContext
+    @State private var showManageSubscriptions = false
     @Environment(SubscriptionManager.self) private var subscriptionManager
     @Query private var allSettings: [UserSettings]
     
@@ -74,6 +76,7 @@ struct SettingsView: View {
         .sheet(isPresented: $showSupport) {
             DeveloperSupportView()
         }
+        .manageSubscriptionsSheet(isPresented: $showManageSubscriptions)
     }
     
     // MARK: - Premium Section
@@ -120,7 +123,7 @@ struct SettingsView: View {
                 
                 // Apple subscription management
                 Button("Abonelikleri Yönet") {
-                    // ManageSubscriptionsSheet açılır
+                    showManageSubscriptions = true
                 }
                 .font(.caption)
                 .foregroundStyle(AppTheme.accentPrimary)
@@ -313,7 +316,7 @@ struct SettingsView: View {
     }
     
     private func premiumAboutLinkRow(title: String, icon: String, iconColor: Color, url: URL) -> some View {
-        Link(destination: url) {
+        ParentalGateButton(destination: url) {
             HStack(spacing: AppTheme.spacingSM) {
                 Image(systemName: icon)
                     .font(.headline)
@@ -363,7 +366,17 @@ struct SettingsView: View {
             }
             .alert("Tüm Veriler Silinecek", isPresented: $showDeleteConfirm) {
                 Button("Sil", role: .destructive) {
-                    // TODO: Tüm SwiftData verilerini sil
+                    do {
+                        try modelContext.delete(model: SleepSession.self)
+                        try modelContext.delete(model: Interruption.self)
+                        try modelContext.delete(model: SoundUsage.self)
+                        try modelContext.delete(model: Milestone.self)
+                        try modelContext.delete(model: Baby.self)
+                        try modelContext.delete(model: UserSettings.self)
+                        try modelContext.save()
+                    } catch {
+                        print("🔴 Veriler silinemedi: \(error.localizedDescription)")
+                    }
                 }
                 Button("İptal", role: .cancel) {}
             } message: {
@@ -429,7 +442,7 @@ struct SettingsView: View {
     }
     
     private func settingLink(_ title: String, url: URL) -> some View {
-        Link(destination: url) {
+        ParentalGateButton(destination: url) {
             HStack {
                 Text(title)
                     .font(.subheadline)

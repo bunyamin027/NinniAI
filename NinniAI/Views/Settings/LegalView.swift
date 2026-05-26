@@ -34,6 +34,12 @@ struct LegalView: View {
                         NinniAI, SwiftUI ve AVFoundation framework'leri üzerine \
                         inşa edilmiştir. Üçüncü parti bağımlılık kullanılmamaktadır.
                         """)
+                        
+                        legalSection("Geliştirici & Destek Bilgileri", text: """
+                        • Geliştirici: Kahramandev\n\
+                        • İletişim & Destek: bunyaminkahraman027@icloud.com\n\
+                        • Web Sitesi: bunyamin027.github.io/Legal
+                        """)
                     }
                     .padding(AppTheme.spacingMD)
                 }

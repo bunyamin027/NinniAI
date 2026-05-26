@@ -10,7 +10,7 @@ class LiveActivityManager {
     
     private init() {}
     
-    func startLiveActivity(babyName: String, soundName: String) {
+    func startLiveActivity(babyName: String, soundName: String, startTime: Date = Date()) {
         print("--- Live Activity Başlatma Tetiklendi (Bebek: \(babyName), Ses: \(soundName)) ---")
         guard ActivityAuthorizationInfo().areActivitiesEnabled else {
             print("HATA: ActivityAuthorizationInfo().areActivitiesEnabled == false. Cihaz/Simülatör ayarlarından Live Activities kapalı olabilir!")
@@ -20,7 +20,7 @@ class LiveActivityManager {
         
         let attributes = SleepAttributes(babyName: babyName)
         let initialContentState = SleepAttributes.ContentState(
-            startTime: Date(),
+            startTime: startTime,
             sleepStatus: "Derin Uykuda",
             soundName: soundName
         )

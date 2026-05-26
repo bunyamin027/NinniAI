@@ -19,10 +19,9 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            if showOnboarding && !isOnboardingDone {
+            if !isOnboardingDone {
                 OnboardingContainerView {
                     withAnimation(AppTheme.animationSlow) {
-                        showOnboarding = false
                         appState.isOnboardingCompleted = true
                     }
                 }
@@ -36,7 +35,6 @@ struct ContentView: View {
             PaywallView()
         }
         .onAppear {
-            showOnboarding = !isOnboardingDone
             appState.isOnboardingCompleted = isOnboardingDone
             
             // Baby varsa ContextEngine'i güncelle

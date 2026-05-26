@@ -399,7 +399,8 @@ struct DashboardView: View {
                 isBabyAwake = false
                 LiveActivityManager.shared.startLiveActivity(
                     babyName: baby?.name ?? "Bebeğiniz",
-                    soundName: appState.audioEngine.activeLayer?.displayName ?? "Sessiz"
+                    soundName: appState.audioEngine.activeLayer?.displayName ?? "Sessiz",
+                    startTime: selectedTime
                 )
             }
         }
