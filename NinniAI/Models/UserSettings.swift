@@ -111,22 +111,19 @@ final class UserSettings {
 enum PremiumPlan: String, Codable, CaseIterable {
     case monthly = "monthly"
     case yearly = "yearly"
-    case lifetime = "lifetime"
     
     var displayTitle: String {
         switch self {
         case .monthly:  return "Aylık"
         case .yearly:   return "Yıllık"
-        case .lifetime: return "Ömür Boyu"
         }
     }
     
-    /// StoreKit product identifier
+    /// StoreKit product identifier — App Store Connect'teki gerçek ID'ler
     var productIdentifier: String {
         switch self {
-        case .monthly:  return "com.ninni.ai.premium.monthly"
-        case .yearly:   return "com.ninni.ai.premium.yearly"
-        case .lifetime: return "com.ninni.ai.premium.lifetime"
+        case .monthly:  return "ninniai.monthly"
+        case .yearly:   return "ninniai.yearly"
         }
     }
 }

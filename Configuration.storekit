@@ -45,7 +45,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "0.99",
+          "displayPrice" : "1.99",
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "F506AC29",
@@ -54,12 +54,17 @@
           ],
           "localizations" : [
             {
-              "description" : "",
-              "displayName" : "",
+              "description" : "Aylık otomatik yenilenen abonelik",
+              "displayName" : "NinniAI Pro Aylık",
+              "locale" : "tr"
+            },
+            {
+              "description" : "Monthly auto-renewable subscription",
+              "displayName" : "NinniAI Pro Monthly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "Monthly",
+          "productID" : "ninniai.monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "ninniai.monthly",
           "subscriptionGroupID" : "03DFB294",
@@ -75,7 +80,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "0.99",
+          "displayPrice" : "9.99",
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "F5A198F6",
@@ -84,12 +89,17 @@
           ],
           "localizations" : [
             {
-              "description" : "",
-              "displayName" : "",
+              "description" : "Yıllık otomatik yenilenen abonelik",
+              "displayName" : "NinniAI Pro Yıllık",
+              "locale" : "tr"
+            },
+            {
+              "description" : "Yearly auto-renewable subscription",
+              "displayName" : "NinniAI Pro Yearly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "Yearly",
+          "productID" : "ninniai.yearly",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "ninniai.yearly",
           "subscriptionGroupID" : "03DFB294",
@@ -106,3 +116,4 @@
     "minor" : 0
   }
 }
+

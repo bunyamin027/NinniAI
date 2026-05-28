@@ -68,7 +68,8 @@ struct PaywallView: View {
         }
         .task {
             do {
-                products = try await Product.products(for: ["ninniai.monthly", "ninniai.yearly"])
+                let ids = PremiumPlan.allCases.map(\.productIdentifier)
+                products = try await Product.products(for: Set(ids))
             } catch {
                 print("🔴 Ürünler yüklenemedi: \(error.localizedDescription)")
             }
@@ -333,8 +334,8 @@ struct PaywallView: View {
     // MARK: - Direct Purchase Cards
     
     private var planCards: some View {
-        let yearlyProduct = products.first(where: { $0.id == "ninniai.yearly" })
-        let monthlyProduct = products.first(where: { $0.id == "ninniai.monthly" })
+        let yearlyProduct = products.first(where: { $0.id == PremiumPlan.yearly.productIdentifier })
+        let monthlyProduct = products.first(where: { $0.id == PremiumPlan.monthly.productIdentifier })
         
         return HStack(spacing: 12) {
             // ── Yıllık — AVANTAJLI (parlayan kart) ──
@@ -502,7 +503,7 @@ struct PaywallView: View {
             isPurchasing = true
             defer { isPurchasing = false }
             do {
-                let productId = (plan == .yearly) ? "ninniai.yearly" : "ninniai.monthly"
+                let productId = plan.productIdentifier
                 if let product = products.first(where: { $0.id == productId }) {
                     // StoreKit 2 yerel satın alma mekanizması doğrudan tetiklenir
                     let result = try await product.purchase()

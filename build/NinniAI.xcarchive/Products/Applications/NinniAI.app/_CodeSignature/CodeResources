@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		gbVkgKBDSiCIrjvB9/ceIQujQio=
+		pI6qjJEIdOwftR+jCVBtJr3Qwpo=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -26,15 +26,15 @@
 		</data>
 		<key>PlugIns/NinniAIWidget.appex/Info.plist</key>
 		<data>
-		H3UVqcqzgXQ3DtFdyic4I3evrm0=
+		1xvU8YR84kSoD1xTPlv5jWdYUUo=
 		</data>
 		<key>PlugIns/NinniAIWidget.appex/NinniAIWidget</key>
 		<data>
-		tr61YxY+V5jXjqIfGXUw4tjd0QI=
+		lkI2zUocHdF7FEyEXBQl/Xdlohs=
 		</data>
 		<key>PlugIns/NinniAIWidget.appex/_CodeSignature/CodeResources</key>
 		<data>
-		yUoJMygYsKu0dr3AU4y9/aqqhVs=
+		KlAH1E3wNOIEaGp4AYMSAoibpIY=
 		</data>
 		<key>PlugIns/NinniAIWidget.appex/embedded.mobileprovision</key>
 		<data>
@@ -300,21 +300,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qdVWRw3pQnAWuE3tb8/SMxaC48r4V+SS+M8lfxsHGro=
+			RlBZVfsUqSziVX+7srbWBT5wR0b56yGyfaRENRWUZAs=
 			</data>
 		</dict>
 		<key>PlugIns/NinniAIWidget.appex/NinniAIWidget</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RKVztKSomDr0kaNsrHp9U8dmJfLnGJ+Fwwqv9X2ujmg=
+			oDumHV3OehG/7Mti6EZQF7/Bvde2/Vgl9XfKot3o3gI=
 			</data>
 		</dict>
 		<key>PlugIns/NinniAIWidget.appex/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			58lIVbsnjBWI7MvSg4pSGyUQIvu27V9h+ecEPHLH1CI=
+			0hwQBqDQhz8qvk2ZbxrKZmTBSQ0t4TvQFjqT0KdW024=
 			</data>
 		</dict>
 		<key>PlugIns/NinniAIWidget.appex/embedded.mobileprovision</key>

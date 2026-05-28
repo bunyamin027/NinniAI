@@ -38,8 +38,7 @@ final class SubscriptionManager {
     
     init(storeKit: StoreKitManager) {
         self.storeKit = storeKit
-        // DEBUG: Test amaçlı her zaman PRO
-        self.isPro = true // storeKit.isSubscribed
+        self.isPro = storeKit.isSubscribed
     }
     
     // MARK: - Sync
@@ -49,8 +48,7 @@ final class SubscriptionManager {
     @MainActor
     func syncSubscriptionStatus() async {
         await storeKit.updateSubscriptionStatus()
-        // DEBUG: Test amaçlı her zaman PRO
-        isPro = true // storeKit.isSubscribed
+        isPro = storeKit.isSubscribed
     }
     
     /// StoreKitManager referansı — PaywallView satın alma akışı için

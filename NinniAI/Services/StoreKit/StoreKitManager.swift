@@ -176,11 +176,6 @@ final class StoreKitManager {
     var yearlyProduct: Product? {
         products.first { $0.id == PremiumPlan.yearly.productIdentifier }
     }
-    
-    /// Ömür boyu ürün
-    var lifetimeProduct: Product? {
-        products.first { $0.id == PremiumPlan.lifetime.productIdentifier }
-    }
 }
 
 // MARK: - Store Error
