@@ -219,8 +219,16 @@ dictionary = {
 }
 
 file_path = 'NinniAI/Localizable.xcstrings'
-with open(file_path, 'r', encoding='utf-8') as f:
-    data = json.load(f)
+import os
+if not os.path.exists(file_path):
+    data = {
+        "sourceLanguage": "tr",
+        "strings": {},
+        "version": "1.0"
+    }
+else:
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
 
 # Ensure all items in dictionary exist in strings
 for key, value in dictionary.items():

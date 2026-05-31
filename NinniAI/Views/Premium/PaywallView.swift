@@ -23,13 +23,17 @@ struct PaywallView: View {
         allSettings.first?.baby?.name ?? "Bebeğiniz"
     }
     
+    private var isIPad: Bool {
+        UIDevice.current.userInterfaceIdiom == .pad
+    }
+    
     var body: some View {
         ZStack {
             // Gece mavisi / lavanta degradeli arka plan
             paywallBackground
             
             ScrollView(showsIndicators: false) {
-                VStack(spacing: 24) {
+                VStack(spacing: isIPad ? 16 : 24) {
                     // Kapat butonu
                     closeButton
                     
@@ -149,7 +153,7 @@ struct PaywallView: View {
     // MARK: - Hero (Koç Odaklı)
     
     private var heroSection: some View {
-        VStack(spacing: 14) {
+        VStack(spacing: isIPad ? 8 : 14) {
             // Kavisli Metin ve Simge Kompozisyonu
             ZStack {
                 // Neon glow arka planı
@@ -166,13 +170,13 @@ struct PaywallView: View {
                             endRadius: 75
                         )
                     )
-                    .frame(width: 150, height: 150)
+                    .frame(width: isIPad ? 100 : 150, height: isIPad ? 100 : 150)
                     .blur(radius: 10)
                 
                 // Cam benzeri (glassmorphism) rozet çemberi
                 Circle()
                     .fill(.white.opacity(0.04))
-                    .frame(width: 110, height: 110)
+                    .frame(width: isIPad ? 80 : 110, height: isIPad ? 80 : 110)
                     .background(
                         Circle()
                             .fill(.ultraThinMaterial)
@@ -199,7 +203,7 @@ struct PaywallView: View {
                 ZStack {
                     // Hilal Ay
                     Image(systemName: "moon.fill")
-                        .font(.system(size: 34))
+                        .font(.system(size: isIPad ? 24 : 34))
                         .foregroundStyle(
                             LinearGradient(
                                 colors: [Color(hex: "FCD34D"), Color(hex: "FBBF24")],
@@ -207,12 +211,12 @@ struct PaywallView: View {
                                 endPoint: .bottomLeading
                             )
                         )
-                        .offset(x: -8, y: -6)
+                        .offset(x: isIPad ? -6 : -8, y: isIPad ? -4 : -6)
                         .rotationEffect(.degrees(-15))
                     
                     // Taç
                     Image(systemName: "crown.fill")
-                        .font(.system(size: 26))
+                        .font(.system(size: isIPad ? 18 : 26))
                         .foregroundStyle(
                             LinearGradient(
                                 colors: [Color(hex: "FFD700"), Color(hex: "FBBF24"), Color(hex: "F59E0B")],
@@ -221,32 +225,32 @@ struct PaywallView: View {
                             )
                         )
                         .shadow(color: Color(hex: "FBBF24").opacity(0.4), radius: 6)
-                        .offset(x: 10, y: 12)
+                        .offset(x: isIPad ? 8 : 10, y: isIPad ? 8 : 12)
                         .offset(y: crownFloat ? -3 : 3)
                     
                     // Parıltılar / Yıldızlar
                     Image(systemName: "sparkles")
-                        .font(.system(size: 18))
+                        .font(.system(size: isIPad ? 12 : 18))
                         .foregroundStyle(Color(hex: "A78BFA"))
-                        .offset(x: -24, y: 22)
+                        .offset(x: isIPad ? -18 : -24, y: isIPad ? 16 : 22)
                         .opacity(glowPulse ? 0.9 : 0.5)
                     
                     Image(systemName: "sparkle")
-                        .font(.system(size: 12))
+                        .font(.system(size: isIPad ? 8 : 12))
                         .foregroundStyle(Color(hex: "FBBF24"))
-                        .offset(x: 28, y: -20)
+                        .offset(x: isIPad ? 20 : 28, y: isIPad ? -14 : -20)
                         .opacity(glowPulse ? 0.9 : 0.4)
                 }
                 
                 // Kavisli Metin "NİNNİ AI PRO"
-                CurvedTextView(text: "NİNNİ AI PRO", radius: 72)
+                CurvedTextView(text: "NİNNİ AI PRO", radius: isIPad ? 52 : 72)
                     .offset(y: 4)
             }
-            .frame(width: 170, height: 170)
+            .frame(width: isIPad ? 120 : 170, height: isIPad ? 120 : 170)
             
             // Duygusal koç başlığı — bebek adıyla
             Text("\(babyName) için Uyku Koçu")
-                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .font(.system(size: isIPad ? 22 : 28, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
                 .lineSpacing(2)
@@ -264,29 +268,71 @@ struct PaywallView: View {
     
     private var featuresSection: some View {
         VStack(spacing: 0) {
-            featureRow(
-                icon: "clock.badge.checkmark.fill",
-                iconColor: Color(hex: "A78BFA"),
-                text: "Ay ve gelişime göre otonom uyku pencereleri"
-            )
-            featureDivider
-            featureRow(
-                icon: "chart.line.uptrend.xyaxis",
-                iconColor: Color(hex: "60A5FA"),
-                text: "Günlük uyku trendleri ve derin analizler"
-            )
-            featureDivider
-            featureRow(
-                icon: "moon.stars.fill",
-                iconColor: Color(hex: "C4B5FD"),
-                text: "Kilit ekranından anlık uyku takibi"
-            )
-            featureDivider
-            featureRow(
-                icon: "sparkles",
-                iconColor: Color(hex: "FCD34D"),
-                text: "Kesintisiz, reklamsız ve dingin deneyim"
-            )
+            if isIPad {
+                // 2x2 grid
+                VStack(spacing: 0) {
+                    HStack(spacing: 0) {
+                        featureRow(
+                            icon: "clock.badge.checkmark.fill",
+                            iconColor: Color(hex: "A78BFA"),
+                            text: "Ay ve gelişime göre otonom uyku pencereleri"
+                        )
+                        .frame(maxWidth: .infinity)
+                        
+                        featureRow(
+                            icon: "chart.line.uptrend.xyaxis",
+                            iconColor: Color(hex: "60A5FA"),
+                            text: "Günlük uyku trendleri ve derin analizler"
+                        )
+                        .frame(maxWidth: .infinity)
+                    }
+                    
+                    featureDivider
+                    
+                    HStack(spacing: 0) {
+                        featureRow(
+                            icon: "moon.stars.fill",
+                            iconColor: Color(hex: "C4B5FD"),
+                            text: "Kilit ekranından anlık uyku takibi"
+                        )
+                        .frame(maxWidth: .infinity)
+                        
+                        featureRow(
+                            icon: "sparkles",
+                            iconColor: Color(hex: "FCD34D"),
+                            text: "Kesintisiz, reklamsız ve dingin deneyim"
+                        )
+                        .frame(maxWidth: .infinity)
+                    }
+                }
+            } else {
+                // 1x4 list
+                VStack(spacing: 0) {
+                    featureRow(
+                        icon: "clock.badge.checkmark.fill",
+                        iconColor: Color(hex: "A78BFA"),
+                        text: "Ay ve gelişime göre otonom uyku pencereleri"
+                    )
+                    featureDivider
+                    featureRow(
+                        icon: "chart.line.uptrend.xyaxis",
+                        iconColor: Color(hex: "60A5FA"),
+                        text: "Günlük uyku trendleri ve derin analizler"
+                    )
+                    featureDivider
+                    featureRow(
+                        icon: "moon.stars.fill",
+                        iconColor: Color(hex: "C4B5FD"),
+                        text: "Kilit ekranından anlık uyku takibi"
+                    )
+                    featureDivider
+                    featureRow(
+                        icon: "sparkles",
+                        iconColor: Color(hex: "FCD34D"),
+                        text: "Kesintisiz, reklamsız ve dingin deneyim"
+                    )
+                }
+            }
         }
         .padding(.vertical, 4)
         .background(
@@ -300,28 +346,30 @@ struct PaywallView: View {
     }
     
     private func featureRow(icon: String, iconColor: Color, text: String) -> some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 8) {
             Image(systemName: icon)
-                .font(.system(size: 16))
+                .font(.system(size: 14))
                 .foregroundStyle(iconColor)
-                .frame(width: 34, height: 34)
+                .frame(width: 28, height: 28)
                 .background(
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    RoundedRectangle(cornerRadius: 8, style: .continuous)
                         .fill(iconColor.opacity(0.12))
                 )
             
             Text(text)
-                .font(.subheadline)
+                .font(.system(size: isIPad ? 11 : 13))
                 .foregroundStyle(.white.opacity(0.85))
+                .lineLimit(2)
+                .minimumScaleFactor(0.85)
             
             Spacer()
             
             Image(systemName: "checkmark")
-                .font(.caption.weight(.bold))
+                .font(.caption2.weight(.bold))
                 .foregroundStyle(AppTheme.success)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
+        .padding(.horizontal, 12)
+        .padding(.vertical, isIPad ? 8 : 12)
     }
     
     private var featureDivider: some View {
@@ -387,14 +435,14 @@ struct PaywallView: View {
         Button {
             triggerPurchase(plan: plan)
         } label: {
-            VStack(spacing: 12) {
+            VStack(spacing: isIPad ? 8 : 12) {
                 // Badge
                 if let badge {
                     Text(badge)
-                        .font(.system(size: 9, weight: .heavy))
+                        .font(.system(size: 8, weight: .heavy))
                         .foregroundStyle(.white)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 4)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
                         .background(
                             Capsule().fill(
                                 LinearGradient(
@@ -405,7 +453,7 @@ struct PaywallView: View {
                             )
                         )
                 } else {
-                    Spacer().frame(height: 22)
+                    Spacer().frame(height: isIPad ? 14 : 22)
                 }
                 
                 Text(label)
@@ -415,7 +463,7 @@ struct PaywallView: View {
                 // Fiyat
                 HStack(alignment: .firstTextBaseline, spacing: 1) {
                     Text(price)
-                        .font(.title3.weight(.bold))
+                        .font(.system(size: isIPad ? 18 : 20, weight: .bold))
                         .foregroundStyle(isSelected ? AppTheme.accentPrimary : .white.opacity(0.8))
                     
                     Text(period)
@@ -424,7 +472,7 @@ struct PaywallView: View {
                 }
                 
                 Text(detail)
-                    .font(.system(size: 10, weight: .medium))
+                    .font(.system(size: 9, weight: .medium))
                     .foregroundStyle(
                         isSelected
                         ? AppTheme.success.opacity(0.85)
@@ -436,7 +484,7 @@ struct PaywallView: View {
                     .font(.caption.weight(.bold))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
+                    .padding(.vertical, isIPad ? 8 : 10)
                     .background(
                         Capsule().fill(
                             isSelected
@@ -452,44 +500,13 @@ struct PaywallView: View {
                             )
                         )
                     )
-                    .padding(.top, 4)
+                    .padding(.top, 2)
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 20)
-            .padding(.horizontal, 14)
+            .padding(.vertical, isIPad ? 14 : 20)
+            .padding(.horizontal, isIPad ? 10 : 14)
             .contentShape(Rectangle()) // Tıklama alanını tüm karta yayar
-            .background(
-                RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .fill(.ultraThinMaterial)
-                    .environment(\.colorScheme, .dark)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .stroke(
-                        isSelected
-                        ? LinearGradient(
-                            colors: [
-                                AppTheme.accentPrimary.opacity(0.7),
-                                AppTheme.accentPrimary.opacity(0.2)
-                            ],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                        : LinearGradient(
-                            colors: [.white.opacity(0.1), .white.opacity(0.04)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        ),
-                        lineWidth: isSelected ? 1.5 : 1
-                    )
-            )
-            // Soft lavanta glow — sadece highlighted kart
-            .shadow(
-                color: isSelected ? AppTheme.accentPrimary.opacity(0.2) : .clear,
-                radius: 20, x: 0, y: 10
-            )
         }
-        .buttonStyle(PlainButtonStyle())
+        .buttonStyle(PaywallCardButtonStyle(isSelected: isSelected))
         .disabled(isPurchasing)
         .sensoryFeedback(.impact(weight: .medium), trigger: isPurchasing)
     }
@@ -602,11 +619,53 @@ struct CharacterView: View {
         let angle = startAngle + (Double(index) * (angleSpan / Double(max(1, totalCount - 1))))
         
         Text(String(letter))
-            .font(.system(size: 13, weight: .black, design: .rounded))
+            .font(.system(size: radius < 60 ? 10 : 13, weight: .black, design: .rounded))
             .foregroundStyle(.white)
             .shadow(color: Color(hex: "A78BFA").opacity(0.8), radius: 3)
             .offset(y: -radius)
             .rotationEffect(Angle(degrees: angle))
+    }
+}
+
+// MARK: - Paywall Card Button Style
+struct PaywallCardButtonStyle: ButtonStyle {
+    let isSelected: Bool
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity)
+            .background(
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .fill(.ultraThinMaterial)
+                    .environment(\.colorScheme, .dark)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .stroke(
+                        isSelected
+                        ? LinearGradient(
+                            colors: [
+                                AppTheme.accentPrimary.opacity(0.7),
+                                AppTheme.accentPrimary.opacity(0.2)
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                        : LinearGradient(
+                            colors: [.white.opacity(0.1), .white.opacity(0.04)],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        lineWidth: isSelected ? 1.5 : 1
+                    )
+            )
+            .shadow(
+                color: isSelected ? AppTheme.accentPrimary.opacity(0.2) : .clear,
+                radius: 20, x: 0, y: 10
+            )
+            .scaleEffect(configuration.isPressed ? 0.98 : 1.0)
+            .opacity(configuration.isPressed ? 0.9 : 1.0)
+            .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
     }
 }
 

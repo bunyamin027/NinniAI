@@ -100,6 +100,7 @@
 		C93214BE7F7344CAB060CF5E /* MilestoneTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6A02F9BC0D45BBBE45846F /* MilestoneTracker.swift */; };
 		CCB1B8F2BBC9E27AF3042E74 /* BabyInfoStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725A7FEFE7A14A1DD28DAC7E /* BabyInfoStepView.swift */; };
 		CF2436011E242D3C54BF87E5 /* SoundUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6ABB9039EC46A3238978AE /* SoundUsage.swift */; };
+		D114B42910EDD2F83D2BB052 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F8F1A3B8190406994CA33028 /* Localizable.xcstrings */; };
 		D1E96F632910BFF0ACB1671A /* the_mountain-soft-loop-130012.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3B2DED412035B5BD4020F7B3 /* the_mountain-soft-loop-130012.m4a */; };
 		D1F81C8628D5F203669FDC71 /* QuickActionGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAD80250AA1A9E83DF8C49A /* QuickActionGrid.swift */; };
 		D288CF680BC6E8998F5CC7C8 /* SoundSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC7AB8909EE2A9D0486CB02 /* SoundSeeder.swift */; };
@@ -272,6 +273,7 @@
 		F3649FD7A293B124F61E4C89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F40267CB0DF17CD10B285678 /* ContextResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextResolver.swift; sourceTree = "<group>"; };
 		F896567CAB113271C6172569 /* nonenothingnowhere-417-hz-sacral-chakra-156264.m4a */ = {isa = PBXFileReference; path = "nonenothingnowhere-417-hz-sacral-chakra-156264.m4a"; sourceTree = "<group>"; };
+		F8F1A3B8190406994CA33028 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F97D4B605397F12E75EC80DD /* freemusicforvideo-kids-cartoon-495621.m4a */ = {isa = PBXFileReference; path = "freemusicforvideo-kids-cartoon-495621.m4a"; sourceTree = "<group>"; };
 		FA65EA2317A7D33A032B612F /* oceanframemusic-guitar-relaxation-524560.m4a */ = {isa = PBXFileReference; path = "oceanframemusic-guitar-relaxation-524560.m4a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -599,6 +601,7 @@
 				2564DD493EF151279BEE32CA /* Views */,
 				F3649FD7A293B124F61E4C89 /* ContentView.swift */,
 				2D546E4F3EBB85514F57FDAC /* Info.plist */,
+				F8F1A3B8190406994CA33028 /* Localizable.xcstrings */,
 				56A8F5B20C5A967965F7B4B3 /* NinniAIApp.swift */,
 			);
 			path = NinniAI;
@@ -685,6 +688,7 @@
 			knownRegions = (
 				Base,
 				en,
+				tr,
 			);
 			mainGroup = 0E203689656B197B3E525A97;
 			minimizedProjectReferenceProxies = 1;
@@ -705,6 +709,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D124848CFDA58F6269A76E /* Assets.xcassets in Resources */,
+				D114B42910EDD2F83D2BB052 /* Localizable.xcstrings in Resources */,
 				63FDB6F2EA85C60B10FD95E8 /* absolutesound-meditation-meditation-music-510801.m4a in Resources */,
 				2F24B47370FF22F912185292 /* alan_frijns-valley-of-silence-meditation-yoga-relaxation-work-study-sleep-music-122612.m4a in Resources */,
 				3B9C7731186E5DBC2DE0CFA6 /* angel4leon-baby-smile-190123.m4a in Resources */,
@@ -889,7 +894,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = ZS89AATCJ2;
 				ENABLE_PREVIEWS = YES;
@@ -968,7 +973,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZS89AATCJ2;
 				ENABLE_NS_ASSERTIONS = NO;

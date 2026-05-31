@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		pI6qjJEIdOwftR+jCVBtJr3Qwpo=
+		EPQQPqaCyiuJhBXHPujh6u+Fd8I=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -26,15 +26,15 @@
 		</data>
 		<key>PlugIns/NinniAIWidget.appex/Info.plist</key>
 		<data>
-		1xvU8YR84kSoD1xTPlv5jWdYUUo=
+		7UCA/xa1T02HkzHNx2Dvyl+rKJg=
 		</data>
 		<key>PlugIns/NinniAIWidget.appex/NinniAIWidget</key>
 		<data>
-		lkI2zUocHdF7FEyEXBQl/Xdlohs=
+		6JYmSiRELNZZZ/8AwBN1HIspm9s=
 		</data>
 		<key>PlugIns/NinniAIWidget.appex/_CodeSignature/CodeResources</key>
 		<data>
-		KlAH1E3wNOIEaGp4AYMSAoibpIY=
+		jxWThVeyEu8I+5+DmQe2nMsupr8=
 		</data>
 		<key>PlugIns/NinniAIWidget.appex/embedded.mobileprovision</key>
 		<data>
@@ -96,6 +96,15 @@
 		<data>
 		c/mekdf/qbNTZwxAmI4scYhsDuY=
 		</data>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YW59Ezqd8qppFqibh0vCrm3gkXE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>freemusicforvideo-kids-cartoon-495621.m4a</key>
 		<data>
 		1dgM5RsE9ee3Y35n6pimhQ9tjoo=
@@ -300,21 +309,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RlBZVfsUqSziVX+7srbWBT5wR0b56yGyfaRENRWUZAs=
+			1v4J3OQmAQFMnSAJEllRKEUt2phdWk6XfJ0foNLqC+M=
 			</data>
 		</dict>
 		<key>PlugIns/NinniAIWidget.appex/NinniAIWidget</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oDumHV3OehG/7Mti6EZQF7/Bvde2/Vgl9XfKot3o3gI=
+			90eH5z2GrWOi7AQjwchq1tx/LNvcSgQkOpRgOMvURKA=
 			</data>
 		</dict>
 		<key>PlugIns/NinniAIWidget.appex/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0hwQBqDQhz8qvk2ZbxrKZmTBSQ0t4TvQFjqT0KdW024=
+			N/rLxb5t56J9VI+ej1rchXgOo2zJHGiC262ltBceveU=
 			</data>
 		</dict>
 		<key>PlugIns/NinniAIWidget.appex/embedded.mobileprovision</key>
@@ -421,6 +430,15 @@
 			<data>
 			yQ/RSIYjJvPbn7SQEURA5bH/uJM30Kh/DtYJDsBhCwc=
 			</data>
+		</dict>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			giUXGtkAzxoAE9BK4gVyZrFTvk7CFaKJAb61BGAZyFs=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 		<key>freemusicforvideo-kids-cartoon-495621.m4a</key>
 		<dict>
