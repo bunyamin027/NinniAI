@@ -85,16 +85,16 @@ struct SettingsView: View {
         GlassCard {
             VStack(spacing: AppTheme.spacingMD) {
                 HStack {
-                    Image(systemName: settings?.isPremiumActive == true ? "crown.fill" : "crown")
+                    Image(systemName: subscriptionManager.isPro ? "crown.fill" : "crown")
                         .font(.title2)
                         .foregroundStyle(AppTheme.warning)
                     
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(settings?.isPremiumActive == true ? "NinniAI Pro" : "Ücretsiz Plan")
+                        Text(subscriptionManager.isPro ? "NinniAI Pro" : "Ücretsiz Plan")
                             .font(.headline)
                             .foregroundStyle(AppTheme.textPrimary)
                         
-                        Text(settings?.isPremiumActive == true
+                        Text(subscriptionManager.isPro
                              ? "Tüm özellikler aktif"
                              : "Premium'a geçerek tüm özellikleri açın"
                         )
@@ -105,7 +105,7 @@ struct SettingsView: View {
                     Spacer()
                 }
                 
-                if settings?.isPremiumActive != true {
+                if !subscriptionManager.isPro {
                     Button {
                         showPaywall = true
                     } label: {
