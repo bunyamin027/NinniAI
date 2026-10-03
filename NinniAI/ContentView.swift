@@ -8,8 +8,8 @@ struct ContentView: View {
     
     @Environment(\.modelContext) private var modelContext
     @Query private var allSettings: [UserSettings]
-    @State private var appState = AppState()
-    @State private var subscriptionManager = SubscriptionManager(storeKit: StoreKitManager())
+    @Bindable var appState: AppState = AppState()
+    @Bindable var subscriptionManager: SubscriptionManager = SubscriptionManager(storeKit: StoreKitManager())
     @State private var showOnboarding = true
     
     /// Onboarding tamamlanmış mı? (SwiftData'dan okunur)

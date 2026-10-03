@@ -13,6 +13,9 @@ import Observation
 @Observable
 final class NotificationManager {
     
+    static let shared = NotificationManager()
+    static let sleepWindowReminderIdentifier = "smart_sleep_window_reminder"
+    
     // MARK: - State
     
     /// Bildirim izni verilmiş mi?
@@ -77,6 +80,55 @@ final class NotificationManager {
         )
         
         UNUserNotificationCenter.current().add(request)
+    }
+    
+    // MARK: - Smart Sleep Window Reminder
+    
+    /// Akıllı Uyku Penceresi bildirimini planlar (İdeal uyku vaktinden 15 dakika önce)
+    func scheduleSleepWindowReminder(optimalSleepTime: Date, babyName: String) {
+        // Önceki bekleyen pencere bildirimini temizle
+        cancelSleepWindowReminder()
+        
+        // İdeal saatten 15 dakika öncesi
+        let reminderDate = optimalSleepTime.addingTimeInterval(-15 * 60)
+        let timeInterval = reminderDate.timeIntervalSinceNow
+        
+        // Bildirim zamanı geçmişte ise gönderme
+        guard timeInterval > 0 else {
+            print("ℹ️ Bildirim zamanı geçmişte kaldığı için planlanmadı.")
+            return
+        }
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Uyku Vakti Yaklaşıyor! 🌙"
+        content.body = "\(babyName) için uyku penceresi kapanmak üzere. Odayı karartıp beyaz gürültüyü açmanın tam zamanı."
+        content.sound = .default
+        content.categoryIdentifier = "SLEEP_WINDOW"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(
+            timeInterval: timeInterval,
+            repeats: false
+        )
+        
+        let request = UNNotificationRequest(
+            identifier: Self.sleepWindowReminderIdentifier,
+            content: content,
+            trigger: trigger
+        )
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("⚠️ Akıllı uyku penceresi bildirimi eklenemedi: \(error.localizedDescription)")
+            } else {
+                print("✅ Akıllı uyku penceresi bildirimi planlandı (\(babyName)): \(reminderDate.formatted(date: .omitted, time: .shortened))")
+            }
+        }
+    }
+    
+    /// Bekleyen uyku penceresi hatırlatmasını iptal et
+    func cancelSleepWindowReminder() {
+        UNUserNotificationCenter.current()
+            .removePendingNotificationRequests(withIdentifiers: [Self.sleepWindowReminderIdentifier])
     }
     
     // MARK: - Milestone Notification

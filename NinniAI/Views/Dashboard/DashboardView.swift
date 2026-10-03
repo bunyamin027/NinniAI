@@ -72,9 +72,17 @@ struct DashboardView: View {
                     smartHeaderSection
                         .padding(.top, AppTheme.spacingMD)
                     
-                    agentSuggestionCard
-                    
-                    quickTrackersSection
+                    SmartSleepWindowCard(
+                        baby: baby,
+                        lastWakeUpTime: $lastWakeUpTime,
+                        lastSleepTime: $lastSleepTime,
+                        isBabyAwake: $isBabyAwake,
+                        onOpenTimePicker: { isWake in
+                            selectedTime = Date()
+                            isSettingWakeTime = isWake
+                            showTimePickerSheet = true
+                        }
+                    )
                     
                     developmentCard
                     
@@ -154,13 +162,39 @@ struct DashboardView: View {
             
             // Center Content
             VStack(spacing: 8) {
-                Text(isBabyAwake ? "Tahmini Uyku Vakti" : "Şu An Uykuda")
+                Text(isBabyAwake ? "Bir sonraki tahmini uyku" : "Şu An Uykuda")
                     .font(.subheadline)
                     .foregroundStyle(Color(hex: "94A3B8"))
                 
-                Text(isBabyAwake ? nextSleepWindowText : currentSleepDurationText)
+                Text(isBabyAwake ? optimalSleepTimeFormatted : currentSleepDurationText)
                     .font(.system(size: 38, weight: .bold, design: .rounded))
                     .foregroundStyle(.white)
+                
+                if isBabyAwake {
+                    HStack(spacing: 8) {
+                        HStack(spacing: 4) {
+                            Circle()
+                                .fill(statusColor)
+                                .frame(width: 8, height: 8)
+                            Text("Kalan: \(remainingWakeTimeText)")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(statusColor)
+                        }
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(statusColor.opacity(0.12))
+                        .clipShape(Capsule())
+                        
+                        HStack(spacing: 4) {
+                            Image(systemName: "bell.badge.fill")
+                                .font(.caption2)
+                            Text("15 dk önce bildirim")
+                                .font(.caption2)
+                        }
+                        .foregroundStyle(Color(hex: "94A3B8"))
+                    }
+                    .padding(.top, 2)
+                }
             }
             
             // Subtle Player Interface
@@ -301,33 +335,44 @@ struct DashboardView: View {
     
     // MARK: - Agentic Logic Helpers
     
+    private var optimalSleepTime: Date {
+        let wakeDate = Date(timeIntervalSince1970: lastWakeUpTime)
+        let age = baby?.ageInMonths ?? 6
+        return SleepWindowService.shared.calculateNextSleepTime(wakeUpTime: wakeDate, ageInMonths: age)
+    }
+    
+    private var optimalSleepTimeFormatted: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: optimalSleepTime)
+    }
+    
+    private var remainingWakeTimeText: String {
+        SleepWindowService.shared.remainingTimeText(to: optimalSleepTime)
+    }
+    
+    private var sleepWindowStatus: SleepWindowStatus {
+        let wakeDate = Date(timeIntervalSince1970: lastWakeUpTime)
+        let age = baby?.ageInMonths ?? 6
+        return SleepWindowService.shared.evaluateStatus(wakeUpTime: wakeDate, ageInMonths: age)
+    }
+    
+    private var statusColor: Color {
+        switch sleepWindowStatus {
+        case .playing:     return Color(hex: "34D399") // Emerald
+        case .approaching: return Color(hex: "FBBF24") // Amber
+        case .optimal:     return AppTheme.accentPrimary // Indigo / Purple
+        case .overtired:   return Color(hex: "F87171") // Red
+        }
+    }
+    
     private var maxWakeWindowHours: Double {
         let age = baby?.ageInMonths ?? 0
-        switch age {
-        case 0...1: return 1.0
-        case 2: return 1.5
-        case 3...4: return 2.0
-        case 5...6: return 2.5
-        case 7...9: return 3.0
-        case 10...12: return 3.5
-        case 13...18: return 4.5
-        default: return 5.0
-        }
+        return Double(SleepWindowService.shared.wakeWindowMinutes(forAgeInMonths: age)) / 60.0
     }
     
     private var recommendedSleep: Int {
         Int(baby?.ageGroup.recommendedSleepHours.upperBound ?? 14)
-    }
-    
-    private var nextSleepWindowText: String {
-        let wakeDate = Date(timeIntervalSince1970: lastWakeUpTime)
-        let nextSleepStart = wakeDate.addingTimeInterval(maxWakeWindowHours * 3600)
-        let nextSleepEnd = nextSleepStart.addingTimeInterval(15 * 60)
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        
-        return "\(formatter.string(from: nextSleepStart)) - \(formatter.string(from: nextSleepEnd))"
     }
     
     private var coachAdviceText: String {
@@ -366,6 +411,25 @@ struct DashboardView: View {
                 .foregroundStyle(AppTheme.textPrimary)
                 .padding(.top, AppTheme.spacingMD)
             
+            // Hızlı "Şimdi" Kayıt Butonu
+            Button {
+                selectedTime = Date()
+                saveTime()
+            } label: {
+                HStack(spacing: 8) {
+                    Image(systemName: "bolt.fill")
+                    Text(isSettingWakeTime ? "Şimdi Uyandı (\(Date().formatted(date: .omitted, time: .shortened)))" : "Şimdi Uyudu (\(Date().formatted(date: .omitted, time: .shortened)))")
+                }
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(AppTheme.accentPrimary)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+                .background(AppTheme.accentPrimary.opacity(0.12))
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal, AppTheme.spacingLG)
+            
             DatePicker(
                 "",
                 selection: $selectedTime,
@@ -375,7 +439,7 @@ struct DashboardView: View {
             .datePickerStyle(.wheel)
             
             Button(action: saveTime) {
-                Text("Kaydet")
+                Text("Seçilen Saati Kaydet")
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
@@ -389,14 +453,23 @@ struct DashboardView: View {
     }
     
     private func saveTime() {
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
             if isSettingWakeTime {
-                lastWakeUpTime = selectedTime.timeIntervalSince1970
+                let wakeDate = selectedTime
+                lastWakeUpTime = wakeDate.timeIntervalSince1970
                 isBabyAwake = true
                 LiveActivityManager.shared.stopLiveActivity()
+                
+                // Akıllı Uyku Penceresi bildirimini hesapla ve zamanla
+                let age = baby?.ageInMonths ?? 6
+                let babyName = baby?.name ?? "Bebeğiniz"
+                let optimalSleep = SleepWindowService.shared.calculateNextSleepTime(wakeUpTime: wakeDate, ageInMonths: age)
+                NotificationManager.shared.scheduleSleepWindowReminder(optimalSleepTime: optimalSleep, babyName: babyName)
             } else {
                 lastSleepTime = selectedTime.timeIntervalSince1970
                 isBabyAwake = false
+                NotificationManager.shared.cancelSleepWindowReminder()
                 LiveActivityManager.shared.startLiveActivity(
                     babyName: baby?.name ?? "Bebeğiniz",
                     soundName: appState.audioEngine.activeLayer?.displayName ?? "Sessiz",

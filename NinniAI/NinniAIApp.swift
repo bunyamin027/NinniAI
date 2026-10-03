@@ -6,6 +6,10 @@ import SwiftData
 @main
 struct NinniAIApp: App {
     
+    @State private var languageManager = LanguageManager.shared
+    @State private var appState = AppState()
+    @State private var subscriptionManager = SubscriptionManager(storeKit: StoreKitManager())
+    
     /// SwiftData Model Container — tüm modeller burada kayıt edilir
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -35,7 +39,12 @@ struct NinniAIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(appState: appState, subscriptionManager: subscriptionManager)
+                .environment(languageManager)
+                .environment(appState)
+                .environment(subscriptionManager)
+                .environment(\.locale, languageManager.locale)
+                .id(languageManager.currentLanguage.rawValue)
                 .onAppear {
                     // İlk açılışta ses kataloğunu seed et
                     let context = sharedModelContainer.mainContext

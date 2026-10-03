@@ -17,6 +17,8 @@ struct SettingsView: View {
     @State private var showLegal = false
     @State private var showDeleteConfirm = false
     @State private var showSupport = false
+    @State private var showLanguagePicker = false
+    @State private var languageManager = LanguageManager.shared
     @State private var notificationManager = NotificationManager()
     
     private var settings: UserSettings? { allSettings.first }
@@ -44,6 +46,9 @@ struct SettingsView: View {
                     if let baby {
                         babyProfileSection(baby)
                     }
+                    
+                    // Uygulama Dili
+                    languageSection
                     
                     // Bildirimler
                     notificationSection
@@ -75,6 +80,9 @@ struct SettingsView: View {
         }
         .sheet(isPresented: $showSupport) {
             DeveloperSupportView()
+        }
+        .sheet(isPresented: $showLanguagePicker) {
+            LanguageSelectionView()
         }
         .manageSubscriptionsSheet(isPresented: $showManageSubscriptions)
     }
@@ -211,6 +219,47 @@ struct SettingsView: View {
         }
     }
     
+    // MARK: - Language Section
+    
+    private var languageSection: some View {
+        GlassCard {
+            VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
+                settingSectionTitle("Uygulama Dili", icon: "globe")
+                
+                Button {
+                    showLanguagePicker = true
+                } label: {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Dil Seçimi")
+                                .font(.subheadline)
+                                .fontWeight(.medium)
+                                .foregroundStyle(AppTheme.textPrimary)
+                            
+                            Text(languageManager.currentLanguage.subtitle)
+                                .font(.caption2)
+                                .foregroundStyle(AppTheme.textTertiary)
+                        }
+                        
+                        Spacer()
+                        
+                        HStack(spacing: 6) {
+                            Text(languageManager.currentLanguage.flag)
+                                .font(.subheadline)
+                            Text(languageManager.currentLanguage.displayName)
+                                .font(.subheadline)
+                                .foregroundStyle(AppTheme.textSecondary)
+                            Image(systemName: "chevron.right")
+                                .font(.caption2)
+                                .foregroundStyle(AppTheme.textTertiary)
+                        }
+                    }
+                    .padding(.vertical, 4)
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
     
     // MARK: - About Section (Antigravity Tasarım)
     
