@@ -41,13 +41,13 @@ struct BabyInfoStepView: View {
                     .opacity(isAppeared ? 1 : 0)
                     .scaleEffect(isAppeared ? 1 : 0.7)
                 
-                Text("Bebeğinizi Tanıyalım")
+                Text("Bebeğinizi Tanıyalım".localized)
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundStyle(AppTheme.textPrimary)
                     .opacity(isAppeared ? 1 : 0)
                 
-                Text("Kişiselleştirilmiş uyku deneyimi için\nbirkaç bilgiye ihtiyacımız var")
+                Text("Kişiselleştirilmiş uyku deneyimi için\nbirkaç bilgiye ihtiyacımız var".localized)
                     .font(.subheadline)
                     .foregroundStyle(AppTheme.textSecondary)
                     .multilineTextAlignment(.center)
@@ -61,12 +61,12 @@ struct BabyInfoStepView: View {
             VStack(spacing: AppTheme.spacingMD) {
                 // Bebek adı
                 VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-                    Text("Bebeğinizin adı")
+                    Text("Bebeğinizin adı".localized)
                         .font(.subheadline)
                         .fontWeight(.medium)
                         .foregroundStyle(AppTheme.textSecondary)
                     
-                    TextField("", text: $babyName, prompt: Text("Adını yazın...").foregroundStyle(AppTheme.textTertiary))
+                    TextField("", text: $babyName, prompt: Text("Adını yazın...".localized).foregroundStyle(AppTheme.textTertiary))
                         .font(.title3)
                         .fontWeight(.medium)
                         .foregroundStyle(AppTheme.textPrimary)
@@ -94,7 +94,7 @@ struct BabyInfoStepView: View {
                 
                 // Doğum tarihi
                 VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-                    Text("Doğum tarihi")
+                    Text("Doğum tarihi".localized)
                         .font(.subheadline)
                         .fontWeight(.medium)
                         .foregroundStyle(AppTheme.textSecondary)
@@ -119,7 +119,7 @@ struct BabyInfoStepView: View {
                                     .stroke(Color.white.opacity(0.1), lineWidth: 1)
                             }
                     }
-                    .environment(\.locale, Locale(identifier: "tr_TR"))
+                    .environment(\.locale, LanguageManager.shared.locale)
                     
                     // Yaş göstergesi
                     if isValid {
@@ -143,7 +143,7 @@ struct BabyInfoStepView: View {
                 onNext()
             }) {
                 HStack(spacing: AppTheme.spacingSM) {
-                    Text("Devam")
+                    Text("Devam".localized)
                         .font(.headline)
                     Image(systemName: "arrow.right")
                         .font(.headline)

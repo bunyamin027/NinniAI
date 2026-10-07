@@ -31,7 +31,7 @@ struct SettingsView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: AppTheme.spacingLG) {
                     // Başlık
-                    Text("Ayarlar")
+                    Text("Ayarlar".localized)
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundStyle(AppTheme.textPrimary)
@@ -98,13 +98,13 @@ struct SettingsView: View {
                         .foregroundStyle(AppTheme.warning)
                     
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(subscriptionManager.isPro ? "NinniAI Pro" : "Ücretsiz Plan")
+                        Text(subscriptionManager.isPro ? "NinniAI Pro" : "Ücretsiz Plan".localized)
                             .font(.headline)
                             .foregroundStyle(AppTheme.textPrimary)
                         
                         Text(subscriptionManager.isPro
-                             ? "Tüm özellikler aktif"
-                             : "Premium'a geçerek tüm özellikleri açın"
+                             ? "Tüm özellikler aktif".localized
+                             : "Premium'a geçerek tüm özellikleri açın".localized
                         )
                         .font(.caption)
                         .foregroundStyle(AppTheme.textSecondary)
@@ -117,7 +117,7 @@ struct SettingsView: View {
                     Button {
                         showPaywall = true
                     } label: {
-                        Text("Premium'a Geç")
+                        Text("Premium'a Geç".localized)
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .foregroundStyle(.white)
@@ -130,7 +130,7 @@ struct SettingsView: View {
                 }
                 
                 // Apple subscription management
-                Button("Abonelikleri Yönet") {
+                Button("Abonelikleri Yönet".localized) {
                     showManageSubscriptions = true
                 }
                 .font(.caption)
@@ -172,10 +172,10 @@ struct SettingsView: View {
     private var notificationSection: some View {
         GlassCard {
             VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-                settingSectionTitle("Bildirimler", icon: "bell.fill")
+                settingSectionTitle("Bildirimler".localized, icon: "bell.fill")
                 
                 premiumSettingToggle(
-                    "Uyku Hatırlatma",
+                    "Uyku Hatırlatma".localized,
                     isOn: Binding(
                         get: { settings?.isSleepReminderEnabled ?? true },
                         set: { settings?.isSleepReminderEnabled = $0 }
@@ -183,7 +183,7 @@ struct SettingsView: View {
                 )
                 
                 premiumSettingToggle(
-                    "Milestone Bildirimleri",
+                    "Milestone Bildirimleri".localized,
                     isOn: Binding(
                         get: { settings?.isMilestoneNotificationEnabled ?? true },
                         set: { settings?.isMilestoneNotificationEnabled = $0 }
@@ -191,7 +191,7 @@ struct SettingsView: View {
                 )
                 
                 premiumSettingToggle(
-                    "Haftalık Rapor",
+                    "Haftalık Rapor".localized,
                     isOn: Binding(
                         get: { settings?.isWeeklyReportEnabled ?? true },
                         set: { settings?.isWeeklyReportEnabled = $0 }
@@ -206,10 +206,10 @@ struct SettingsView: View {
     private var playerSection: some View {
         GlassCard {
             VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-                settingSectionTitle("Player", icon: "waveform")
+                settingSectionTitle("Player".localized, icon: "waveform")
                 
                 settingToggle(
-                    "Arka Planda Çalmaya Devam",
+                    "Arka Planda Çalmaya Devam".localized,
                     isOn: Binding(
                         get: { settings?.continuePlaybackInBackground ?? true },
                         set: { settings?.continuePlaybackInBackground = $0 }
@@ -224,14 +224,14 @@ struct SettingsView: View {
     private var languageSection: some View {
         GlassCard {
             VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-                settingSectionTitle("Uygulama Dili", icon: "globe")
+                settingSectionTitle("Uygulama Dili".localized, icon: "globe")
                 
                 Button {
                     showLanguagePicker = true
                 } label: {
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Dil Seçimi")
+                            Text("Dil Seçimi".localized)
                                 .font(.subheadline)
                                 .fontWeight(.medium)
                                 .foregroundStyle(AppTheme.textPrimary)
@@ -265,19 +265,19 @@ struct SettingsView: View {
     
     private var aboutSection: some View {
         VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-            settingSectionTitle("Hakkında", icon: "info.circle.fill")
+            settingSectionTitle("Hakkında".localized, icon: "info.circle.fill")
                 .padding(.leading, 4)
             
             VStack(spacing: 10) {
                 premiumAboutLinkRow(
-                    title: "Gizlilik Politikası",
+                    title: "Gizlilik Politikası".localized,
                     icon: "lock.shield.fill",
                     iconColor: Color(red: 0.7, green: 0.5, blue: 1.0),
                     url: URL(string: "https://bunyamin027.github.io/Legal/#privacy")!
                 )
                 
                 premiumAboutLinkRow(
-                    title: "Kullanım Şartları (EULA)",
+                    title: "Kullanım Şartları (EULA)".localized,
                     icon: "doc.text.fill",
                     iconColor: Color(red: 0.4, green: 0.8, blue: 1.0),
                     url: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
@@ -292,7 +292,7 @@ struct SettingsView: View {
                             .foregroundStyle(Color(red: 0.4, green: 0.9, blue: 0.7))
                             .frame(width: 28)
                         
-                        Text("Destek & Geri Bildirim")
+                        Text("Destek & Geri Bildirim".localized)
                             .font(.subheadline.weight(.medium))
                             .foregroundStyle(AppTheme.textPrimary)
                         
@@ -325,7 +325,7 @@ struct SettingsView: View {
                             .foregroundStyle(Color(red: 1.0, green: 0.7, blue: 0.3))
                             .frame(width: 28)
                         
-                        Text("Yasal Bilgiler & Lisanslar")
+                        Text("Yasal Bilgiler & Lisanslar".localized)
                             .font(.subheadline.weight(.medium))
                             .foregroundStyle(AppTheme.textPrimary)
                         
@@ -355,7 +355,7 @@ struct SettingsView: View {
                 Spacer()
                 let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
                 let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
-                Text("Sürüm \(version) (Build \(build))")
+                Text("\("Sürüm".localized) \(version) (Build \(build))")
                     .font(.caption2.weight(.medium))
                     .foregroundStyle(.white.opacity(0.35))
                     .padding(.top, 6)
@@ -407,14 +407,14 @@ struct SettingsView: View {
                 HStack {
                     Image(systemName: "trash.fill")
                         .foregroundStyle(AppTheme.error)
-                    Text("Tüm Verileri Sil")
+                    Text("Tüm Verileri Sil".localized)
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.error)
                     Spacer()
                 }
             }
-            .alert("Tüm Veriler Silinecek", isPresented: $showDeleteConfirm) {
-                Button("Sil", role: .destructive) {
+            .alert("Tüm Veriler Silinecek".localized, isPresented: $showDeleteConfirm) {
+                Button("Sil".localized, role: .destructive) {
                     do {
                         try modelContext.delete(model: SleepSession.self)
                         try modelContext.delete(model: Interruption.self)
@@ -427,9 +427,9 @@ struct SettingsView: View {
                         print("🔴 Veriler silinemedi: \(error.localizedDescription)")
                     }
                 }
-                Button("İptal", role: .cancel) {}
+                Button("İptal".localized, role: .cancel) {}
             } message: {
-                Text("Bu işlem geri alınamaz. Tüm bebek profili, uyku verileri ve ayarlar silinecektir.")
+                Text("Bu işlem geri alınamaz. Tüm bebek profili, uyku verileri ve ayarlar silinecektir.".localized)
             }
         }
     }
@@ -537,7 +537,7 @@ struct DeveloperSupportView: View {
                             .foregroundStyle(AppTheme.accentPrimary)
                             .padding(.bottom, 8)
                         
-                        Text("Destek & Geliştirici")
+                        Text("Destek & Geliştirici".localized)
                             .font(.title2.weight(.bold))
                             .foregroundStyle(.white)
                         

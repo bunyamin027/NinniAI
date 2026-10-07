@@ -6,10 +6,6 @@ import SwiftData
 @main
 struct NinniAIApp: App {
     
-    @State private var languageManager = LanguageManager.shared
-    @State private var appState = AppState()
-    @State private var subscriptionManager = SubscriptionManager(storeKit: StoreKitManager())
-    
     /// SwiftData Model Container — tüm modeller burada kayıt edilir
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -39,24 +35,37 @@ struct NinniAIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(appState: appState, subscriptionManager: subscriptionManager)
-                .environment(languageManager)
-                .environment(appState)
-                .environment(subscriptionManager)
-                .environment(\.locale, languageManager.locale)
-                .id(languageManager.currentLanguage.rawValue)
-                .onAppear {
-                    // İlk açılışta ses kataloğunu seed et
-                    let context = sharedModelContainer.mainContext
-                    SoundSeeder.seedIfNeeded(context: context)
-                }
-                .onOpenURL { url in
-                    if url.host == "stopSleep" {
-                        LiveActivityManager.shared.stopLiveActivity()
-                        // Optional: also stop audio playback if needed
-                    }
-                }
+            RootView(sharedModelContainer: sharedModelContainer)
         }
         .modelContainer(sharedModelContainer)
+    }
+}
+
+// MARK: - Root View
+/// Anlık dil değişimlerinde tüm hiyerarşiyi anında yeniden oluşturan dinamik kök görünüm.
+struct RootView: View {
+    let sharedModelContainer: ModelContainer
+    
+    @State private var languageManager = LanguageManager.shared
+    @State private var appState = AppState()
+    @State private var subscriptionManager = SubscriptionManager(storeKit: StoreKitManager())
+    
+    var body: some View {
+        ContentView(appState: appState, subscriptionManager: subscriptionManager)
+            .environment(languageManager)
+            .environment(appState)
+            .environment(subscriptionManager)
+            .environment(\.locale, languageManager.locale)
+            .id("root_view_lang_\(languageManager.languageChangeCounter)_\(languageManager.currentLanguage.rawValue)")
+            .onAppear {
+                // İlk açılışta ses kataloğunu seed et
+                let context = sharedModelContainer.mainContext
+                SoundSeeder.seedIfNeeded(context: context)
+            }
+            .onOpenURL { url in
+                if url.host == "stopSleep" {
+                    LiveActivityManager.shared.stopLiveActivity()
+                }
+            }
     }
 }

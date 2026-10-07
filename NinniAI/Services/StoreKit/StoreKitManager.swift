@@ -185,7 +185,7 @@ enum StoreError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .failedVerification:
-            return "İşlem doğrulanamadı."
+            return "İşlem doğrulanamadı.".localized
         }
     }
 }

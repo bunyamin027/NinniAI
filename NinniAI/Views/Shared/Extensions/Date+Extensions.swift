@@ -96,22 +96,23 @@ extension Date {
     
     // MARK: - Formatting
     
-    /// "6 aylık" gibi bebek yaşı formatı
+    /// "6 aylık" veya "6 months old" gibi bebek yaşı formatı
     func babyAgeString(from birthDate: Date) -> String {
         let months = self.monthsSince(birthDate)
         let days = self.daysSince(birthDate)
+        let isEn = LanguageManager.shared.activeLanguageCode == "en"
         
         if months < 1 {
-            return "\(days) günlük"
+            return isEn ? "\(days) \(days == 1 ? "day old" : "days old")" : "\(days) günlük"
         } else if months < 12 {
-            return "\(months) aylık"
+            return isEn ? "\(months) \(months == 1 ? "month old" : "months old")" : "\(months) aylık"
         } else {
             let years = months / 12
             let remainingMonths = months % 12
             if remainingMonths == 0 {
-                return "\(years) yaşında"
+                return isEn ? "\(years) \(years == 1 ? "year old" : "years old")" : "\(years) yaşında"
             }
-            return "\(years) yaş \(remainingMonths) aylık"
+            return isEn ? "\(years) yr \(remainingMonths) mo" : "\(years) yaş \(remainingMonths) aylık"
         }
     }
     
@@ -119,7 +120,7 @@ extension Date {
     var shortFormatted: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
-        formatter.locale = Locale(identifier: "tr_TR")
+        formatter.locale = LanguageManager.shared.locale
         return formatter.string(from: self)
     }
     

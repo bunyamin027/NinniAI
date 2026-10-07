@@ -18,7 +18,7 @@ struct WeeklyReportView: View {
                     Image(systemName: "doc.text.fill")
                         .foregroundStyle(AppTheme.accentPrimary)
                     
-                    Text("Haftalık Rapor")
+                    Text("Haftalık Rapor".localized)
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundStyle(AppTheme.textPrimary)
@@ -34,32 +34,32 @@ struct WeeklyReportView: View {
                 VStack(spacing: AppTheme.spacingSM) {
                     reportRow(
                         icon: "bed.double.fill",
-                        label: "Toplam uyku süresi",
-                        value: String(format: "%.1f saat", totalHours)
+                        label: "Toplam uyku süresi".localized,
+                        value: String(format: "%.1f %@", totalHours, "saat".localized)
                     )
                     
                     Divider().overlay(Color.white.opacity(0.05))
                     
                     reportRow(
                         icon: "clock.fill",
-                        label: "Ortalama oturum",
-                        value: "\(Int(avgMinutes)) dakika"
+                        label: "Ortalama oturum".localized,
+                        value: "\(Int(avgMinutes)) \("dakika".localized)"
                     )
                     
                     Divider().overlay(Color.white.opacity(0.05))
                     
                     reportRow(
                         icon: "play.circle.fill",
-                        label: "Toplam oturum",
-                        value: "\(sessionCount) seans"
+                        label: "Toplam oturum".localized,
+                        value: "\(sessionCount) \("seans".localized)"
                     )
                     
                     Divider().overlay(Color.white.opacity(0.05))
                     
                     reportRow(
                         icon: "exclamationmark.circle.fill",
-                        label: "Toplam kesinti",
-                        value: "\(interruptions) kez"
+                        label: "Toplam kesinti".localized,
+                        value: formatTimes(interruptions)
                     )
                 }
                 
@@ -104,15 +104,24 @@ struct WeeklyReportView: View {
     
     private var adviceMessage: String {
         if sessionCount == 0 {
-            return "Bu hafta henüz kayıt yok. Düzenli kayıt tutmak uyku düzenini takip etmenize yardımcı olur."
+            return "Bu hafta henüz kayıt yok. Düzenli kayıt tutmak uyku düzenini takip etmenize yardımcı olur.".localized
         }
         if interruptions == 0 {
-            return "Harika! Bu hafta hiç kesinti olmadı. Aynı sesleri kullanmaya devam edin."
+            return "Harika! Bu hafta hiç kesinti olmadı. Aynı sesleri kullanmaya devam edin.".localized
         }
         if avgMinutes < 30 {
-            return "Oturumlar biraz kısa kalmış. Zamanlayıcıyı 45 dakikaya çıkarmayı deneyin."
+            return "Oturumlar biraz kısa kalmış. Zamanlayıcıyı 45 dakikaya çıkarmayı deneyin.".localized
         }
-        return "Güzel bir hafta geçirdiniz. Düzenli rutine devam edin, sonuçlar giderek iyileşecek."
+        return "Güzel bir hafta geçirdiniz. Düzenli rutine devam edin, sonuçlar giderek iyileşecek.".localized
+    }
+    
+    private func formatTimes(_ count: Int) -> String {
+        let isEn = LanguageManager.shared.activeLanguageCode == "en"
+        if isEn {
+            return "\(count) \(count == 1 ? "time" : "times")"
+        } else {
+            return "\(count) kez"
+        }
     }
 }
 

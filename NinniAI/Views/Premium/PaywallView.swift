@@ -20,7 +20,7 @@ struct PaywallView: View {
     @State private var glowPulse = false
     
     private var babyName: String {
-        allSettings.first?.baby?.name ?? "Bebeğiniz"
+        allSettings.first?.baby?.name ?? "Bebeğiniz".localized
     }
     
     private var isIPad: Bool {
@@ -47,7 +47,7 @@ struct PaywallView: View {
                     planCards
                     
                     // Geri yükleme
-                    Button("Satın Alımları Geçmişe Dönük Yükle") {
+                    Button("Satın Alımları Geçmişe Dönük Yükle".localized) {
                         Task { await storeKit.restorePurchases() }
                     }
                     .font(.caption)
@@ -249,14 +249,14 @@ struct PaywallView: View {
             .frame(width: isIPad ? 120 : 170, height: isIPad ? 120 : 170)
             
             // Duygusal koç başlığı — bebek adıyla
-            Text("\(babyName) için Uyku Koçu")
+            Text(String(format: "%@ için Uyku Koçu".localized, babyName))
                 .font(.system(size: isIPad ? 22 : 28, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
                 .lineSpacing(2)
                 .minimumScaleFactor(0.7)
             
-            Text("Profesyonel Uyku Danışmanı.")
+            Text("Profesyonel Uyku Danışmanı.".localized)
                 .font(.subheadline)
                 .foregroundStyle(.white.opacity(0.7))
                 .multilineTextAlignment(.center)
@@ -275,14 +275,14 @@ struct PaywallView: View {
                         featureRow(
                             icon: "clock.badge.checkmark.fill",
                             iconColor: Color(hex: "A78BFA"),
-                            text: "Ay ve gelişime göre otonom uyku pencereleri"
+                            text: "Ay ve gelişime göre otonom uyku pencereleri".localized
                         )
                         .frame(maxWidth: .infinity)
                         
                         featureRow(
                             icon: "chart.line.uptrend.xyaxis",
                             iconColor: Color(hex: "60A5FA"),
-                            text: "Günlük uyku trendleri ve derin analizler"
+                            text: "Günlük uyku trendleri ve derin analizler".localized
                         )
                         .frame(maxWidth: .infinity)
                     }
@@ -293,14 +293,14 @@ struct PaywallView: View {
                         featureRow(
                             icon: "moon.stars.fill",
                             iconColor: Color(hex: "C4B5FD"),
-                            text: "Kilit ekranından anlık uyku takibi"
+                            text: "Kilit ekranından anlık uyku takibi".localized
                         )
                         .frame(maxWidth: .infinity)
                         
                         featureRow(
                             icon: "sparkles",
                             iconColor: Color(hex: "FCD34D"),
-                            text: "Kesintisiz, reklamsız ve dingin deneyim"
+                            text: "Kesintisiz, reklamsız ve dingin deneyim".localized
                         )
                         .frame(maxWidth: .infinity)
                     }
@@ -311,25 +311,25 @@ struct PaywallView: View {
                     featureRow(
                         icon: "clock.badge.checkmark.fill",
                         iconColor: Color(hex: "A78BFA"),
-                        text: "Ay ve gelişime göre otonom uyku pencereleri"
+                        text: "Ay ve gelişime göre otonom uyku pencereleri".localized
                     )
                     featureDivider
                     featureRow(
                         icon: "chart.line.uptrend.xyaxis",
                         iconColor: Color(hex: "60A5FA"),
-                        text: "Günlük uyku trendleri ve derin analizler"
+                        text: "Günlük uyku trendleri ve derin analizler".localized
                     )
                     featureDivider
                     featureRow(
                         icon: "moon.stars.fill",
                         iconColor: Color(hex: "C4B5FD"),
-                        text: "Kilit ekranından anlık uyku takibi"
+                        text: "Kilit ekranından anlık uyku takibi".localized
                     )
                     featureDivider
                     featureRow(
                         icon: "sparkles",
                         iconColor: Color(hex: "FCD34D"),
-                        text: "Kesintisiz, reklamsız ve dingin deneyim"
+                        text: "Kesintisiz, reklamsız ve dingin deneyim".localized
                     )
                 }
             }
@@ -385,25 +385,26 @@ struct PaywallView: View {
         let yearlyProduct = products.first(where: { $0.id == PremiumPlan.yearly.productIdentifier })
         let monthlyProduct = products.first(where: { $0.id == PremiumPlan.monthly.productIdentifier })
         
+        let isEn = LanguageManager.shared.activeLanguageCode == "en"
         return HStack(spacing: 12) {
             // ── Yıllık — AVANTAJLI (parlayan kart) ──
             purchaseCard(
                 plan: .yearly,
-                label: "Yıllık",
+                label: "Yıllık".localized,
                 price: yearlyProduct?.displayPrice ?? "–",
-                period: "/yıl",
+                period: isEn ? "/yr" : "/yıl",
                 detail: yearlyMonthlyDetail(for: yearlyProduct),
-                badge: "%40 TASARRUF",
+                badge: "%40 TASARRUF".localized,
                 isSelected: selectedPlan == .yearly
             )
             
             // ── Aylık — sade kart ──
             purchaseCard(
                 plan: .monthly,
-                label: "Aylık",
+                label: "Aylık".localized,
                 price: monthlyProduct?.displayPrice ?? "–",
-                period: "/ay",
-                detail: "Her ay yenilenir",
+                period: isEn ? "/mo" : "/ay",
+                detail: "Her ay yenilenir".localized,
                 badge: nil,
                 isSelected: selectedPlan == .monthly
             )
@@ -416,11 +417,11 @@ struct PaywallView: View {
     private func yearlyMonthlyDetail(for product: Product?) -> String {
         guard let product else { return "–" }
         let monthlyPrice = product.price / 12
-        // Ürünün kendi locale ve para birimini kullanarak formatla
         let formatted = monthlyPrice.formatted(
             .currency(code: product.priceFormatStyle.currencyCode)
         )
-        return "Aylık sadece \(formatted)"
+        let isEn = LanguageManager.shared.activeLanguageCode == "en"
+        return isEn ? "Only \(formatted) / mo" : "Aylık sadece \(formatted)"
     }
     
     private func purchaseCard(
@@ -480,7 +481,7 @@ struct PaywallView: View {
                     )
                 
                 // Kart içi CTA
-                Text(isSelected ? "Hemen Başla" : "Seç")
+                Text(isSelected ? "Hemen Başla".localized : "Seç".localized)
                     .font(.caption.weight(.bold))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
@@ -547,28 +548,28 @@ struct PaywallView: View {
     
     private var legalDisclosure: some View {
         VStack(spacing: 12) {
-            Text("Abonelik, seçilen plana göre otomatik olarak yenilenir. İstediğiniz zaman Ayarlar > Apple Kimliği > Abonelikler üzerinden iptal edebilirsiniz. İptal, mevcut dönemin sonunda geçerli olur.")
+            Text("Abonelik, seçilen plana göre otomatik olarak yenilenir. İstediğiniz zaman Ayarlar > Apple Kimliği > Abonelikler üzerinden iptal edebilirsiniz. İptal, mevcut dönemin sonunda geçerli olur.".localized)
                 .font(.system(size: 10))
                 .foregroundStyle(.white.opacity(0.28))
                 .multilineTextAlignment(.center)
             
             HStack(spacing: 10) {
                 ParentalGateButton(destination: URL(string: "https://bunyamin027.github.io/Legal/#privacy")!) {
-                    Text("Gizlilik Politikası")
+                    Text("Gizlilik Politikası".localized)
                 }
                 
                 Text("•")
                     .foregroundStyle(.white.opacity(0.2))
                 
                 ParentalGateButton(destination: URL(string: "https://bunyamin027.github.io/Legal/#terms")!) {
-                    Text("Kullanım Şartları")
+                    Text("Kullanım Şartları".localized)
                 }
                 
                 Text("•")
                     .foregroundStyle(.white.opacity(0.2))
                 
                 ParentalGateButton(destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!) {
-                    Text("EULA")
+                    Text("EULA".localized)
                 }
             }
             .font(.system(size: 10, weight: .medium))
@@ -576,9 +577,9 @@ struct PaywallView: View {
             
             // Mikro İmza
             VStack(spacing: 2) {
-                Text("Geliştirici: Kahramandev")
+                Text("Geliştirici: Kahramandev".localized)
                 ParentalGateButton(destination: URL(string: "mailto:bunyaminkahraman027@icloud.com")!) {
-                    Text("Destek: bunyaminkahraman027@icloud.com")
+                    Text("Destek: bunyaminkahraman027@icloud.com".localized)
                 }
             }
             .font(.system(size: 10))

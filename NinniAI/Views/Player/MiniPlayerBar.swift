@@ -66,9 +66,9 @@ struct MiniPlayerBar: View {
     
     private var activeSoundsText: String {
         if let name = appState.audioEngine.activeLayer?.displayName {
-            return name
+            return name.localized
         }
-        return "Çalıyor..."
+        return "Çalıyor...".localized
     }
     
     private func formatTime(_ seconds: TimeInterval) -> String {

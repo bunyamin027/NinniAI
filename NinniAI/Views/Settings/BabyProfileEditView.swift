@@ -18,8 +18,8 @@ struct BabyProfileEditView: View {
                     VStack(spacing: AppTheme.spacingLG) {
                         GlassCard {
                             VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-                                Text("Bebeğin Adı").font(.caption).foregroundStyle(AppTheme.textTertiary)
-                                TextField("Ad", text: $editedName)
+                                Text("Bebeğin Adı".localized).font(.caption).foregroundStyle(AppTheme.textTertiary)
+                                TextField("Ad".localized, text: $editedName)
                                     .font(.title3).fontWeight(.medium)
                                     .foregroundStyle(AppTheme.textPrimary)
                                     .textInputAutocapitalization(.words)
@@ -27,11 +27,11 @@ struct BabyProfileEditView: View {
                         }
                         GlassCard {
                             VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-                                Text("Doğum Tarihi").font(.caption).foregroundStyle(AppTheme.textTertiary)
+                                Text("Doğum Tarihi".localized).font(.caption).foregroundStyle(AppTheme.textTertiary)
                                 DatePicker("", selection: $editedDOB, in: ...Date.now, displayedComponents: .date)
                                     .datePickerStyle(.compact).labelsHidden()
                                     .tint(AppTheme.accentPrimary)
-                                    .environment(\.locale, Locale(identifier: "tr_TR"))
+                                    .environment(\.locale, LanguageManager.shared.locale)
                                 Text("📅 \(Date.now.babyAgeString(from: editedDOB))")
                                     .font(.caption).foregroundStyle(AppTheme.accentPrimary)
                             }
@@ -40,15 +40,15 @@ struct BabyProfileEditView: View {
                     .padding(AppTheme.spacingMD)
                 }
             }
-            .navigationTitle("Profili Düzenle")
+            .navigationTitle("Profili Düzenle".localized)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button("İptal") { dismiss() }.foregroundStyle(AppTheme.textSecondary)
+                    Button("İptal".localized) { dismiss() }.foregroundStyle(AppTheme.textSecondary)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Kaydet") {
+                    Button("Kaydet".localized) {
                         baby.name = editedName.trimmingCharacters(in: .whitespacesAndNewlines)
                         baby.dateOfBirth = editedDOB
                         baby.sleepProblems = editedProblems

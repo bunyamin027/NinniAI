@@ -36,7 +36,7 @@ struct LanguageSelectionView: View {
     private var headerView: some View {
         VStack(spacing: 6) {
             HStack {
-                Text("Dil Seçimi")
+                Text("Dil Seçimi".localized)
                     .font(.title3.weight(.bold))
                     .foregroundStyle(AppTheme.textPrimary)
                 
@@ -53,7 +53,7 @@ struct LanguageSelectionView: View {
             .padding(.horizontal, AppTheme.spacingLG)
             .padding(.top, 8)
             
-            Text("Uygulama için tercih ettiğiniz dili seçin")
+            Text("Uygulama için tercih ettiğiniz dili seçin".localized)
                 .font(.subheadline)
                 .foregroundStyle(AppTheme.textSecondary)
                 .frame(maxWidth: .infinity, alignment: .leading)

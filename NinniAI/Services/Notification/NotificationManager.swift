@@ -59,8 +59,8 @@ final class NotificationManager {
     /// Uyku hatırlatma bildirimini planla
     func scheduleSleepReminder(hour: Int, minute: Int, babyName: String) {
         let content = UNMutableNotificationContent()
-        content.title = "Uyku Vakti 🌙"
-        content.body = "\(babyName) için uyku rutinine başlama zamanı. NinniAI'ı açıp sakinleştirici sesler başlatabilirsiniz."
+        content.title = "Uyku Vakti 🌙".localized
+        content.body = String(format: "%@ için uyku rutinine başlama zamanı. NinniAI'ı açıp sakinleştirici sesler başlatabilirsiniz.".localized, babyName)
         content.sound = .default
         content.categoryIdentifier = "SLEEP_REMINDER"
         
@@ -100,8 +100,8 @@ final class NotificationManager {
         }
         
         let content = UNMutableNotificationContent()
-        content.title = "Uyku Vakti Yaklaşıyor! 🌙"
-        content.body = "\(babyName) için uyku penceresi kapanmak üzere. Odayı karartıp beyaz gürültüyü açmanın tam zamanı."
+        content.title = "Uyku Vakti Yaklaşıyor! 🌙".localized
+        content.body = String(format: "%@ için uyku penceresi kapanmak üzere. Odayı karartıp beyaz gürültüyü açmanın tam zamanı.".localized, babyName)
         content.sound = .default
         content.categoryIdentifier = "SLEEP_WINDOW"
         
@@ -160,8 +160,8 @@ final class NotificationManager {
     /// Haftalık rapor bildirimini planla
     func scheduleWeeklyReport(weekday: Int = AppConstants.weeklyReportDay) {
         let content = UNMutableNotificationContent()
-        content.title = "Haftalık Uyku Raporu 📊"
-        content.body = "Geçen haftanın uyku analizi hazır. Detayları görmek için tıklayın."
+        content.title = "Haftalık Uyku Raporu 📊".localized
+        content.body = "Geçen haftanın uyku analizi hazır. Detayları görmek için tıklayın.".localized
         content.sound = .default
         content.categoryIdentifier = "WEEKLY_REPORT"
         

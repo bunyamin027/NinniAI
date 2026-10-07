@@ -23,13 +23,13 @@ enum SoundCategory: String, Codable, CaseIterable, Identifiable {
     
     var id: String { rawValue }
     
-    var displayTitle: LocalizedStringResource {
+    var displayTitle: String {
         switch self {
-        case .whiteNoise: return "Beyaz Gürültü"
-        case .nature:     return "Doğa Sesleri"
-        case .lullaby:    return "Hızlı Uyu"
-        case .heartbeat:  return "Kalp Atışı"
-        case .ambient:    return "Ortam Sesleri"
+        case .whiteNoise: return "Beyaz Gürültü".localized
+        case .nature:     return "Doğa Sesleri".localized
+        case .lullaby:    return "Hızlı Uyu".localized
+        case .heartbeat:  return "Kalp Atışı".localized
+        case .ambient:    return "Ortam Sesleri".localized
         }
     }
     

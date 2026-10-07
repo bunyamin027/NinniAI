@@ -76,14 +76,14 @@ struct WelcomeStepView: View {
                     .opacity(isAppeared ? 1 : 0)
                     .offset(y: isAppeared ? 0 : 20)
                 
-                Text("Akıllı Uyku Asistanı")
+                Text("Akıllı Uyku Asistanı".localized)
                     .font(.title3)
                     .fontWeight(.medium)
                     .foregroundStyle(AppTheme.textSecondary)
                     .opacity(isAppeared ? 1 : 0)
                     .offset(y: isAppeared ? 0 : 15)
                 
-                Text("Bebeğinizin gelişimine uyum sağlayan,\nkişiselleştirilmiş uyku deneyimi")
+                Text("Bebeğinizin gelişimine uyum sağlayan,\nkişiselleştirilmiş uyku deneyimi".localized)
                     .font(.subheadline)
                     .foregroundStyle(AppTheme.textTertiary)
                     .multilineTextAlignment(.center)
@@ -98,7 +98,7 @@ struct WelcomeStepView: View {
             // Başla butonu
             Button(action: onNext) {
                 HStack(spacing: AppTheme.spacingSM) {
-                    Text("Başlayalım")
+                    Text("Başlayalım".localized)
                         .font(.headline)
                     
                     Image(systemName: "arrow.right")

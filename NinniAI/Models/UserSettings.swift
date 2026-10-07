@@ -114,8 +114,8 @@ enum PremiumPlan: String, Codable, CaseIterable {
     
     var displayTitle: String {
         switch self {
-        case .monthly:  return "Aylık"
-        case .yearly:   return "Yıllık"
+        case .monthly:  return "Aylık".localized
+        case .yearly:   return "Yıllık".localized
         }
     }
     

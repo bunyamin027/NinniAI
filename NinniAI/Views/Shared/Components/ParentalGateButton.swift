@@ -37,11 +37,11 @@ struct ParentalGateButton<Label: View>: View {
                         .padding(.top, 40)
                         .shadow(color: AppTheme.accentPrimary.opacity(0.3), radius: 10)
                     
-                    Text("Ebeveyn Doğrulaması")
+                    Text("Ebeveyn Doğrulaması".localized)
                         .font(.title2.weight(.bold))
                         .foregroundStyle(.white)
                     
-                    Text("Devam etmek için lütfen aşağıdaki işlemi çözün. Bu alan ebeveynler içindir.")
+                    Text("Devam etmek için lütfen aşağıdaki işlemi çözün. Bu alan ebeveynler içindir.".localized)
                         .font(.subheadline)
                         .foregroundStyle(.white.opacity(0.7))
                         .multilineTextAlignment(.center)
@@ -52,7 +52,7 @@ struct ParentalGateButton<Label: View>: View {
                             .font(.title.weight(.bold))
                             .foregroundStyle(.white)
                         
-                        TextField("Cevap", text: $inputAnswer)
+                        TextField("Cevap".localized, text: $inputAnswer)
                             .keyboardType(.numberPad)
                             .textFieldStyle(.roundedBorder)
                             .frame(width: 90)
@@ -65,7 +65,7 @@ struct ParentalGateButton<Label: View>: View {
                     .background(Color.white.opacity(0.05), in: RoundedRectangle(cornerRadius: 12))
                     
                     if showError {
-                        Text("Hatalı cevap, lütfen tekrar deneyin.")
+                        Text("Hatalı cevap, lütfen tekrar deneyin.".localized)
                             .font(.caption)
                             .foregroundStyle(AppTheme.error)
                             .transition(.opacity)
@@ -74,7 +74,7 @@ struct ParentalGateButton<Label: View>: View {
                     Button {
                         verifyAndOpen()
                     } label: {
-                        Text("Doğrula ve Devam Et")
+                        Text("Doğrula ve Devam Et".localized)
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(.white)
                             .frame(maxWidth: .infinity)
@@ -89,7 +89,7 @@ struct ParentalGateButton<Label: View>: View {
                 .background(GradientBackground().ignoresSafeArea())
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("Vazgeç") {
+                        Button("Vazgeç".localized) {
                             showGate = false
                         }
                         .foregroundStyle(.white.opacity(0.6))

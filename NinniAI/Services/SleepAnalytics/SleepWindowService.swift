@@ -10,10 +10,10 @@ enum SleepWindowStatus {
     
     var title: String {
         switch self {
-        case .playing:     return "Uyanık & Dinç"
-        case .approaching: return "Uykuya Hazırlık"
-        case .optimal:     return "İdeal Uyku Penceresi"
-        case .overtired:   return "Aşırı Yorgunluk Riski"
+        case .playing:     return "Uyanık & Dinç".localized
+        case .approaching: return "Uykuya Hazırlık".localized
+        case .optimal:     return "İdeal Uyku Penceresi".localized
+        case .overtired:   return "Aşırı Yorgunluk Riski".localized
         }
     }
 }
@@ -76,10 +76,13 @@ final class SleepWindowService {
     /// Kalan süreyi insan tarafından okunabilir formata dönüştürür (Örn: "1 sa 15 dk", "45 dk")
     func remainingTimeText(from now: Date = Date(), to optimalSleepTime: Date) -> String {
         let diff = optimalSleepTime.timeIntervalSince(now)
+        let saText = "sa".localized
+        let dkText = "dk".localized
         
         if diff <= 0 {
             let pastMinutes = Int(abs(diff)) / 60
-            return pastMinutes > 0 ? "+\(pastMinutes) dk gecikti" : "Şimdi"
+            let geciktiText = "dk gecikti".localized
+            return pastMinutes > 0 ? "+\(pastMinutes) \(geciktiText)" : "Şimdi".localized
         }
         
         let totalMinutes = Int(diff) / 60
@@ -87,9 +90,9 @@ final class SleepWindowService {
         let minutes = totalMinutes % 60
         
         if hours > 0 {
-            return "\(hours) sa \(minutes) dk"
+            return "\(hours) \(saText) \(minutes) \(dkText)"
         } else {
-            return "\(minutes) dk"
+            return "\(minutes) \(dkText)"
         }
     }
     

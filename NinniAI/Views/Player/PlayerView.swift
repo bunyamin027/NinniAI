@@ -56,14 +56,14 @@ struct PlayerView: View {
     // MARK: - Agentic Header
     private var agenticHeaderSection: some View {
         VStack(spacing: AppTheme.spacingXS) {
-            Text("SİSTEM ÖNERİSİ")
+            Text("SİSTEM ÖNERİSİ".localized)
                 .font(.system(size: 12, weight: .bold, design: .rounded))
                 .tracking(2)
                 .foregroundStyle(AppTheme.textSecondary)
                 .textCase(.uppercase)
                 .opacity(0.8)
             
-            Text(currentSoundName)
+            Text(currentSoundName.localized)
                 .font(.system(size: 32, weight: .bold, design: .rounded))
                 .foregroundStyle(AppTheme.textPrimary)
                 .multilineTextAlignment(.center)
@@ -72,7 +72,7 @@ struct PlayerView: View {
     }
     
     private var currentSoundName: String {
-        appState.audioEngine.activeLayer?.displayName ?? allSounds.first?.displayName ?? "Kozmik Frekans"
+        appState.audioEngine.activeLayer?.displayName.localized ?? allSounds.first?.displayName.localized ?? "Kozmik Frekans".localized
     }
     
     // MARK: - Play Button Section (Antigravity Style)
@@ -149,7 +149,7 @@ struct PlayerView: View {
                             .font(.system(.subheadline, design: .monospaced))
                             .fontWeight(.medium)
                     } else {
-                        Text("Zamanlayıcı Kapalı")
+                        Text("Zamanlayıcı Kapalı".localized)
                             .font(.subheadline)
                             .fontWeight(.medium)
                     }
@@ -269,7 +269,7 @@ struct PlayerView: View {
                         }
                     }
                     
-                    Text(sound.displayName)
+                    Text(sound.displayName.localized)
                         .font(.caption)
                         .fontWeight(.medium)
                         .foregroundStyle(isSelected ? AppTheme.accentPrimary : AppTheme.textSecondary)

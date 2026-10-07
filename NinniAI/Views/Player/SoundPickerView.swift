@@ -26,12 +26,12 @@ struct SoundPickerView: View {
                     soundGrid
                 }
             }
-            .navigationTitle("Ses Seçin")
+            .navigationTitle("Ses Seçin".localized)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Tamam") {
+                    Button("Tamam".localized) {
                         dismiss()
                     }
                     .foregroundStyle(AppTheme.accentPrimary)
@@ -101,7 +101,7 @@ struct SoundPickerView: View {
                 .font(.system(size: 48))
                 .foregroundStyle(AppTheme.textTertiary)
             
-            Text("Bu kategoride henüz ses yok")
+            Text("Bu kategoride henüz ses yok".localized)
                 .font(.subheadline)
                 .foregroundStyle(AppTheme.textSecondary)
         }
@@ -199,7 +199,7 @@ private struct SoundGridItem: View {
                 }
                 
                 // Ses adı
-                Text(sound.displayName)
+                Text(sound.displayName.localized)
                     .font(.caption)
                     .fontWeight(.medium)
                     .foregroundStyle(

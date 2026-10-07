@@ -21,8 +21,8 @@ class LiveActivityManager {
         let attributes = SleepAttributes(babyName: babyName)
         let initialContentState = SleepAttributes.ContentState(
             startTime: startTime,
-            sleepStatus: "Derin Uykuda",
-            soundName: soundName
+            sleepStatus: "Derin Uykuda".localized,
+            soundName: soundName.localized
         )
         
         do {
@@ -43,7 +43,7 @@ class LiveActivityManager {
             
             let finalContentState = SleepAttributes.ContentState(
                 startTime: activity.content.state.startTime,
-                sleepStatus: "Uyandı",
+                sleepStatus: "Uyandı".localized,
                 soundName: activity.content.state.soundName
             )
             

@@ -47,7 +47,7 @@ struct QuickActionGrid: View {
                         .foregroundStyle(action.color)
                 }
                 
-                Text(action.title)
+                Text(action.title.localized)
                     .font(.system(size: 11))
                     .fontWeight(.medium)
                     .foregroundStyle(AppTheme.textSecondary)

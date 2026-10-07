@@ -23,7 +23,7 @@ enum AppLanguage: String, CaseIterable, Identifiable {
     /// Ekranda gösterilen yerel isim
     var displayName: String {
         switch self {
-        case .system:  return "Sistem Dili"
+        case .system:  return "Sistem Dili".localized
         case .turkish: return "Türkçe"
         case .english: return "English"
         }
@@ -32,8 +32,8 @@ enum AppLanguage: String, CaseIterable, Identifiable {
     /// Açıklayıcı alt metin
     var subtitle: String {
         switch self {
-        case .system:  return "Cihazınızın varsayılan dilini kullanır"
-        case .turkish: return "Varsayılan"
+        case .system:  return "Cihazınızın varsayılan dilini kullanır".localized
+        case .turkish: return "Varsayılan".localized
         case .english: return "English (US/UK)"
         }
     }
@@ -53,10 +53,16 @@ private var bundleKey: UInt8 = 0
 
 final class LocalizedBundle: Bundle, @unchecked Sendable {
     override func localizedString(forKey key: String, value: String?, table tableName: String?) -> String {
-        guard let bundle = objc_getAssociatedObject(self, &bundleKey) as? Bundle else {
-            return super.localizedString(forKey: key, value: value, table: tableName)
+        if let bundle = objc_getAssociatedObject(self, &bundleKey) as? Bundle {
+            let val = bundle.localizedString(forKey: key, value: value, table: tableName)
+            if val != key {
+                return val
+            }
         }
-        return bundle.localizedString(forKey: key, value: value, table: tableName)
+        if let direct = LanguageManager.shared.directLookup(key: key) {
+            return direct
+        }
+        return super.localizedString(forKey: key, value: value, table: tableName)
     }
 }
 
@@ -77,7 +83,7 @@ extension Bundle {
 
 // MARK: - Language Manager
 /// Uygulama içi anlık dil değişim yöneticisi.
-/// iOS 17+ @Observable mimarisi ile tüm widget ağacına anında reaktif bildirim sağlar.
+/// iOS 17+ @Observable mimarisi ile tüm görünüm ağacına reaktif yenileme sağlar.
 @Observable
 final class LanguageManager {
     static let shared = LanguageManager()
@@ -88,15 +94,20 @@ final class LanguageManager {
     var currentLanguage: AppLanguage {
         didSet {
             UserDefaults.standard.set(currentLanguage.rawValue, forKey: Self.storageKey)
+            languageChangeCounter += 1
             applyLanguage(currentLanguage)
         }
     }
+    
+    /// Görünüm hiyerarşisinin anlık yeniden oluşturulmasını tetikleyen sayaç
+    var languageChangeCounter: Int = 0
     
     /// SwiftUI Environment `\.locale` için aktif Locale nesnesi
     var locale: Locale {
         switch currentLanguage {
         case .system:
-            return Locale.autoupdatingCurrent
+            let preferred = Locale.preferredLanguages.first ?? "tr"
+            return Locale(identifier: preferred.hasPrefix("en") ? "en" : "tr")
         case .turkish:
             return Locale(identifier: "tr")
         case .english:
@@ -117,6 +128,7 @@ final class LanguageManager {
         let saved = UserDefaults.standard.string(forKey: Self.storageKey) ?? AppLanguage.system.rawValue
         let language = AppLanguage(rawValue: saved) ?? .system
         self.currentLanguage = language
+        self.languageChangeCounter = 0
         applyLanguage(language)
     }
     
@@ -127,13 +139,56 @@ final class LanguageManager {
     }
     
     private func applyLanguage(_ language: AppLanguage) {
-        if let code = language.code {
-            UserDefaults.standard.set([code], forKey: "AppleLanguages")
-            Bundle.setLanguage(code)
-        } else {
-            UserDefaults.standard.removeObject(forKey: "AppleLanguages")
-            Bundle.resetLanguage()
-        }
+        let code = activeLanguageCode
+        UserDefaults.standard.set([code], forKey: "AppleLanguages")
+        Bundle.setLanguage(code)
         UserDefaults.standard.synchronize()
+    }
+    
+    /// Herhangi bir metin anahtarını anında aktif dile çevirir
+    func localized(_ key: String) -> String {
+        let code = activeLanguageCode
+        if code == "tr" {
+            // Türkçe için varsayılan kaynak dildir
+            return key
+        }
+        
+        // 1. Doğrudan bellek içi sözlük kontrolü
+        if let translation = LocalizationData.english[key] {
+            return translation
+        }
+        
+        // 2. Bundle içindeki .lproj kontrolü
+        if let path = Bundle.main.path(forResource: "en", ofType: "lproj"),
+           let bundle = Bundle(path: path) {
+            let res = bundle.localizedString(forKey: key, value: nil, table: nil)
+            if res != key {
+                return res
+            }
+        }
+        
+        return key
+    }
+    
+    func directLookup(key: String) -> String? {
+        let code = activeLanguageCode
+        if code == "en" {
+            return LocalizationData.english[key]
+        }
+        return nil
+    }
+}
+
+// MARK: - String Localization Extension
+extension String {
+    /// Aktif dile göre anlık çeviri
+    var localized: String {
+        LanguageManager.shared.localized(self)
+    }
+    
+    /// Parametreli anlık çeviri
+    func localized(with arguments: CVarArg...) -> String {
+        let format = self.localized
+        return String(format: format, locale: LanguageManager.shared.locale, arguments: arguments)
     }
 }

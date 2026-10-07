@@ -24,12 +24,12 @@ struct TimerPickerView: View {
                                 .font(.system(size: 32))
                                 .foregroundStyle(AppTheme.accentPrimary)
                             
-                            Text("Zamanlayıcı")
+                            Text("Zamanlayıcı".localized)
                                 .font(.title3)
                                 .fontWeight(.semibold)
                                 .foregroundStyle(AppTheme.textPrimary)
                             
-                            Text("Süre bittiğinde sesler yavaşça kapanır")
+                            Text("Süre bittiğinde sesler yavaşça kapanır".localized)
                                 .font(.caption)
                                 .foregroundStyle(AppTheme.textSecondary)
                         }
@@ -63,7 +63,7 @@ struct TimerPickerView: View {
                             minutes: 0,
                             isSelected: selectedMinutes == 0,
                             label: "∞",
-                            subtitle: "Süresiz (Kapatana Kadar Çalar)"
+                            subtitle: "Süresiz (Kapatana Kadar Çalar)".localized
                         ) {
                             withAnimation(AppTheme.animationDefault) {
                                 selectedMinutes = 0
@@ -79,7 +79,7 @@ struct TimerPickerView: View {
                                 appState.audioEngine.cancelTimer()
                                 dismiss()
                             } label: {
-                                Text("Zamanlayıcıyı İptal Et")
+                                Text("Zamanlayıcıyı İptal Et".localized)
                                     .font(.subheadline)
                                     .foregroundStyle(AppTheme.error)
                             }
@@ -92,7 +92,7 @@ struct TimerPickerView: View {
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Kapat") { dismiss() }
+                    Button("Kapat".localized) { dismiss() }
                         .foregroundStyle(AppTheme.accentPrimary)
                 }
             }
@@ -127,7 +127,7 @@ private struct TimerPresetButton: View {
                         isSelected ? .white : AppTheme.textPrimary
                     )
                 
-                Text(subtitle ?? "dakika")
+                Text(subtitle ?? "dakika".localized)
                     .font(.caption2)
                     .foregroundStyle(
                         isSelected ? .white.opacity(0.8) : AppTheme.textTertiary

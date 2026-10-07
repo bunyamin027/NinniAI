@@ -131,13 +131,13 @@ enum AgeGroup: String, Codable, CaseIterable {
     /// Kullanıcıya gösterilecek açıklayıcı başlık
     var displayTitle: String {
         switch self {
-        case .newborn:      return "Yenidoğan"
-        case .infant:       return "Bebek"
-        case .crawler:      return "Emekleyen"
-        case .cruiser:      return "Tutunan"
-        case .toddlerEarly: return "Yürümeye Başlayan"
-        case .toddlerLate:  return "Yürüyen"
-        case .preschooler:  return "Okul Öncesi"
+        case .newborn:      return "Yenidoğan".localized
+        case .infant:       return "Bebek".localized
+        case .crawler:      return "Emekleyen".localized
+        case .cruiser:      return "Tutunan".localized
+        case .toddlerEarly: return "Yürümeye Başlayan".localized
+        case .toddlerLate:  return "Yürüyen".localized
+        case .preschooler:  return "Okul Öncesi".localized
         }
     }
 }

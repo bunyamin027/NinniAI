@@ -72,11 +72,11 @@ enum PremiumFeature: String, CaseIterable {
     
     var displayTitle: String {
         switch self {
-        case .allSounds:            return "Tüm Sesler"
-        case .unlimitedMix:         return "Sınırsız Mix"
-        case .advancedAnalytics:    return "Gelişmiş Analizler"
-        case .unlimitedFavorites:   return "Sınırsız Favori"
-        case .smartRecommendations: return "Akıllı Öneriler"
+        case .allSounds:            return "Tüm Sesler".localized
+        case .unlimitedMix:         return "Sınırsız Mix".localized
+        case .advancedAnalytics:    return "Gelişmiş Analizler".localized
+        case .unlimitedFavorites:   return "Sınırsız Favori".localized
+        case .smartRecommendations: return "Akıllı Öneriler".localized
         }
     }
     

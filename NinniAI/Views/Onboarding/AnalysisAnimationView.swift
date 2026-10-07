@@ -68,7 +68,7 @@ struct AnalysisAnimationView: View {
             
             // Durum mesajı
             VStack(spacing: AppTheme.spacingSM) {
-                Text(isComplete ? "Her Şey Hazır! ✨" : currentPhase.message)
+                Text(isComplete ? "Her Şey Hazır! ✨".localized : currentPhase.message)
                     .font(.title3)
                     .fontWeight(.semibold)
                     .foregroundStyle(AppTheme.textPrimary)
@@ -82,7 +82,7 @@ struct AnalysisAnimationView: View {
                         .multilineTextAlignment(.center)
                         .transition(.opacity)
                 } else {
-                    Text("\(babyName) için kişiselleştirilmiş\nuyku profili oluşturuldu")
+                    Text(String(format: "%@ için kişiselleştirilmiş\nuyku profili oluşturuldu".localized, babyName))
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.textSecondary)
                         .multilineTextAlignment(.center)
@@ -96,7 +96,7 @@ struct AnalysisAnimationView: View {
             if isComplete {
                 Button(action: onComplete) {
                     HStack(spacing: AppTheme.spacingSM) {
-                        Text("Keşfetmeye Başla")
+                        Text("Keşfetmeye Başla".localized)
                             .font(.headline)
                         Image(systemName: "sparkles")
                             .font(.headline)
@@ -195,20 +195,20 @@ private enum AnalysisPhase: CaseIterable {
     
     var message: String {
         switch self {
-        case .profiling:     return "Uyku Profili Oluşturuluyor..."
-        case .personalizing: return "Ses Kütüphanesi Kişiselleştiriliyor..."
-        case .optimizing:    return "Öneriler Hazırlanıyor..."
+        case .profiling:     return "Uyku Profili Oluşturuluyor...".localized
+        case .personalizing: return "Ses Kütüphanesi Kişiselleştiriliyor...".localized
+        case .optimizing:    return "Öneriler Hazırlanıyor...".localized
         }
     }
     
     func subtitle(babyName: String) -> String {
         switch self {
         case .profiling:
-            return "\(babyName) için en uygun uyku stratejisi belirleniyor"
+            return String(format: "%@ için en uygun uyku stratejisi belirleniyor".localized, babyName)
         case .personalizing:
-            return "Gelişim dönemine uygun sesler seçiliyor"
+            return "Gelişim dönemine uygun sesler seçiliyor".localized
         case .optimizing:
-            return "Kişisel uyku takvimi oluşturuluyor"
+            return "Kişisel uyku takvimi oluşturuluyor".localized
         }
     }
     

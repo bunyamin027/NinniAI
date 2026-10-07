@@ -35,7 +35,6 @@
 		331BCA81CDB39F210940D070 /* siarhei_korbut-285-hz-star-chakra-484883.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5AD97117540C9A9856523563 /* siarhei_korbut-285-hz-star-chakra-484883.m4a */; };
 		35EC9F1D0DB55394CA2E8822 /* MiniPlayerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56550EA700DFDAC387B191B /* MiniPlayerBar.swift */; };
 		367F849AF61FE3BF68B4A079 /* music_for_video-forest-lullaby-110624.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5E38FCE770DE9B798347CE8B /* music_for_video-forest-lullaby-110624.m4a */; };
-		37CCAB027B821FB476F3F6A2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D1B4D87B8D0AE74A2F39F8B1 /* Localizable.xcstrings */; };
 		3ACC43936D7F409690464F29 /* pretex-briefing-ambience-341525.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB9E6209ED1D786BDC93C9 /* pretex-briefing-ambience-341525.m4a */; };
 		3B9C7731186E5DBC2DE0CFA6 /* angel4leon-baby-smile-190123.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4925CBDCE28F8873F659BBA6 /* angel4leon-baby-smile-190123.m4a */; };
 		3F96991D84495D6F88EC832C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D44EFDBC37E143669594A5 /* AppConstants.swift */; };
@@ -76,6 +75,7 @@
 		94188DA1696176692836B4DE /* purebinaural-purebinaural-40-hz-gamma-binaural-beats-with-white-noise-484861.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B74DBA80314813EEE54458E4 /* purebinaural-purebinaural-40-hz-gamma-binaural-beats-with-white-noise-484861.m4a */; };
 		973CC9F82EDD1EB673204308 /* music_for_video-please-calm-my-mind-125566.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8221CEC9E0B290AB833E9C85 /* music_for_video-please-calm-my-mind-125566.m4a */; };
 		97D36F77E528297CED0E8298 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D2E4D847414D47D546667A00 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a */; };
+		9956FFA486D1CE3C6CC99575 /* LocalizationDictionaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3832E72C56757A4EC39E5A4D /* LocalizationDictionaries.swift */; };
 		996B45421E364E7DD36AAFA1 /* viacheslavstarostin-kids-baby-children-music-382060.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 71FDFF7816AE74815CFADCF7 /* viacheslavstarostin-kids-baby-children-music-382060.m4a */; };
 		9B74069AA08AE83B946E52F1 /* audiocoffee-positive-happy-kids-background-468931.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2D6C7C22503D9A1989A012E4 /* audiocoffee-positive-happy-kids-background-468931.m4a */; };
 		9D92E7C56DECDC35F42C3CCC /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65F945E10E52536CF07C750 /* SubscriptionManager.swift */; };
@@ -178,6 +178,7 @@
 		3255C90C2EA76A7B1D93235D /* music_for_video-pray-for-ukraine-sleep-21715.m4a */ = {isa = PBXFileReference; path = "music_for_video-pray-for-ukraine-sleep-21715.m4a"; sourceTree = "<group>"; };
 		32D44EFDBC37E143669594A5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		34747F7ECA897960E367F5AE /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		3832E72C56757A4EC39E5A4D /* LocalizationDictionaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationDictionaries.swift; sourceTree = "<group>"; };
 		394DBF0F3904E5E6593EE45B /* SleepProblemsStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepProblemsStepView.swift; sourceTree = "<group>"; };
 		3ACAE1C52CF90F08829A8942 /* the_mountain-baby-joy-130049.m4a */ = {isa = PBXFileReference; path = "the_mountain-baby-joy-130049.m4a"; sourceTree = "<group>"; };
 		3B2DED412035B5BD4020F7B3 /* the_mountain-soft-loop-130012.m4a */ = {isa = PBXFileReference; path = "the_mountain-soft-loop-130012.m4a"; sourceTree = "<group>"; };
@@ -265,7 +266,6 @@
 		CC5B95523640373AE6FACF0C /* NinniAIWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinniAIWidgetBundle.swift; sourceTree = "<group>"; };
 		D04CC511BA322DF553FB2600 /* low_atmos-desert-night-sleep-atmosphere-513282.m4a */ = {isa = PBXFileReference; path = "low_atmos-desert-night-sleep-atmosphere-513282.m4a"; sourceTree = "<group>"; };
 		D16B61E52DB929066BD6FCE5 /* PremiumGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumGuard.swift; sourceTree = "<group>"; };
-		D1B4D87B8D0AE74A2F39F8B1 /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D2B79CE5BDA2BBE82A1559D3 /* ceeprolific-kiss-the-rain-274811.m4a */ = {isa = PBXFileReference; path = "ceeprolific-kiss-the-rain-274811.m4a"; sourceTree = "<group>"; };
 		D2E4D847414D47D546667A00 /* nonenothingnowhere-639-hz-heart-chakra-156267.m4a */ = {isa = PBXFileReference; path = "nonenothingnowhere-639-hz-heart-chakra-156267.m4a"; sourceTree = "<group>"; };
 		D8349971C343D101D16815E6 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
@@ -400,6 +400,7 @@
 				C0F4732BC85A1BDB9AE6C7A7 /* StoreKit */,
 				CA133D0272B5A64E2A837248 /* LanguageManager.swift */,
 				83F3518298FA090A79F57A8C /* LiveActivityManager.swift */,
+				3832E72C56757A4EC39E5A4D /* LocalizationDictionaries.swift */,
 				DDC7AB8909EE2A9D0486CB02 /* SoundSeeder.swift */,
 			);
 			path = Services;
@@ -617,7 +618,6 @@
 				2D546E4F3EBB85514F57FDAC /* Info.plist */,
 				F8F1A3B8190406994CA33028 /* Localizable.xcstrings */,
 				56A8F5B20C5A967965F7B4B3 /* NinniAIApp.swift */,
-				D1B4D87B8D0AE74A2F39F8B1 /* Localizable.xcstrings */,
 			);
 			path = NinniAI;
 			sourceTree = "<group>";
@@ -652,6 +652,8 @@
 			dependencies = (
 			);
 			name = NinniAIWidget;
+			packageProductDependencies = (
+			);
 			productName = NinniAIWidget;
 			productReference = AEAF3FF24BB56BB9D4A83DF6 /* NinniAIWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -670,6 +672,8 @@
 				3DB4AB4D32BE5B46AF52102C /* PBXTargetDependency */,
 			);
 			name = NinniAI;
+			packageProductDependencies = (
+			);
 			productName = NinniAI;
 			productReference = 9405092CC6A1022B18B9866B /* NinniAI.app */;
 			productType = "com.apple.product-type.application";
@@ -778,7 +782,6 @@
 				C1DF83387061DFFC4D5989BB /* tunetank-music-box-sleep-lullaby-349471.m4a in Resources */,
 				321BE9C6341C79926275709D /* viacheslavstarostin-baby-kids-children-music-471917.m4a in Resources */,
 				996B45421E364E7DD36AAFA1 /* viacheslavstarostin-kids-baby-children-music-382060.m4a in Resources */,
-				37CCAB027B821FB476F3F6A2 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,6 +823,7 @@
 				0ED3B5950DA1FB19D5F01904 /* LanguageSelectionView.swift in Sources */,
 				EA4C6FB3CBAE5F6F0CC8047D /* LegalView.swift in Sources */,
 				0435E15D8B052E359B1A4D5A /* LiveActivityManager.swift in Sources */,
+				9956FFA486D1CE3C6CC99575 /* LocalizationDictionaries.swift in Sources */,
 				11C52438F26EE58D8B5F216C /* Milestone.swift in Sources */,
 				C93214BE7F7344CAB060CF5E /* MilestoneTracker.swift in Sources */,
 				35EC9F1D0DB55394CA2E8822 /* MiniPlayerBar.swift in Sources */,

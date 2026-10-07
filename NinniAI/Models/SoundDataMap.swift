@@ -40,7 +40,7 @@ struct SoundSection: Identifiable {
     let category: SoundCategory
     let tracks: [SoundTrack]
     
-    var displayTitle: LocalizedStringResource { category.displayTitle }
+    var displayTitle: String { category.displayTitle }
     var iconName: String { category.iconName }
 }
 

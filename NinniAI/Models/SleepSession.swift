@@ -138,9 +138,9 @@ enum SessionType: String, Codable, CaseIterable {
     
     var displayTitle: String {
         switch self {
-        case .nightSleep: return "Gece Uykusu"
-        case .nap:        return "Gündüz Uykusu"
-        case .calming:    return "Sakinleştirme"
+        case .nightSleep: return "Gece Uykusu".localized
+        case .nap:        return "Gündüz Uykusu".localized
+        case .calming:    return "Sakinleştirme".localized
         }
     }
     

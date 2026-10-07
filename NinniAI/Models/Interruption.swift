@@ -62,11 +62,11 @@ enum InterruptionReason: String, Codable, CaseIterable {
     
     var displayTitle: String {
         switch self {
-        case .feeding:      return "Beslenme"
-        case .diaperChange: return "Alt Değiştirme"
-        case .crying:       return "Ağlama"
-        case .noise:        return "Dış Ses"
-        case .unknown:      return "Bilinmiyor"
+        case .feeding:      return "Beslenme".localized
+        case .diaperChange: return "Alt Değiştirme".localized
+        case .crying:       return "Ağlama".localized
+        case .noise:        return "Dış Ses".localized
+        case .unknown:      return "Bilinmiyor".localized
         }
     }
     

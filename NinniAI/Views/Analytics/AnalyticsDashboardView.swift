@@ -48,7 +48,7 @@ struct AnalyticsDashboardView: View {
                     
                     Button(action: { showTodayAnalysis = true }) {
                         HStack {
-                            Text("Günün Analizi Detayı")
+                            Text("Günün Analizi Detayı".localized)
                                 .font(.headline)
                             Spacer()
                             Image(systemName: "chevron.right")
@@ -85,7 +85,7 @@ struct AnalyticsDashboardView: View {
     // MARK: - 1. Akıllı İçgörü Kartı
     
     private var smartInsightCard: some View {
-        let babyName = baby?.name ?? "Bebeğiniz"
+        let babyName = baby?.name ?? "Bebeğiniz".localized
         
         return HStack(alignment: .top, spacing: 16) {
             Image(systemName: "sparkles")
@@ -110,11 +110,12 @@ struct AnalyticsDashboardView: View {
     private func insightMessage(for name: String) -> String {
         let todayMins = calculateTodaySleepMinutes(for: .now)
         if todayMins == 0 {
-            return "\(name) için henüz bugünün uyku verisi girilmedi. Yeni bir uyku oturumu başlatarak analizi görebilirsiniz."
+            return String(format: "%@ için henüz bugünün uyku verisi girilmedi. Yeni bir uyku oturumu başlatarak analizi görebilirsiniz.".localized, name)
         } else if todayMins > targetSleepHours * 60 {
-            return "Harika! \(name) bugün günlük uyku hedefine ulaştı. Kaliteli uyku büyümesini destekliyor."
+            return String(format: "Harika! %@ bugün günlük uyku hedefine ulaştı. Kaliteli uyku büyümesini destekliyor.".localized, name)
         } else {
-            return "\(name)'in hedefine ulaşması için yaklaşık \(Int((targetSleepHours * 60) - todayMins) / 60) saat daha uykuya ihtiyacı var."
+            let remHours = Int((targetSleepHours * 60) - todayMins) / 60
+            return String(format: "%@ hedefine ulaşması için yaklaşık %d saat daha uykuya ihtiyacı var.".localized, name, remHours)
         }
     }
     
@@ -181,18 +182,18 @@ struct AnalyticsDashboardView: View {
                         if activeSession != nil {
                             HStack(spacing: 4) {
                                 Circle().fill(AppTheme.accentPrimary).frame(width: 6, height: 6)
-                                Text("Şu an uyuyor")
+                                Text("Şu an uyuyor".localized)
                                     .font(.caption2.weight(.bold))
                                     .foregroundStyle(AppTheme.accentPrimary)
                             }
                             .padding(.bottom, 2)
                         }
                         
-                        Text(String(format: "%.1f Saat", todayHours))
+                        Text(String(format: "%.1f \("Saat".localized)", todayHours))
                             .font(.system(size: 32, weight: .bold, design: .rounded))
                             .foregroundStyle(.white)
                         
-                        Text("Hedef: \(Int(targetSleepHours)) Saat")
+                        Text(String(format: "Hedef: %lld Saat".localized, Int64(targetSleepHours)))
                             .font(.subheadline)
                             .foregroundStyle(.white.opacity(0.6))
                     }
@@ -202,11 +203,11 @@ struct AnalyticsDashboardView: View {
                 HStack(spacing: 24) {
                     HStack(spacing: 6) {
                         Circle().fill(AppTheme.accentPrimary).frame(width: 8, height: 8)
-                        Text("Toplam Uyku").font(.caption).foregroundStyle(.white.opacity(0.8))
+                        Text("Toplam Uyku".localized).font(.caption).foregroundStyle(.white.opacity(0.8))
                     }
                     HStack(spacing: 6) {
                         Circle().fill(Color.blue).frame(width: 8, height: 8)
-                        Text("Kesintisiz Uyku").font(.caption).foregroundStyle(.white.opacity(0.8))
+                        Text("Kesintisiz Uyku".localized).font(.caption).foregroundStyle(.white.opacity(0.8))
                     }
                 }
             }
@@ -222,17 +223,17 @@ struct AnalyticsDashboardView: View {
         
         return LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: AppTheme.spacingMD) {
             metricCard(
-                title: "Ortalama Uyku",
-                value: String(format: "%.1f sa", avgDur),
-                subtitle: "Son 7 gün",
+                title: "Ortalama Uyku".localized,
+                value: String(format: "%.1f \("sa".localized)", avgDur),
+                subtitle: "Son 7 gün".localized,
                 icon: "clock.fill",
                 color: AppTheme.accentPrimary
             )
             
             metricCard(
-                title: "Uyanma",
-                value: "\(totalInt) kez",
-                subtitle: "Bugün",
+                title: "Uyanma".localized,
+                value: formatTimes(totalInt),
+                subtitle: "Bugün".localized,
                 icon: "exclamationmark.triangle.fill",
                 color: totalInt > 3 ? AppTheme.warning : AppTheme.success
             )
@@ -281,7 +282,7 @@ struct AnalyticsDashboardView: View {
         
         return VStack(alignment: .leading, spacing: AppTheme.spacingMD) {
             HStack {
-                Text("Derin Analizler")
+                Text("Derin Analizler".localized)
                     .font(.title3.weight(.bold))
                     .foregroundStyle(.white)
                 
@@ -322,7 +323,7 @@ struct AnalyticsDashboardView: View {
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Uyku Kalite Skoru")
+                        Text("Uyku Kalite Skoru".localized)
                             .font(.headline)
                             .foregroundStyle(.white)
                         Text(scoreMessage)
@@ -345,10 +346,10 @@ struct AnalyticsDashboardView: View {
                         .clipShape(Circle())
                     
                     VStack(alignment: .leading) {
-                        Text("En Etkili Ses")
+                        Text("En Etkili Ses".localized)
                             .font(.subheadline)
                             .foregroundStyle(.white.opacity(0.6))
-                        Text(mostEffectiveSoundName)
+                        Text(mostEffectiveSoundName.localized)
                             .font(.headline)
                             .foregroundStyle(.white)
                     }
@@ -363,7 +364,7 @@ struct AnalyticsDashboardView: View {
                     HStack {
                         Image(systemName: "brain.head.profile")
                             .foregroundStyle(AppTheme.accentSecondary)
-                        Text("AI Koç Analizi")
+                        Text("AI Koç Analizi".localized)
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(.white)
                     }
@@ -441,7 +442,7 @@ struct AnalyticsDashboardView: View {
     
     private func calculateSleepQualityScore() -> (Int, String) {
         let todayMins = calculateTodaySleepMinutes(for: .now)
-        if todayMins < 30 { return (0, "Henüz yeterli veri yok.") }
+        if todayMins < 30 { return (0, "Henüz yeterli veri yok.".localized) }
         
         var score = 100.0
         
@@ -456,15 +457,15 @@ struct AnalyticsDashboardView: View {
         score = max(min(score, 100), 10)
         
         let msg: String
-        if score > 85 { msg = "Mükemmel! Bebeğinizin uyku derinliği çok iyi." }
-        else if score > 60 { msg = "İyi. Kesintileri azaltmak için farklı sesler deneyebilirsiniz." }
-        else { msg = "Düşük kalite. Uyku rutininizi gözden geçirmenizi öneririz." }
+        if score > 85 { msg = "Mükemmel! Bebeğinizin uyku derinliği çok iyi.".localized }
+        else if score > 60 { msg = "İyi. Kesintileri azaltmak için farklı sesler deneyebilirsiniz.".localized }
+        else { msg = "Düşük kalite. Uyku rutininizi gözden geçirmenizi öneririz.".localized }
         
         return (Int(score), msg)
     }
     
     private func calculateMostEffectiveSound() -> String {
-        guard !sessions.isEmpty else { return "Veri Bekleniyor" }
+        guard !sessions.isEmpty else { return "Veri Bekleniyor".localized }
         
         var counts: [String: Int] = [:]
         for session in sessions where !session.playedSoundIdentifiers.isEmpty {
@@ -475,10 +476,10 @@ struct AnalyticsDashboardView: View {
         
         if let topID = counts.max(by: { $0.value < $1.value })?.key,
            let sound = allSounds.first(where: { $0.identifier == topID }) {
-            return sound.displayName
+            return sound.displayName.localized
         }
         
-        return "Anne Karnı (Varsayılan)"
+        return "Anne Karnı (Varsayılan)".localized
     }
     
     private func generateAICoachMessage() -> String {
@@ -486,17 +487,17 @@ struct AnalyticsDashboardView: View {
         let recentSessions = sessions.filter { $0.startedAt >= past3Days }
         
         if recentSessions.isEmpty {
-            return "Düzenli uyku kaydı tutarak bebeğinizin gelişimine dair yapay zeka analizleri alabilirsiniz."
+            return "Düzenli uyku kaydı tutarak bebeğinizin gelişimine dair yapay zeka analizleri alabilirsiniz.".localized
         }
         
         let totalInterruptions = recentSessions.reduce(0) { $0 + $1.interruptionCount }
         
         if totalInterruptions > 5 {
-            return "Son 3 gündür kesintiler yüksek. 4. ay uyku gerilemesi dönemi veya diş çıkarma olabilir. Rutinleri şaşmamaya özen gösterin."
+            return "Son 3 gündür kesintiler yüksek. 4. ay uyku gerilemesi dönemi veya diş çıkarma olabilir. Rutinleri şaşmamaya özen gösterin.".localized
         } else if calculateTodaySleepMinutes(for: .now) < (targetSleepHours * 60) - 120 {
-            return "Uyku hedefine ulaşmakta zorlanıyorsunuz. Gündüz uyanık kalma sürelerini (wake windows) uzatmayı deneyebilirsiniz."
+            return "Uyku hedefine ulaşmakta zorlanıyorsunuz. Gündüz uyanık kalma sürelerini (wake windows) uzatmayı deneyebilirsiniz.".localized
         } else {
-            return "Harika gidiyorsunuz! Son 3 gündür uyku düzeni çok istikrarlı. Mevcut rutini korumaya devam edin."
+            return "Harika gidiyorsunuz! Son 3 gündür uyku düzeni çok istikrarlı. Mevcut rutini korumaya devam edin.".localized
         }
     }
 }
@@ -537,7 +538,7 @@ struct TodayAnalysisView: View {
                     .padding(AppTheme.spacingMD)
                 }
             }
-            .navigationTitle("Günün Analizi")
+            .navigationTitle("Günün Analizi".localized)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -589,7 +590,7 @@ struct TodayAnalysisView: View {
     
     private var distributionSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Gece / Gündüz Dağılımı")
+            Text("Gece / Gündüz Dağılımı".localized)
                 .font(.headline)
                 .foregroundStyle(.white)
             
@@ -618,14 +619,14 @@ struct TodayAnalysisView: View {
             HStack {
                 HStack(spacing: 6) {
                     Circle().fill(Color.indigo).frame(width: 8, height: 8)
-                    Text("Gece: \(formatMinutes(todayNightSleepMinutes))")
+                    Text(String(format: "Gece: %@".localized, formatMinutes(todayNightSleepMinutes)))
                         .font(.caption)
                         .foregroundStyle(.white.opacity(0.8))
                 }
                 Spacer()
                 HStack(spacing: 6) {
                     Circle().fill(Color.orange).frame(width: 8, height: 8)
-                    Text("Gündüz: \(formatMinutes(todayNapMinutes))")
+                    Text(String(format: "Gündüz: %@".localized, formatMinutes(todayNapMinutes)))
                         .font(.caption)
                         .foregroundStyle(.white.opacity(0.8))
                 }
@@ -638,13 +639,13 @@ struct TodayAnalysisView: View {
     
     private var comparisonSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Düne Göre Karşılaştırma")
+            Text("Düne Göre Karşılaştırma".localized)
                 .font(.headline)
                 .foregroundStyle(.white)
             
             HStack(spacing: 20) {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Dün")
+                    Text("Dün".localized)
                         .font(.subheadline)
                         .foregroundStyle(.white.opacity(0.6))
                     Text(formatMinutes(yesterdayTotalMinutes))
@@ -656,7 +657,7 @@ struct TodayAnalysisView: View {
                     .foregroundStyle(.white.opacity(0.4))
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Bugün")
+                    Text("Bugün".localized)
                         .font(.subheadline)
                         .foregroundStyle(.white.opacity(0.6))
                     Text(formatMinutes(todayTotalMinutes))
@@ -696,10 +697,10 @@ struct TodayAnalysisView: View {
         
         return HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Kesintiler")
+                Text("Kesintiler".localized)
                     .font(.subheadline)
                     .foregroundStyle(.white.opacity(0.6))
-                Text("\(totalInt) kez")
+                Text(formatTimes(totalInt))
                     .font(.title3.bold())
                     .foregroundStyle(.white)
             }
@@ -709,7 +710,7 @@ struct TodayAnalysisView: View {
             .clipShape(RoundedRectangle(cornerRadius: 16))
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("Ort. Kesintisiz")
+                Text("Ort. Kesintisiz".localized)
                     .font(.subheadline)
                     .foregroundStyle(.white.opacity(0.6))
                 Text(formatMinutes(avgStretch))
@@ -725,12 +726,12 @@ struct TodayAnalysisView: View {
     
     private var timelineSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Oturum Geçmişi (Bugün)")
+            Text("Oturum Geçmişi (Bugün)".localized)
                 .font(.headline)
                 .foregroundStyle(.white)
             
             if todaySessions.isEmpty {
-                Text("Bugün henüz uyku kaydı yok.")
+                Text("Bugün henüz uyku kaydı yok.".localized)
                     .font(.subheadline)
                     .foregroundStyle(.white.opacity(0.5))
                     .padding(.top, 8)
@@ -767,7 +768,7 @@ struct TodayAnalysisView: View {
                     if let endedAt = session.endedAt {
                         Text(endedAt, format: .dateTime.hour().minute())
                     } else {
-                        Text("Devam Ediyor")
+                        Text("Devam Ediyor".localized)
                             .foregroundStyle(AppTheme.accentPrimary)
                     }
                 }
@@ -799,12 +800,23 @@ struct TodayAnalysisView: View {
     
     // Formatter Helper
     private func formatMinutes(_ minutes: Double) -> String {
+        let dk = "dk".localized
+        let sa = "sa".localized
         if minutes < 60 {
-            return "\(Int(minutes)) dk"
+            return "\(Int(minutes)) \(dk)"
         } else {
             let h = Int(minutes) / 60
             let m = Int(minutes) % 60
-            return "\(h) sa \(m) dk"
+            return "\(h) \(sa) \(m) \(dk)"
         }
+    }
+}
+
+fileprivate func formatTimes(_ count: Int) -> String {
+    let isEn = LanguageManager.shared.activeLanguageCode == "en"
+    if isEn {
+        return "\(count) \(count == 1 ? "time" : "times")"
+    } else {
+        return "\(count) kez"
     }
 }

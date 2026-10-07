@@ -33,38 +33,38 @@ enum SleepProblem: String, Codable, CaseIterable, Identifiable {
     var id: String { rawValue }
     
     /// Kullanıcıya gösterilecek başlık
-    var displayTitle: LocalizedStringResource {
+    var displayTitle: String {
         switch self {
-        case .difficultyFallingAsleep: return "Uykuya dalma güçlüğü"
-        case .frequentNightWaking:     return "Gece sık uyanma"
-        case .shortNaps:               return "Kısa gündüz uykusu"
-        case .irregularSchedule:       return "Düzensiz uyku programı"
-        case .nightTerrors:            return "Gece korkuları"
-        case .sleepRegression:         return "Uyku gerileme dönemi"
-        case .needsHolding:            return "Kucakta uyuma"
-        case .feedToSleep:             return "Emzirerek uyuma"
+        case .difficultyFallingAsleep: return "Uykuya dalma güçlüğü".localized
+        case .frequentNightWaking:     return "Gece sık uyanma".localized
+        case .shortNaps:               return "Kısa gündüz uykusu".localized
+        case .irregularSchedule:       return "Düzensiz uyku programı".localized
+        case .nightTerrors:            return "Gece korkuları".localized
+        case .sleepRegression:         return "Uyku gerileme dönemi".localized
+        case .needsHolding:            return "Kucakta uyuma".localized
+        case .feedToSleep:             return "Emzirerek uyuma".localized
         }
     }
     
     /// Kullanıcıya gösterilecek açıklama
-    var displayDescription: LocalizedStringResource {
+    var displayDescription: String {
         switch self {
         case .difficultyFallingAsleep:
-            return "Bebeğiniz yatağa konulduğunda uzun süre uykuya dalamıyor."
+            return "Bebeğiniz yatağa konulduğunda uzun süre uykuya dalamıyor.".localized
         case .frequentNightWaking:
-            return "Gece boyunca sık sık uyanıyor ve tekrar uyumakta zorlanıyor."
+            return "Gece boyunca sık sık uyanıyor ve tekrar uyumakta zorlanıyor.".localized
         case .shortNaps:
-            return "Gündüz uykuları genellikle 30 dakikadan kısa sürüyor."
+            return "Gündüz uykuları genellikle 30 dakikadan kısa sürüyor.".localized
         case .irregularSchedule:
-            return "Uyku ve uyanma saatleri her gün farklılık gösteriyor."
+            return "Uyku ve uyanma saatleri her gün farklılık gösteriyor.".localized
         case .nightTerrors:
-            return "Gece uykusunda ağlama ve korku nöbetleri yaşıyor."
+            return "Gece uykusunda ağlama ve korku nöbetleri yaşıyor.".localized
         case .sleepRegression:
-            return "Daha önce iyi uyurken artık uyku düzeni bozuldu."
+            return "Daha önce iyi uyurken artık uyku düzeni bozuldu.".localized
         case .needsHolding:
-            return "Sadece kucakta veya sallanarak uyuyabiliyor."
+            return "Sadece kucakta veya sallanarak uyuyabiliyor.".localized
         case .feedToSleep:
-            return "Uyumak için mutlaka emzirilmesi veya biberonla beslenmesi gerekiyor."
+            return "Uyumak için mutlaka emzirilmesi veya biberonla beslenmesi gerekiyor.".localized
         }
     }
     

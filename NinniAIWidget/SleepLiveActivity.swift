@@ -12,7 +12,7 @@ struct SleepLiveActivity: Widget {
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("\(context.attributes.babyName) dinleniyor...")
+                        Text(String(format: String(localized: "%@ dinleniyor..."), context.attributes.babyName))
                             .font(.system(size: 16, weight: .medium, design: .rounded))
                             .foregroundColor(.white.opacity(0.9))
                         
@@ -64,7 +64,7 @@ struct SleepLiveActivity: Widget {
                         Link(destination: URL(string: "ninniAI://stopSleep")!) {
                             HStack(spacing: 6) {
                                 Image(systemName: "stop.fill")
-                                Text("Durdur")
+                                Text(String(localized: "Durdur"))
                             }
                             .font(.subheadline.weight(.semibold))
                             .foregroundColor(.white)

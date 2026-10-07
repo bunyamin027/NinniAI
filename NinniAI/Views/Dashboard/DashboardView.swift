@@ -97,16 +97,19 @@ struct DashboardView: View {
     
     private var smartHeaderSection: some View {
         VStack(alignment: .leading, spacing: 6) {
-            let babyName = baby?.name ?? "Beren"
-            let ageText = baby != nil ? "\(baby!.ageInMonths) aylık" : "7 aylık"
+            let babyName = baby?.name ?? (LanguageManager.shared.activeLanguageCode == "en" ? "Baby" : "Beren")
+            let aylik = "aylık".localized
+            let ageText = baby != nil ? "\(baby!.ageInMonths) \(aylik)" : "7 \(aylik)"
             let recommended = recommendedSleep
+            let headerFormat = "%@ nasıl? %@ bugün tam %@.".localized
+            let targetFormat = "Bugün hedef: %lld saat uyku".localized
             
-            Text("\(babyName) nasıl? \(babyName) bugün tam \(ageText).")
+            Text(String(format: headerFormat, babyName, babyName, ageText))
                 .font(.system(size: 26, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
                 .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
             
-            Text("Bugün hedef: \(recommended) saat uyku")
+            Text(String(format: targetFormat, Int64(recommended)))
                 .font(.subheadline)
                 .foregroundStyle(Color(hex: "94A3B8")) // Light gray
         }
@@ -131,7 +134,7 @@ struct DashboardView: View {
             // Header
             HStack(alignment: .top) {
                 // Status Badge
-                Text(isBabyAwake ? "Uyanık" : "Uyuyor")
+                Text(isBabyAwake ? "Uyanık".localized : "Uyuyor".localized)
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(.white)
                     .padding(.horizontal, 16)
@@ -153,7 +156,7 @@ struct DashboardView: View {
                 
                 Spacer()
                 
-                Text("UYKU KOÇU (PRO)")
+                Text("UYKU KOÇU (PRO)".localized)
                     .font(.caption)
                     .fontWeight(.bold)
                     .foregroundStyle(Color(hex: "94A3B8"))
@@ -162,7 +165,7 @@ struct DashboardView: View {
             
             // Center Content
             VStack(spacing: 8) {
-                Text(isBabyAwake ? "Bir sonraki tahmini uyku" : "Şu An Uykuda")
+                Text(isBabyAwake ? "Bir sonraki tahmini uyku".localized : "Şu An Uykuda".localized)
                     .font(.subheadline)
                     .foregroundStyle(Color(hex: "94A3B8"))
                 
@@ -176,7 +179,7 @@ struct DashboardView: View {
                             Circle()
                                 .fill(statusColor)
                                 .frame(width: 8, height: 8)
-                            Text("Kalan: \(remainingWakeTimeText)")
+                            Text(String(format: "Kalan: %@".localized, remainingWakeTimeText))
                                 .font(.caption.weight(.semibold))
                                 .foregroundStyle(statusColor)
                         }
@@ -188,7 +191,7 @@ struct DashboardView: View {
                         HStack(spacing: 4) {
                             Image(systemName: "bell.badge.fill")
                                 .font(.caption2)
-                            Text("15 dk önce bildirim")
+                            Text("15 dk önce bildirim".localized)
                                 .font(.caption2)
                         }
                         .foregroundStyle(Color(hex: "94A3B8"))
@@ -200,7 +203,7 @@ struct DashboardView: View {
             // Subtle Player Interface
             if isBabyAwake {
                 HStack {
-                    Text(suggestedSound?.displayName ?? "Okyanus Sesi")
+                    Text(suggestedSound?.displayName.localized ?? "Okyanus Sesi".localized)
                         .font(.subheadline)
                         .foregroundStyle(Color(hex: "94A3B8"))
                     
@@ -254,7 +257,7 @@ struct DashboardView: View {
                         .foregroundStyle(Color(hex: "FBBF24"))
                         .shadow(color: Color(hex: "FBBF24").opacity(0.6), radius: 8)
                     
-                    Text("Bebek\nUyandı")
+                    Text("Bebek\nUyandı".localized)
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundStyle(Color(hex: "FDE68A"))
@@ -286,7 +289,7 @@ struct DashboardView: View {
                         .foregroundStyle(Color(hex: "A78BFA"))
                         .shadow(color: Color(hex: "A78BFA").opacity(0.6), radius: 8)
                     
-                    Text("Bebek\nUyudu")
+                    Text("Bebek\nUyudu".localized)
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundStyle(Color(hex: "E0E7FF"))
@@ -317,7 +320,7 @@ struct DashboardView: View {
                 .font(.title2)
                 .shadow(color: Color(hex: "FDE047").opacity(0.5), radius: 8)
             
-            Text("Ayrılık Kaygısı Dönemi: Uykuya dalışta yanınızda olmak isteyebilir. Rutinleri koruyun.")
+            Text(coachAdviceText)
                 .font(.subheadline)
                 .lineSpacing(4)
                 .foregroundStyle(Color(hex: "E2E8F0"))
@@ -378,27 +381,29 @@ struct DashboardView: View {
     private var coachAdviceText: String {
         let age = baby?.ageInMonths ?? 0
         switch age {
-        case 0...2: return "Yenidoğan Dönemi: Bebeğiniz henüz gece/gündüz ayrımını bilmiyor. Gündüzleri aydınlık, geceleri loş ortam sağlayın."
-        case 3...4: return "⚠️ 4. Ay Uyku Gerilemesi Dönemi: Bebeğiniz sirkadiyen ritim geliştiriyor, gündüz uykularını 2 saatten uzun tutmamaya özen gösterin."
-        case 5...6: return "Katı Gıdaya Geçiş: Uyku öncesi aşırı beslenmeden kaçının. Gece uyanmaları azalabilir."
-        case 7...9: return "Ayrılık Kaygısı Dönemi: Uykuya dalışta yanınızda olmak isteyebilir. Rutinleri koruyun."
-        case 10...12: return "Hareketli Dönem: Emekleme/yürüme çalışmaları uykuyu bölebilir. Gündüz bol aktivite yaptırın."
-        default: return "Rutin Dönemi: İstikrarlı bir uyku rutini bebeğinizin gelişimini destekler. Saatleri korumaya çalışın."
+        case 0...2: return "Yenidoğan Dönemi: Bebeğiniz henüz gece/gündüz ayrımını bilmiyor. Gündüzleri aydınlık, geceleri loş ortam sağlayın.".localized
+        case 3...4: return "⚠️ 4. Ay Uyku Gerilemesi Dönemi: Bebeğiniz sirkadiyen ritim geliştiriyor, gündüz uykularını 2 saatten uzun tutmamaya özen gösterin.".localized
+        case 5...6: return "Katı Gıdaya Geçiş: Uyku öncesi aşırı beslenmeden kaçının. Gece uyanmaları azalabilir.".localized
+        case 7...9: return "Ayrılık Kaygısı Dönemi: Uykuya dalışta yanınızda olmak isteyebilir. Rutinleri koruyun.".localized
+        case 10...12: return "Hareketli Dönem: Emekleme/yürüme çalışmaları uykuyu bölebilir. Gündüz bol aktivite yaptırın.".localized
+        default: return "Rutin Dönemi: İstikrarlı bir uyku rutini bebeğinizin gelişimini destekler. Saatleri korumaya çalışın.".localized
         }
     }
     
     private var currentSleepDurationText: String {
         let sleepDate = Date(timeIntervalSince1970: lastSleepTime)
         let diff = Date().timeIntervalSince(sleepDate)
-        if diff < 0 { return "0 dk" }
+        let dk = "dk".localized
+        let sa = "sa".localized
+        if diff < 0 { return "0 \(dk)" }
         let minutes = Int(diff) / 60
         let hours = minutes / 60
         let remMinutes = minutes % 60
         
         if hours > 0 {
-            return "\(hours) saat \(remMinutes) dk"
+            return "\(hours) \(sa) \(remMinutes) \(dk)"
         } else {
-            return "\(minutes) dk"
+            return "\(minutes) \(dk)"
         }
     }
     
@@ -406,7 +411,7 @@ struct DashboardView: View {
     
     private var timePickerSheet: some View {
         VStack(spacing: AppTheme.spacingMD) {
-            Text(isSettingWakeTime ? "Saat kaçta uyandı?" : "Saat kaçta uyudu?")
+            Text(isSettingWakeTime ? "Saat kaçta uyandı?".localized : "Saat kaçta uyudu?".localized)
                 .font(.headline)
                 .foregroundStyle(AppTheme.textPrimary)
                 .padding(.top, AppTheme.spacingMD)
@@ -418,7 +423,8 @@ struct DashboardView: View {
             } label: {
                 HStack(spacing: 8) {
                     Image(systemName: "bolt.fill")
-                    Text(isSettingWakeTime ? "Şimdi Uyandı (\(Date().formatted(date: .omitted, time: .shortened)))" : "Şimdi Uyudu (\(Date().formatted(date: .omitted, time: .shortened)))")
+                    let formatted = Date().formatted(date: .omitted, time: .shortened)
+                    Text(isSettingWakeTime ? "\("Şimdi Uyandı".localized) (\(formatted))" : "\("Şimdi Uyudu".localized) (\(formatted))")
                 }
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(AppTheme.accentPrimary)
@@ -439,7 +445,7 @@ struct DashboardView: View {
             .datePickerStyle(.wheel)
             
             Button(action: saveTime) {
-                Text("Seçilen Saati Kaydet")
+                Text("Seçilen Saati Kaydet".localized)
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
@@ -463,7 +469,7 @@ struct DashboardView: View {
                 
                 // Akıllı Uyku Penceresi bildirimini hesapla ve zamanla
                 let age = baby?.ageInMonths ?? 6
-                let babyName = baby?.name ?? "Bebeğiniz"
+                let babyName = baby?.name ?? "Bebeğiniz".localized
                 let optimalSleep = SleepWindowService.shared.calculateNextSleepTime(wakeUpTime: wakeDate, ageInMonths: age)
                 NotificationManager.shared.scheduleSleepWindowReminder(optimalSleepTime: optimalSleep, babyName: babyName)
             } else {
@@ -471,8 +477,8 @@ struct DashboardView: View {
                 isBabyAwake = false
                 NotificationManager.shared.cancelSleepWindowReminder()
                 LiveActivityManager.shared.startLiveActivity(
-                    babyName: baby?.name ?? "Bebeğiniz",
-                    soundName: appState.audioEngine.activeLayer?.displayName ?? "Sessiz",
+                    babyName: baby?.name ?? "Bebeğiniz".localized,
+                    soundName: appState.audioEngine.activeLayer?.displayName.localized ?? "Sessiz".localized,
                     startTime: selectedTime
                 )
             }

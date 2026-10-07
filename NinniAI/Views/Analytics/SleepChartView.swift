@@ -44,14 +44,14 @@ struct SleepChartView: View {
             VStack(alignment: .leading, spacing: AppTheme.spacingMD) {
                 // Başlık
                 HStack {
-                    Text("Haftalık Uyku")
+                    Text("Haftalık Uyku".localized)
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundStyle(AppTheme.textPrimary)
                     
                     Spacer()
                     
-                    Text("Son 7 gün")
+                    Text("Son 7 gün".localized)
                         .font(.caption2)
                         .foregroundStyle(AppTheme.textTertiary)
                 }
@@ -69,8 +69,8 @@ struct SleepChartView: View {
     private var chart: some View {
         Chart(dailyData) { data in
             BarMark(
-                x: .value("Gün", data.date, unit: .day),
-                y: .value("Dakika", data.totalMinutes)
+                x: .value("Gün".localized, data.date, unit: .day),
+                y: .value("Dakika".localized, data.totalMinutes)
             )
             .foregroundStyle(
                 LinearGradient(
@@ -96,7 +96,7 @@ struct SleepChartView: View {
             AxisMarks { value in
                 AxisValueLabel {
                     if let minutes = value.as(Double.self) {
-                        Text("\(Int(minutes / 60))sa")
+                        Text("\(Int(minutes / 60))\("sa".localized)")
                             .font(.caption2)
                             .foregroundStyle(AppTheme.textTertiary)
                     }
@@ -114,11 +114,11 @@ struct SleepChartView: View {
                 .font(.title)
                 .foregroundStyle(AppTheme.textTertiary)
             
-            Text("Henüz yeterli veri yok")
+            Text("Henüz yeterli veri yok".localized)
                 .font(.caption)
                 .foregroundStyle(AppTheme.textTertiary)
             
-            Text("Birkaç uyku oturumu kaydettikten sonra\ngrafikler burada görünecek")
+            Text("Birkaç uyku oturumu kaydettikten sonra\ngrafikler burada görünecek".localized)
                 .font(.caption2)
                 .foregroundStyle(AppTheme.textTertiary)
                 .multilineTextAlignment(.center)
@@ -129,7 +129,7 @@ struct SleepChartView: View {
     
     private func dayAbbreviation(_ date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "tr_TR")
+        formatter.locale = LanguageManager.shared.locale
         formatter.dateFormat = "EEE"
         return formatter.string(from: date)
     }

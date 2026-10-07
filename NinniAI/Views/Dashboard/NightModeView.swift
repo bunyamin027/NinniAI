@@ -54,12 +54,12 @@ struct NightModeView: View {
                                 .foregroundStyle(AppTheme.accentPrimary.opacity(0.6))
                         }
                         
-                        Text("Gece Uykusuna Dön")
+                        Text("Gece Uykusuna Dön".localized)
                             .font(.title2)
                             .fontWeight(.medium)
                             .foregroundStyle(Color.white.opacity(0.5))
                         
-                        Text("Sakin seslerle tekrar uykuya dal")
+                        Text("Sakin seslerle tekrar uykuya dal".localized)
                             .font(.caption)
                             .foregroundStyle(Color.white.opacity(0.2))
                     }
@@ -75,7 +75,7 @@ struct NightModeView: View {
                         appState.contextEngine.nightMode.dismiss()
                     }
                 } label: {
-                    Text("Normal moda geç")
+                    Text("Normal moda geç".localized)
                         .font(.caption2)
                         .foregroundStyle(Color.white.opacity(0.12))
                 }

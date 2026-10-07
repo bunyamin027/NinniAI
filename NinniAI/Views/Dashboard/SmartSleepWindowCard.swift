@@ -57,14 +57,16 @@ struct SmartSleepWindowCard: View {
     private var currentSleepDurationText: String {
         let sleepDate = Date(timeIntervalSince1970: lastSleepTime)
         let diff = Date().timeIntervalSince(sleepDate)
-        if diff < 0 { return "0 dk" }
+        let dk = "dk".localized
+        let sa = "sa".localized
+        if diff < 0 { return "0 \(dk)" }
         let minutes = Int(diff) / 60
         let hours = minutes / 60
         let remMinutes = minutes % 60
         if hours > 0 {
-            return "\(hours) saat \(remMinutes) dk"
+            return "\(hours) \(sa) \(remMinutes) \(dk)"
         } else {
-            return "\(minutes) dk"
+            return "\(minutes) \(dk)"
         }
     }
     
@@ -78,7 +80,7 @@ struct SmartSleepWindowCard: View {
                         .frame(width: 8, height: 8)
                         .scaleEffect(pulseGlow ? 1.3 : 1.0)
                     
-                    Text(isBabyAwake ? sleepWindowStatus.title : "Şu An Uykuda")
+                    Text(isBabyAwake ? sleepWindowStatus.title : "Şu An Uykuda".localized)
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(isBabyAwake ? statusColor : Color.indigo)
                 }
@@ -89,7 +91,7 @@ struct SmartSleepWindowCard: View {
                 
                 Spacer()
                 
-                Text("AKILLI UYKU PENCERESİ")
+                Text("AKILLI UYKU PENCERESİ".localized)
                     .font(.system(size: 10, weight: .bold))
                     .foregroundStyle(Color(hex: "94A3B8"))
                     .tracking(1.2)
@@ -97,7 +99,7 @@ struct SmartSleepWindowCard: View {
             
             // ─── Merkez Bilgi: Bir Sonraki Tahmini Uyku ───
             VStack(spacing: 6) {
-                Text(isBabyAwake ? "Bir sonraki tahmini uyku" : "Toplam Uyku Süresi")
+                Text(isBabyAwake ? "Bir sonraki tahmini uyku".localized : "Toplam Uyku Süresi".localized)
                     .font(.subheadline)
                     .foregroundStyle(Color(hex: "94A3B8"))
                 
@@ -119,7 +121,7 @@ struct SmartSleepWindowCard: View {
                 
                 if isBabyAwake {
                     HStack(spacing: 8) {
-                        Text("Kalan: \(remainingWakeTimeText)")
+                        Text(String(format: "Kalan: %@".localized, remainingWakeTimeText))
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(statusColor)
                             .padding(.horizontal, 10)
@@ -130,7 +132,7 @@ struct SmartSleepWindowCard: View {
                         HStack(spacing: 4) {
                             Image(systemName: "bell.badge.fill")
                                 .font(.caption2)
-                            Text("\(reminderTimeFormatted) bildirim 🌙")
+                            Text(String(format: "%@ bildirim 🌙".localized, reminderTimeFormatted))
                                 .font(.caption2)
                         }
                         .foregroundStyle(Color(hex: "94A3B8"))
@@ -146,7 +148,7 @@ struct SmartSleepWindowCard: View {
                     HStack(spacing: 8) {
                         Image(systemName: "sun.max.fill")
                             .font(.subheadline)
-                        Text("Bebek Uyandı")
+                        Text("Bebek Uyandı".localized)
                             .font(.subheadline.weight(.semibold))
                     }
                     .foregroundStyle(isBabyAwake ? .white : Color(hex: "FDE68A"))
@@ -168,7 +170,7 @@ struct SmartSleepWindowCard: View {
                     HStack(spacing: 8) {
                         Image(systemName: "moon.stars.fill")
                             .font(.subheadline)
-                        Text("Bebek Uyudu")
+                        Text("Bebek Uyudu".localized)
                             .font(.subheadline.weight(.semibold))
                     }
                     .foregroundStyle(!isBabyAwake ? .white : Color(hex: "E0E7FF"))
@@ -226,7 +228,7 @@ struct SmartSleepWindowCard: View {
         
         // 15 dakika öncesine Akıllı Uyku Bildirimi kur
         let age = baby?.ageInMonths ?? 6
-        let babyName = baby?.name ?? "Bebeğiniz"
+        let babyName = baby?.name ?? "Bebeğiniz".localized
         let optimal = SleepWindowService.shared.calculateNextSleepTime(wakeUpTime: now, ageInMonths: age)
         NotificationManager.shared.scheduleSleepWindowReminder(optimalSleepTime: optimal, babyName: babyName)
     }
@@ -245,8 +247,8 @@ struct SmartSleepWindowCard: View {
         NotificationManager.shared.cancelSleepWindowReminder()
         
         LiveActivityManager.shared.startLiveActivity(
-            babyName: baby?.name ?? "Bebeğiniz",
-            soundName: "Sessiz",
+            babyName: baby?.name ?? "Bebeğiniz".localized,
+            soundName: "Sessiz".localized,
             startTime: now
         )
     }

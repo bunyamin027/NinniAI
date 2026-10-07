@@ -31,13 +31,13 @@ struct SleepProblemsStepView: View {
                     .opacity(isAppeared ? 1 : 0)
                     .scaleEffect(isAppeared ? 1 : 0.7)
                 
-                Text("Uyku Zorlukları")
+                Text("Uyku Zorlukları".localized)
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundStyle(AppTheme.textPrimary)
                     .opacity(isAppeared ? 1 : 0)
                 
-                Text("En fazla 2 zorluk seçin.\nSize özel öneriler sunalım.")
+                Text("En fazla 2 zorluk seçin.\nSize özel öneriler sunalım.".localized)
                     .font(.subheadline)
                     .foregroundStyle(AppTheme.textSecondary)
                     .multilineTextAlignment(.center)
@@ -87,7 +87,7 @@ struct SleepProblemsStepView: View {
             VStack(spacing: AppTheme.spacingSM) {
                 Button(action: onNext) {
                     HStack(spacing: AppTheme.spacingSM) {
-                        Text("Devam")
+                        Text("Devam".localized)
                             .font(.headline)
                         Image(systemName: "arrow.right")
                             .font(.headline)
@@ -102,7 +102,7 @@ struct SleepProblemsStepView: View {
                 .buttonStyle(.plain)
                 
                 // Atla seçeneği
-                Button("Şimdilik atlayın") {
+                Button("Şimdilik atlayın".localized) {
                     selectedProblems = []
                     onNext()
                 }

@@ -74,7 +74,7 @@ struct SuccessScoreView: View {
                             .fontWeight(.bold)
                             .foregroundStyle(level.color)
                         
-                        Text("puan")
+                        Text("puan".localized)
                             .font(.system(size: 9))
                             .foregroundStyle(AppTheme.textTertiary)
                     }
@@ -82,7 +82,7 @@ struct SuccessScoreView: View {
                 
                 // Detaylar
                 VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
-                    Text("Başarı Puanı")
+                    Text("Başarı Puanı".localized)
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundStyle(AppTheme.textPrimary)
@@ -131,10 +131,10 @@ private enum ScoreLevel {
     
     var title: String {
         switch self {
-        case .beginner:   return "Başlangıç"
-        case .developing: return "Gelişiyor"
-        case .good:       return "İyi"
-        case .excellent:  return "Mükemmel"
+        case .beginner:   return "Başlangıç".localized
+        case .developing: return "Gelişiyor".localized
+        case .good:       return "İyi".localized
+        case .excellent:  return "Mükemmel".localized
         }
     }
     
@@ -158,10 +158,10 @@ private enum ScoreLevel {
     
     var message: String {
         switch self {
-        case .beginner:   return "Birkaç oturum daha kaydedince daha net sonuçlar çıkacak."
-        case .developing: return "Uyku düzeni gelişiyor. Doğru yoldasınız!"
-        case .good:       return "Harika gidiyorsunuz! Uyku düzeni oturmaya başladı."
-        case .excellent:  return "Mükemmel bir hafta! Uyku kalitesi çok iyi."
+        case .beginner:   return "Birkaç oturum daha kaydedince daha net sonuçlar çıkacak.".localized
+        case .developing: return "Uyku düzeni gelişiyor. Doğru yoldasınız!".localized
+        case .good:       return "Harika gidiyorsunuz! Uyku düzeni oturmaya başladı.".localized
+        case .excellent:  return "Mükemmel bir hafta! Uyku kalitesi çok iyi.".localized
         }
     }
 }

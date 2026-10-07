@@ -49,12 +49,12 @@ enum AppTab: String, CaseIterable, Identifiable {
     
     var id: String { rawValue }
     
-    var title: LocalizedStringResource {
+    var title: String {
         switch self {
-        case .dashboard: return "Ana Sayfa"
-        case .player:    return "Sesler"
-        case .analytics: return "Analizler"
-        case .settings:  return "Ayarlar"
+        case .dashboard: return "Ana Sayfa".localized
+        case .player:    return "Sesler".localized
+        case .analytics: return "Analizler".localized
+        case .settings:  return "Ayarlar".localized
         }
     }
     
